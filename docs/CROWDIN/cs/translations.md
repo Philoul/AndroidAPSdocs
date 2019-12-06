@@ -40,7 +40,7 @@ Když korektor schválí překlad, tak bude přidaný do příští verze Androi
     
     3 Upravte návrh překladu nebo vepište svůj překlad.
     
-    4 Click save
+    4 Klikněte na tlačítko Save
     
     ![Překlad wiki](./images/translation_WikiTranslate.png)
 
@@ -57,6 +57,8 @@ Když korektor schválí překlad, tak bude přidaný do příští verze Androi
     * Was ist ein Closed Loop System mit AndroidAPS? \---> #was-ist-ein-closed-loop-system-mit-androidaps
     * Wiki Updates & Änderungen \---> #wiki-updates-anderungen
     * AAPS-.apk Datei \---> #aaps-apk-datei
+
+* Check your link if it is working as intended. If it is linking to a new translated headline you may have to wait until next build to be able to check correct link syntax. In this case do not forget to make a reminder in your calendar / todo app.
 
 #### Link translation in Markdown files (.md)
 

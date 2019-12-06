@@ -1,7 +1,11 @@
 Wiki mises à jour et modifications
 **********************
+December 2019
+=====
+* `Watchfaces <../Configuration/Watchfaces.html>`_
 Novembre 2019
 ===============
+* `Automatisation - à désactiver lors de la désactivation de la boucle <../Usage/Automation.html#important-note>`_
 * `Remplacement du transmetteur Dexcom G6 <../Configuration/xdrip.html#replace-transmitter>`_
 * `Bolus étendus - pourquoi ils ne fonctionnent pas dans le cadre d'une boucle <../Usage/Extended-Carbs.html#extended-bolus>`_
 * `FAQ - sports <../Getting-Started/FAQ.html#sports>`_
@@ -12,9 +16,9 @@ Novembre 2019
 * `Changement de profil avec pourcentage - example <../Usage/Profiles.html>`_
 * `Mise à jour commandes SMS <../Children/SMS-commandshtml>`_
 * `Dépannage d'Android Studio <../Installing-AndroidAPS/troubleshooting_androidstudio.html>`_
-* `Troubleshooting - link collection <../Usage/troubleshooting.html>`_
+* `Dépannage - collection de liens <../Usage/troubleshooting.html>`_
 * `Mise à jour - démarrage rapide pour les utilisateurs expérimentés <../Installing-AndroidAPS/Update-to-new-version.html#quick-walk-through-for-experied-users>`_
-* Wiki - update `edit <../make-a-PR.md#code-syntax>`_ and `translation <../translations.html#translate-wiki-pages>`_.
+* Wiki - mise à jour `édition <../make-a-PR.md#code-syntax>`_ et `traduction <../translations.html#translate-wiki-pages>`_.
 
 Octobre 2019
 ===============

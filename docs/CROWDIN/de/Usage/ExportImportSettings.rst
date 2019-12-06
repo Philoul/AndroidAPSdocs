@@ -9,6 +9,12 @@ Die Empfehlung ist, den Export nach einer Änderung der Einstellungen oder dem A
 
 Die exportierten Einstellungen sollten in einen Cloud-Speicher oder auf Deinen Computer kopiert werden. Dann ist Du für den Verlust oder die Beschädigung Deines AAPS-Smartphones vorbereitet und musst nicht wieder bei Null anfangen.
 
+Auf einem Windows 10 PC sieht es in etwa so aus:
+  
+  .. image:: ../images/SmartphoneRootLevelWin10.png
+    :alt: AndroidAPS Preferences Datei - Smartphone mit PC verbunden
+
+
 Exportieren der Einstellungen
 =====
 * **Exportiere die Einstellungen** auf Deinem alten Smartphone
@@ -23,8 +29,8 @@ Exportieren der Einstellungen
        
 * **Übertrage** die exportierten Einstellungen vom alten auf das neue Smartphone
 
-  The exported file is called "AndroidAPSPreferences" and should be in your root folder in the main storage of the phone (just like C: on your computer).
-
+  Die exportierte Datei heißt "AndroidAPSPreferences" und sollte im root-Ordner auf der Hauptebene Deines Smartphones (wie C: auf Deinem Computer) zu finden sein.
+  
 * **Installiere AndroidAPS** auf dem neuen Smartphone.
 * **Importiere die Einstellungen** auf Deinem neuen Smartphone
 

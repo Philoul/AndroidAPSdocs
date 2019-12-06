@@ -1,7 +1,11 @@
 Wiki Updates & Änderungen
 **********************
+Dezember 2019
+=====
+* `Watchfaces <../Configuration/Watchfaces.html>`_
 November 2019
 ===============
+* `Automation - bei deaktiviertem Loop ausschalten <../Usage/Automation.html#wichtiger-hinweis>`_
 * `Dexcom G6 Update zum Transmitter-Wechsel <../Configuration/xdrip.html#transmitter-ersetzen>`_
 * `Warum ein verzögerter Bolus beim Loopen nicht funktioniert <../Usage/Extended-Carbs.html#verzogerter-bolus>`_
 * `FAQ - Sport <../Getting-Started/FAQ.html#sport>`_

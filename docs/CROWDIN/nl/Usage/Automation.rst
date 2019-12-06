@@ -3,7 +3,7 @@ Automatisering
 
 What is Automation
 ===================
-For the same frequent events, you might always have to change the same settings. To avoid the extra work, you can just try to automate the event if you can specify it well enough and let it do it for you automatically. I.e. when your BG is too low, you can decide to have automatically a high temp target. Or if you are at your fitness center, you get automatically a temp target. Before using Automation, you should be confident with manual `temp targets <./temptarget.html>`_ or profile switches. 
+For the same frequent events, you might always have to change the same settings. To avoid the extra work, you can just try to automate the event if you can specify it well enough and let it do it for you automatically. Bijv. when your BG is too low, you can decide to have automatically a high temp target. Or if you are at your fitness center, you get automatically a temp target. Before using Automation, you should be confident with manual `temp targets <./temptarget.html>`_ or profile switches. 
 
 .. image:: ../images/Automation_ConditionAction_RC3.png
   :alt: Automation condition + action
@@ -11,6 +11,15 @@ For the same frequent events, you might always have to change the same settings.
 How to use it
 ================
 To set up an automation, you have to give it a title, select at least one condition and one action. 
+
+Important note
+-----
+**Automation is still active when you disable loop!**
+
+So make sure to deactivate Automation rules during these occations if neccessary. You can do so by untiking the box left of the name of your automation rule.
+
+.. image:: ../images/Automation_ActivateDeactivate.png
+  :alt: Activate and deactivaten automation rule
 
 Algemeen
 --------

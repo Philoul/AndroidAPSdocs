@@ -40,7 +40,7 @@ Kiedy korektor zatwierdzi tłumaczenie, zostanie ono dodane do następnej wersji
     
     3 Edit the proposal or write the translation yourself.
     
-    4 Click safe
+    4 Click save
     
     ![Translation wiki](./images/translation_WikiTranslate.png)
 
@@ -50,7 +50,7 @@ Kiedy korektor zatwierdzi tłumaczenie, zostanie ono dodane do następnej wersji
 
 * When an internal link leads only to a certain page (i.e. ../Usage/Profiles.html) no translation is necessary.
 * Internal links to a certain headline (i.e. ..//Usage/Profiles.html#percentage) must be translated as the headline in the other language is different from the English original.
-* If you create a new headline you can transform this into the anchor link (part after # - i.e. #percentage) by turning all letters to lower case, transforming special characters to standard characters and skipping punctuation marks.
+* If you translate a headline you can transform this into the anchor link (part after # - i.e. #percentage) by turning all letters to lower case, transforming special characters to standard characters, replacing spaces by - (minus sign) and skipping punctuation marks.
     
     Here are some examples:
     
@@ -58,11 +58,13 @@ Kiedy korektor zatwierdzi tłumaczenie, zostanie ono dodane do następnej wersji
     * Wiki Updates & Änderungen \---> #wiki-updates-anderungen
     * AAPS-.apk Datei \---> #aaps-apk-datei
 
+* Check your link if it is working as intended. If it is linking to a new translated headline you may have to wait until next build to be able to check correct link syntax. In this case do not forget to make a reminder in your calendar / todo app.
+
 #### Link translation in Markdown files (.md)
 
-At the moment two [markup languages](./make-a-PR#code-syntax) are used in wiki. Whereas files written in reStructuredText syntax (.rst) always show link address, for files in Markdown syntax (.md) you might have to activate HTML tag displaying in order to translate the link address.
+At the moment two [markup languages](./make-a-PR#code-syntax) are used in wiki. Whereas files written in reStructuredText syntax (.rst) always show link address in Crowdin, for files in Markdown syntax (.md) you might have to activate HTML tag displaying in order to translate the link address.
 
-If links are displayed like this in your browser
+If links are displayed like this in Crowdin
 
 ![Crowdin - no HTML tag display](./images/CrowdinShowURL1.png)
 
