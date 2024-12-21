@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # Pompe à insuline Diaconn G8
 
 ## Appairage Bluetooth de la pompe à insuline
@@ -88,4 +92,4 @@
 ### Fonction Bolus Étendu
 
 - Si vous utilisez un bolus étendu, cela désactivera la boucle fermée.
-- See [this page](../DailyLifeWithAaps/ExtendedCarbs.md#why-extended-boluses-wont-work-in-a-closed-loop-environment) for details why extended bolus does not work in a closed loop environment.
+- See [this page](#Extended-Carbs-why-extended-boluses-won-t-work-in-a-closed-loop-environment) for details why extended bolus does not work in a closed loop environment.

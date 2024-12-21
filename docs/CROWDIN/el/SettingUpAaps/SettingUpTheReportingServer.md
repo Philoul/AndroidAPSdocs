@@ -9,6 +9,7 @@ There are currently two reporting servers available for use with **AAPS**:
 
 We recommend using Nightscout.
 
+(SettingUpTheReportingServer-nightscout)=
 ## Nightscout
 
 Nightscout is a web application that can log and display your CGM data and **AAPS** data and creates reports. It is a powerful platform which has been integrated into **AAPS** for many years. It enables users and caregivers to track the patient's diabetes data in near real-time (only a few seconds may pass between data reception and data provision if there is a sufficient Internet connection between all components involved). It also allows caregivers to send remote commands to **AAPS**.
@@ -27,14 +28,16 @@ A description of how you can set up Nightscout with the advantages and disadvant
 
 There are also options from different service providers who host Nightscout for you, with a monthly fee. The costs are manageable, and the advantage of a hosted option is that you do not need to be IT-literate, or have any operating infrastructure.
 
+
 Existing Nightscout users can reconsider where and how their Nightscout server is hosted from time to time, and change to a different option if it becomes more suitable.
 
 Some Nightscout hosted services are listed [here](https://nightscout.github.io/nightscout/new_user/#vendors-comparison-table).
 
 ### Further configuration of Nightscout
 
-One you have your Nightscout instance up and running, see [Nightscout configuration page](../SettingUpAaps/Nightscout.md) for additional considerations.
+Once you have your Nightscout instance up and running, see [Nightscout configuration page](../SettingUpAaps/Nightscout.md) for additional considerations.
 
+(SettingUpTheReportingServer-tidepool)=
 ## Tidepool
 
 Tidepool has only been available in **AAPS** since version 3.2 which was released in late 2023.
@@ -56,4 +59,4 @@ You do **not** need to use the uploader app to Tidepool: **AAPS** will upload bl
 
 ## Next step
 
-Once you have set up your reporting server, you can now either set up a [dedicated Google account for AAPS use](../SettingUpAaps/DedicatedGoogleAccountForAaps.md), or go straight to [building the AAPS app](../SettingUpAaps/BuildingAaps.md).
+Once you have set up your reporting server, you can now either set up a [dedicated Google account for AAPS use](../UsefulLinks/DedicatedGoogleAccountForAaps.md), or go straight to [building the AAPS app](../SettingUpAaps/BuildingAaps.md). 

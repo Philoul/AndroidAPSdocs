@@ -1,9 +1,15 @@
+* * *
+
+orphan: true
+
+* * *
+
 # DanaR Pump
 
 *These instructions are for configuring the app and your pump if you have a DanaR. Visit [DanaRS Insulin Pump](./DanaRS-Insulin-Pump.md) if you have the DanaRS launched in 2017 instead.*
 
 * In the pump go to Main Menu > Setting > User Option
-* Turn on "8. Extended Bolus"
+* Turn on "8. 扩展大剂量"
 
 ![DanaR pump](../images/danar1.png)
 
@@ -19,8 +25,8 @@
 * In Preferences under DanaR pump settings you can change the default bolus speed used (12sec per 1u, 30sec per 1u or 60sec per 1u).
 * Set basal step on pump to 0.01 U/h
 * Set bolus step on pump to 0.1 U/h
-* Enable extended boluses on pump
+* 在泵上启用扩展大剂量
 
 ## Timezone traveling with Dana R pump
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

@@ -44,6 +44,7 @@ A [commentary](https://academic.oup.com/brain/article/138/1/2/340563) on this wo
 
 It is generally recognised that _newly_ diagnosed type 1 diabetics (who often have very high HbA1c at diagnosis, before starting insulin therapy) appear to be able to rapidly reduce their HbA1c immediately after diagnosis without encountering these risks to the same extent, because they have not had elevated blood glucose levels for such a sustained period. However, it is still a consideration which you should discuss with your clinician.
 
+(PreparingForAaps-no-sglt-2-inhibitors)=
 ### No SGLT-2 inhibitors
 
 ```{admonition} NO SGLT-2 inhibitors
@@ -115,13 +116,13 @@ No dudes en ponerte en contacto con la comunidad de AAPS si hay algo de lo que t
 
 
 
-#### [Where to go for help](../Where-To-Go-For-Help/Background-reading.md)?
+#### [Where to go for help](../UsefulLinks/BackgroundReading.md)?
 
 This section is aimed to provide new users with links on resources in order to get help including accessing community support made up of both new and experienced users who can clarify questions, and resolve the usual pitfalls that come with AAPS.
 
-#### [Section For Clinicians](../Resources/clinician-guide-to-AndroidAPS.md)
+#### [Section For Clinicians](../UsefulLinks/ClinicianGuideToAaps.md)
 
-This is a [section specificially for clinicians](../Resources/clinician-guide-to-AndroidAPS.md) who want to know more about AAPS and open source artificial pancreas technology. There is also guidance on [how to talk to your clinical team](./Introduction.md#how-can-i-approach-discussing-aaps-with-my-clinical-team) in the Introduction.
+This is a [section specificially for clinicians](../UsefulLinks/ClinicianGuideToAaps.md) who want to know more about AAPS and open source artificial pancreas technology. There is also guidance on [how to talk to your clinical team](#introduction-how-can-i-approach-discussing-aaps-with-my-clinical-team) in the Introduction.
 
 ## What are we going to build and install?
 
@@ -150,7 +151,7 @@ Depending on your glucose sensor/CGM, you will need a compatible app for receivi
 
 Both **Nightscout** and **AAPS** must be updated approximately once a year, as improved versions are released. In some cases, the update can be delayed, in others it is strongly recommended or considered essential for safety. Notification of these updates will be given on the Facebook groups and Discord servers. The release notes will make it clear what the scenario is. There are likely to be many people asking similar questions to you at update time, and you will have support for performing the updates.
 
-(preparing-how-long-will-it-take?)=
+(preparing-how-long-will-it-take)=
 ## How long will it take to set everything up?
 
 As mentioned earlier, using **AAPS** is more of a “journey” that requires investment of your personal time. It is not a one-time setup. Current estimates for building **AAPS**, installing and configuring **AAPS** and **CGM** software and getting from open loop to hybrid closed looping with **AAPS** are about 4 to 6 months overall. It is therefore suggested that you prioritize building the **AAPS** app and working through the early objectives as soon as possible, even if you are still using a different insulin delivery system (you can use a virtual pump up to objective 5).
@@ -208,16 +209,11 @@ This documentation aims to reduce the technical expertise required to an absolut
 ### Smartphones
 
 #### AAPS and Android Versions
-The current version of **AAPS** (3.2) requires an Android smartphone with Google **Android 9.0 or above**. If you are considering buying a new phone, (as of July 2024), Android 13 is preferred. Users are strongly encouraged to keep their build of **AAPS** up to date for safety reasons, however for users unable to use a device with Android 9.0 or newer, earlier versions of  **AAPS** compatible for older Android versions like [Android 8](https://github.com/nightscout/AndroidAPS/releases/tag/2.8.2.1) and [Android 7](https://github.com/nightscout/AndroidAPS/releases/tag/2.6.2), remain available from previous releases (check the release notes for legacy versions).
+
+The current version of **AAPS** (3.2) requires an Android smartphone with Google **Android 9.0 or above**. The next **AAPS** version (3.3) will require **Android 11.0 or above**. If you are considering buying a new phone, (as of July 2024), Android 13 is preferred.<br/> As of November 2024, several users have reported issues with Android 15 and Bluetooth connection. You may wish to delay the update to Android 15, especially if you are using Omnipod Dash or Dexcom G7. Check [Facebook or Discord](../GettingHelp/WhereCanIGetHelp.md) for latest updates on this subject.<br/> Users are strongly encouraged to keep their build of **AAPS** up to date for safety reasons. However, for users unable to use a device with Android 11.0 or newer, earlier versions of **AAPS** compatible for older Android versions, remain available, see: [Release notes](#maintenance-android-version-aaps-version).
 
 #### Smartphone model choice
-The exact model you buy depends on the desired function(s). There are two archived spreadsheets of compatible [smartphones](https://docs.google.com/spreadsheets/d/1zO-Vf3wv0jji5Gflk6pe48oi348ApF5RvMcI6NG5TnY/edit#gid=2097219952) and [smartphones and watches](https://docs.google.com/spreadsheets/d/1gZAsN6f0gv6tkgy9EBsYl0BQNhna0RDqA9QGycAqCQc/edit#gid=698881435). The spreadsheets are no longer updated because there are so many possible models, therefore we now suggest searching the support groups (Facebook or Discord) for "phone", or the specific model you are thinking of getting. Create a new post to ask questions about it if you still need more information.
-
-To make a donation of smartphone or smartwatch models that still need testing, please email [donations@androidaps.org](mailto:donations@androidaps.org).
-
-- [List of tested phones](../CompatiblePhones/ListOfTestedPhones.md)
-- [Jelly Settings](../CompatiblePhones/Jelly.md)
-- [Huawei Settings](../CompatiblePhones/Huawei.md)
+The exact model you buy depends on the desired function(s). You can find on the [Phones page](../Getting-Started/Phones.md) recommendations and user feedback about working setups.
 
 Users are encouraged to keep their phone Android version up-to-date, including with security parameters. However, if you are new with **AAPS** or are not a technical expert you might want to delay updating your phone until others have done so and confirmed it is safe to do so, on our various forums.
 

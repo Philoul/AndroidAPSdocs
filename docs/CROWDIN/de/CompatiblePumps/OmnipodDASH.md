@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # Omnipod DASH
 
 Diese Anleitung ist für die Konfiguration der **Omnipod DASH** Pumpe **(NICHT für Omnipod Eros)**. Der Omnipod-Treiber ist ab Version 3.0 als Teil von AAPS verfügbar.
@@ -23,7 +27,7 @@ Hier finden sich die Spezifikationen für den **Omnipod DASH** und die Unterschi
 ![Omnipod Pod](../images/DASH_images/Omnipod_Pod.png)
 
 * **Kompatibles Android Smartphone** mit Bluetooth-Verbindung (Bluetooth Low Energy, BLE)
-   -  Nicht alle Telefone und Android-Versionen werden sicher funktionieren. Bitte überprüfe die [**DASH getesteten Telefone**](https://docs.google.com/spreadsheets/d/1zO-Vf3wv0jji5Gflk6pe48oi348ApF5RvMcI6NG5TnY) oder teste einfach mit Deinem Telefon und teile das Ergebnis (Telefonversion und geographische Region, Android-Version, funktioniert / einige Schwierigkeiten / funktioniert nicht).
+   -  Nicht alle Telefone und Android-Versionen werden sicher funktionieren. Please check [**DASH Tested phones**](#Phones-list-of-tested-phones) or just try with your phone and tell us the result (phone reference and geographical region, Android version, worked / some difficulties / did not work).
    - **Wichtiger Hinweis: Es gab mehrere Fälle von dauerhaften, nicht wiederherstellbaren Verbindungsverlusten bei der Verwendung älterer Pods mit Firmware Version 3.XX.X. Nutze diesen alten Pods mit AAPS bitte mit Vorsicht. Insbesondere dann, wenn Dein Smartphone mit anderen Bluetooth-Geräten gekoppelt ist!** Der AAPS Omnipod DASH-Treiber baut bei jedem Senden eines Befehls eine Bluetooth-Verbindung zum DASH Pod via Bluetooth auf und beendet diese Verbindung unmittelbar danach wieder. Die Bluetooth-Verbindungen können durch andere Geräte gestört werden, die mit dem Telefon verbunden sind, auf dem AAPS läuft, wie Earbuds etc... (was in seltenen Fällen zu Verbindungsproblemen oder Pod-Fehlern bei der Aktivierung oder danach bei einigen Telefonmodellen führen kann).
    -  **Version 3.0 or newer of AAPS built and installed** using the [**Build APK**](../SettingUpAaps/BuildingAaps.md) instructions.
 * [**Kontinuierliche Glukosemessung (CGM)**](../Getting-Started/CompatiblesCgms.md)
@@ -88,7 +92,9 @@ Bitte **wische nach links **zur **DASH** Registerkarte, wo du alle Pod Funktione
 
 1. Navigiere zur Registerkarte **DASH** und klicke auf den **POD MGMT (1)** Button und dann auf **Pod aktivieren (2)**.
 
-![Activate_Pod_1](../images/DASH_images/Activate_Pod/Activate_Pod_1.png)    ![Activate_Pod_2](../images/DASH_images/Activate_Pod/Activate_Pod_2.png)
+![Activate_Pod_1](../images/DASH_images/Activate_Pod/Activate_Pod_1.png)
+
+​    ![Activate_Pod_2](../images/DASH_images/Activate_Pod/Activate_Pod_2.png)
 
 2. Der **Pod füllen** Bildschirm wird angezeigt. Fülle deinen neuen Pod mit mindestens 80 Einheiten Insulin und achte auf zwei Signaltöne, die anzeigen, dass der Pod bereit ist, gestartet zu werden. Beachte bei der Berechnung der gesamten Insulinmenge, welche Du in drei Tagen benötigst, dass zum Füllen des Pod 3 bis 10 IE benötigt werden.
 
@@ -132,7 +138,9 @@ Stelle sicher, dass der neue Pod und das Smartphone, auf dem AAPS läuft, in der
 
     For more details on the information displayed go to the [**DASH Tab**](#dash-tab) section of this document.
 
-![Activate_Pod_14](../images/DASH_images/Activate_Pod/Activate_Pod_14.png)    ![Activate_Pod_15](../images/DASH_images/Activate_Pod/Activate_Pod_15.jpg)
+![Activate_Pod_14](../images/DASH_images/Activate_Pod/Activate_Pod_14.png)
+
+​    ![Activate_Pod_15](../images/DASH_images/Activate_Pod/Activate_Pod_15.jpg)
 
 Es ist zu empfehlen, NACH der Aktivierung des Pods die Einstellungen zu exportieren. Dies solltest Du nach jedem Podwechsel und einmal monatlich tun. Kopiere die Exportdatei an einen sicheren Ort (z. B. in der Cloud). see [**Export settings Doc**](../Maintenance/ExportImportSettings.md).
 
@@ -147,11 +155,17 @@ Gehe wie folgt vor, um einen Pod zu deaktivieren (entweder vor dem Ablaufen der 
 
 1. Gehe zur Registerkarte **DASH** und klicke auf **POD MGMT (1)** und dann auf dem **Pod Management** Bildschirm klicke auf den **Pod deaktivieren (2)** Button.
 
-![Deactivate_Pod_1](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_1.jpg)    ![Deactivate_Pod_2](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_2.png)
+![Deactivate_Pod_1](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_1.jpg)
+
+​    ![Deactivate_Pod_2](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_2.png)
 
 2. Auf dem Bildschirm **Pod deaktivieren**, klicke auf die **Weiter** Taste, um die Deaktivierung des Pods zu starten. Du erhältst vom Pod ein Piepen als Bestätigung, dass die Deaktivierung erfolgreich war.
 
-![Deactivate_Pod_3](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_3.jpg) ![Deactivate_Pod_4](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_4.jpg)
+![Deactivate_Pod_3](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_3.jpg)
+
+ ![Deactivate_Pod_4](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_4.jpg)
+
+
 
 3. Nach erfolgreicher Deaktivierung wird ein grünes Häkchen angezeigt. Klicke auf **Weiter** um die Deaktivierung des Pods abzuschließen. Du kannst nun deinen Pod entfernen, da die aktive Sitzung beendet wurde.
 
@@ -163,7 +177,9 @@ Gehe wie folgt vor, um einen Pod zu deaktivieren (entweder vor dem Ablaufen der 
 
 5. Du bist jetzt wieder im **Pod Management** Menü; drücke die Zurück-Taste auf Deinem Smartphone um zur Registerkarte **DASH** zurückzukehren. Überprüfe, ob das Feld **Pod Status** die Nachricht **Kein aktiver Pod** anzeigt.
 
-![Deactivate_Pod_7](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_7.png) ![Deactivate_Pod_8](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_8.jpg)
+![Deactivate_Pod_2](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_2.png)
+
+ ![Deactivate_Pod_8](../images/DASH_images/Enable_Dash/Enable_Dash_4.jpg)
 
 (OmnipodDASH-resuming-insulin-delivery)=
 
@@ -218,7 +234,13 @@ Diese Funktion ist hilfreich bei der Überprüfung von Bolus-, TBR- und Basalrat
 
 1. Gehe zur Registerkarte **DASH** und klicke auf **POD MGMT (1)** und dann auf dem **Pod Management** Bildschirm klicke auf den **Pod Historie (2)** Button.
 
-![Pod_history_1](../images/DASH_images/Pod_History/Pod_history_1.jpg) ![Pod_history_2](../images/DASH_images/Pod_History/Pod_history_2.jpg)
+![Pod_history_1](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_1.jpg)
+
+
+
+ ![Pod_history_2](../images/DASH_images/Pod_History/Pod_history_2.jpg)
+
+
 
 2. Auf dem **Pod Historie** Bildschirm wird als Standard die Kategorie **Alle (1)** angezeigt. Sie zeigt **Datum und Zeit (2)** aller Pod **Aktionen (3)** und **Ergebnisse (4)** in umgekehrter chronologischer Reihenfolge. Drücke **2 mal die Zurück-Taste** des Smartphones, um zur Reisterkarte **DASH** im AAPS Hauptfenster zurückzukehren.
 
@@ -282,12 +304,16 @@ Im Folgenden werden die Anordnung und die Bedeutung der Symbole und Statusfelder
 
 ### Pod Management Menu
 
-Im Folgenden ist die Bedeutung der Symbole im **Pod Management** Bildschirm zu sehen, die Du durch Drücken des **POD MGMT (0)** Buttons in der Registerkarte **DASH** erreichst. ![DASH_Tab_2](../images/DASH_images/DASH_Tab/DASH_Tab_2.png) ![DASH_Tab_3](../images/DASH_images/DASH_Tab/DASH_Tab_3.png)
+Below is the meaning of the icons on the **Pod Management** menu accessed by pressing **POD MGMT (1)** button from the **DASH** tab.
 
-* 1 - [**Activate Pod**](#activate-pod) : Primes and activates a new pod.
-* 2 - [**Deactivate Pod**](#deactivate-pod) : Deactivates the currently active pod.
-* 3 - **Testton abspielen**: Spielt einen einzelnen Test Piep auf dem Pod ab.
-* 4 - [**Pod history**](#view-pod-history) : Displays the active pod activity history.
+![DASH_Tab_2](../images/DASH_images/Deactivate_Pod/Deactivate_Pod_1.jpg)
+
+ ![DASH_Tab_3](../images/DASH_images/DASH_Tab/DASH_Tab_3.png)
+
+* 2 - [**Activate Pod**](#activate-pod) : Primes and activates a new pod.
+* 3 - [**Deactivate Pod**](#deactivate-pod) : Deactivates the currently active pod.
+* 4 - **Play Test Beep** : Plays a single test beep on the pod when pressed.
+* 5 - [**Pod history**](#view-pod-history) : Displays the active pod activity history.
 
 (DanaRS-Insulin-Pump-dash-settings)=
 
@@ -295,7 +321,9 @@ Im Folgenden ist die Bedeutung der Symbole im **Pod Management** Bildschirm zu s
 
 Über das **Hamburger Menü** oben links unter **Konfiguration (1)** \ ➜\ **Pumpe** \ ➜ \ **DASH** \ ➜\ **Einstellungsrädchen (3)** über das **Auswahlfeld (2)** für **DASH**. Wenn Du das ** Kontrollkästchen (4)** neben dem ** Einstellungsrädchen (3)** wählst, wird das DASH-Menü als Registerkarte im AAPS-Interface mit dem Titel **DASH** als eigener Tab angezeigt.
 
-![Dash_settings_1](../images/DASH_images/Dash_settings/Dash_settings_1.png) ![Dash_settings_2](../images/DASH_images/Dash_settings/Dash_settings_2.png)
+![Dash_settings_1](../images/DASH_images/Enable_Dash/Enable_Dash_3.png)
+
+
 
 **HINWEIS:** Einen schnelleren Zugriff auf die **DASH-Einstellungen** erlaubt das **3-Punkt-Menü (1)** in der oberen rechten Ecke der Registerkarte **DASH** und die Auswahl **DASH-Einstellungen (2)** aus dem Dropdown-Menü.
 
@@ -303,11 +331,11 @@ Im Folgenden ist die Bedeutung der Symbole im **Pod Management** Bildschirm zu s
 
 Die Einstellungen sind nach Gruppen sortiert unten aufgelistet. Du kannst die meisten der Einstellungen über einen Kippschalter aktivieren oder deaktivieren:
 
-![Dash_settings_4](../images/DASH_images/Dash_settings/Dash_settings_4.jpg)
-
 *HINWEIS: Ein Sternchen (\*) bedeutet, dass "aktiviert" der Standardwert für eine Einstellung ist.*
 
 ### Bestätigungstöne
+
+![Dash_settings_4](../images/DASH_images/Dash_settings/Dash_settings_4.jpg)
 
 Bestätigt mit Signaltönen des Pods die Abgabe und Änderung von Bolus, Basalrate, SMB und TBR.
 
@@ -317,6 +345,8 @@ Bestätigt mit Signaltönen des Pods die Abgabe und Änderung von Bolus, Basalra
 * **TBR-Piep aktiviert:** Aktiviert oder deaktiviert Bestätigungstöne, bei Setzen oder Abbruch einer TBR.
 
 ### Alarme
+
+![Dash_settings_5](../images/DASH_images/Dash_settings/Dash_settings_5.jpg)
 
 Einstellungen für AAPS-Alarme für Ablauferinnerung, Zeit bis Podende und niedrigen Reservoirstand basierend auf den definierten Schwelleneinheiten.
 
@@ -328,6 +358,8 @@ Einstellungen für AAPS-Alarme für Ablauferinnerung, Zeit bis Podende und niedr
 * **Anzahl der Einheiten:** Die Anzahl der verbleibenden Einheiten, bei denen der Alarm für den niedrigen Reservoirstand ausgelöst werden soll.
 
 ### Benachrichtigungen
+
+![Dash_settings_6](../images/DASH_images/Dash_settings/Dash_settings_6.jpg)
 
 Ermöglicht AAPS-Benachrichtigungen und akustische Telefon-Warnungen, wenn unsicher ist, ob TBR, SMB, Bolus oder eine Unterbrechung der Insulinabgabe erfolgreich waren.
 
@@ -369,7 +401,7 @@ Sonstiges
 
   * Es gibt keine Unterbrechen-Taste mehr. Wenn Du die Insulinabgabe unterbrechen möchtest, kannst Du eine Null-TBR für x Minuten setzen.
   * Während eines Profilwechsels muss der DASH die Insulinabgabe unterbrechen, bevor das neue Basal-Profil gesetzt wird. Wenn die Kommunikation zwischen den beiden Befehlen fehlschlägt, kann die Insulinabgabe unterbrochen bleiben. Wenn das passiert:
-     - Es wird gibt dann keine Insulinabgabe; dies schließt Basal-, SMB-, manuelle Boli usw. ein.
+     - Es gibt dann keine Insulinabgabe; dies schließt Basal, SMB, manuelle Boli usw. ein.
      - Es kann eine Benachrichtigung geben, dass einer der Befehle unbestätigt blieb: Dies hängt davon ab, wann der Fehler aufgetreten ist.
      - AAPS wird alle 15 Minuten versuchen, das neue Basalprofil zu setzen.
      - AAPS wird alle 15 Minuten eine Benachrichtigung anzeigen, dass die Insulinabgabe unterbrochen ist, wenn die Abgabe weiterhin unterbrochen ist (Insulinabgabe konnte nicht gestartet werden).
@@ -393,7 +425,7 @@ Wenn für eine voreingestellte Zeitspanne keine Kommunikation mit dem Pod herges
 
 ### Exporteinstellungen
 
-Durch den Export derAAPS-Einstellungen kannst Du alle Deine Einstellungen - und vielleicht noch wichtiger - alle Deine Objectives (Ziele) wiederherstellen. Es kann passieren, dass die Einstellungen in der „letzten bekannten funktionierenden Fassung“ wieder hergestellt werden müssen, etwa nach der Deinstallation/Neuinstallation von AAPS oder im Falle eines Smartphone-Verlustes.
+Durch den Export der AAPS-Einstellungen kannst Du alle Deine Einstellungen - und vielleicht noch wichtiger - alle Deine Objectives (Ziele) wiederherstellen. Es kann passieren, dass die Einstellungen in der „letzten bekannten funktionierenden Fassung“ wieder hergestellt werden müssen, etwa nach der Deinstallation/Neuinstallation von AAPS oder im Falle eines Smartphone-Verlustes.
 
 Hinweis: Die Informationen des aktiven Pod sind in den exportierten Einstellungen enthalten. Wenn Sie eine "alte" Exportdatei importieren, wird Ihr aktueller Pod "sterben". Es gibt hierzu keine Alternative. In einigen Fällen (wie bei einem _vorgesehenen_ Telefonwechsel) musst Du unter Umständen die exportierte Datei verwenden, um die AndroisAPS-Einstellungen wiederherzustellen **während der aktuelle aktive Pod** beibehalten wird. In diesem Fall ist es wichtig, nur die zuletzt exportierte Einstellungsdatei zu verwenden, die den aktuell aktiven Pod enthält.
 

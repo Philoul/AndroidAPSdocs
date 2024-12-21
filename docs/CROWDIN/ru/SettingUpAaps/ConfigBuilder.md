@@ -1,14 +1,12 @@
 # Конфигуратор
 
-В зависимости от настроек, конфигуратор можно открыть с помощью вкладки в верхней части экрана или через сэндвич-меню.
+Depending on your settings you can open Config Builder through a tab at the top of **AAPS**' screen or through the hamburger menu.
 
 ![Открыть компоновщик конфигурации](../images/ConfBuild_Open_AAPS30.png)
 
-Конфигуратор (Конф) - это вкладка, на которой можно подключать и отключать модули программы. Ячейки с левой стороны (A) позволяют выбрать, какими модулями программы вы будете пользоваться, ячейки справа (C) позволяют представить эти модули в виде вкладок (E) в AAPS. Если правая ячейка не активирована, доступ к функциям можно получить из выпадающего меню (D) в левом верхнем углу экрана.
+The **Config Builder** is the tab where you turn the modular features on and off. In the picture below, the boxes on the left-hand side (A) allow you to select which modules you want activated, the boxes on the right-hand side (C) allow you to view these as a tab (E) in **AAPS**. In case the right box is not activated, you can reach the function by using the hamburger menu (D) on the top left of the screen. See [Tab or hamburger menu](#tab-or-hamburger-menu) below.
 
-Там, где в пределах модуля доступны дополнительные параметры, можно нажать на шестеренку (B), которая их откроет.
-
-**Первая конфигурация:** Начиная с версии 2.0 AAPS процесс создания AAPS контролируется Мастером установки. Для его запуска нажмите на меню под тремя точками в правом верхнем углу экрана меню (F) и выберите «Мастер установки».
+When there are additional settings available within the module, you can click on the cog wheel (B) which will take you to the specific settings within preferences.
 
 ![Опции конфигуратора и шестеренка настроек](../images/ConfBuild_ConfigBuilder_AAPS30.png)
 
@@ -20,360 +18,259 @@
 
 ![Вкладка или сэндвич-меню](../images/ConfBuild_TabOrHH_AAPS30.png)
 
-(Config-Builder-profile)=
+```{contents}
+:backlinks: entry
+:depth: 2
+```
+
+(ConfigBuilder_Profile)=
 
 ## Profile
 
-* Выберите базальной профиль, который хотите использовать. See [Profiles](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) page for more setup information.
-* Начиная с AAPS 3.0, доступен только локальный профиль.
+This module can not be disabled as it is a core part of **AAPS**.
 
-Тем не менее, можно синхронизировать профиль Nightscout в локальный профиль. Для этого важно, однако, скопировать всю запись базы данных, состоящую из нескольких профилей в редакторе Nightscout. Следуйте инструкции ниже. Это может быть полезно, если в профиль необходимо внести существенные изменения, например, скопировать данные из таблицы.
-
-(Config-Builder-local-profile)=
-
-### Локальный профиль
-
-Локальный профиль использует базальной профиль, введенный вручную в телефоне. Как только он выбран, появляется новая вкладка, можно при необходимости изменить данные профиля, считываемые с помпы. Во время следующего подключения к профилю они будут записаны в профиль 1 на помпе. Этот профиль рекомендуется поскольку он не зависит от интернет-соединения.
-
-Your local profiles are part of [exported settings](../Maintenance/ExportImportSettings.md). Поэтому убедитесь, что у вас есть резервная копия в безопасном месте.
-
-![Параметры локального профиля](../images/LocalProfile_Settings.png)
-
-Кнопки:
-
-* зеленый плюс: добавить
-* красный крестик: удалить
-* синяя стрелка: дублировать
-
-Если вы вносите изменения в профиль, убедитесь, что редактируете правильный профиль. На вкладке профиля не всегда отображается фактически используемый профиль, например, если вы переключили профиль, используя вкладку профиля на домашней странице, то он может отличаться от профиля, который показан на вкладке, так как между ними нет синхронизации.
-
-#### Переключение профиля и клонирование
-
-Вы можете легко создать новый локальный профиль с помощью переключения профиля. В этом случае сдвиг по времени и процент будет применяться к новому локальному профилю ( Ниже следует порядок входа в профиль для устаревших версий AAPS. В новых версиях вход в профиль можно выполнить из выпадающего меню в левом верхнем углу экрана или через помощник профиля в выпадвющем меню правого верхнего угла.- прим. перев.).
-
-1. Откройте меню из трех точек в правом верхнем углу экрана.
-2. Выберите 'Терапия'.
-3. Нажмите звездочку для доступа к странице переключения профиля.
-4. Выберите желательный профиль и нажмите "клонировать".
-5. Вы можете редактировать новый локальный профиль через вкладку локальный профиль (ЛП) или через сэндвич-меню.
-
-![Переключение профиля и клонирование](../images/LocalProfile_ClonePS_AAPS30.png)
-
-(Config-Builder-upload-local-profiles-to-nightscout)=
-
-#### Загрузить локальные профили в Nightscout
-
-Локальные профили также могут быть загружены на Nightscout. The settings can be found in [NSClient preferences](../SettingUpAaps/Preferences.md#nsclient).
-
-![Выгрузить локальный профиль в NS](../images/LocalProfile_UploadNS_AASP30.png)
-
-#### Change profile in Nightscout profile editor
-
-You can synchronize changes to the profile in the Nightscout profile editor to local profiles. The settings can be found in [NSClient preferences](../SettingUpAaps/Preferences.md#nsclient).
-
-Необходимо клонировать активные данные всей базы данных Nightscout для профилей, а не просто профиль с синей стрелкой! Новые записи базы данных сохраняют текущую дату и могут быть активированы на вкладке "local profile".
-
-![Клонировать записи базы данных](../images/Nightscout_Profile_Editor.PNG)
-
-### Помощник профиля
-
-Помощник профиля предлагает две функции:
-
-1. Найти профиль для детей
-2. Сравнить два профиля или переключателя профиля, чтобы клонировать новый профиль
-
-Details are explained on the separate [profile helper page](../SettingUpAaps/ProfileHelper.md).
+See [Your AAPS Profile](../SettingUpAaps/YourAapsProfile.md) for a basic understanding of what goes inside your **Profile**.
 
 (Config-Builder-insulin)=
 
 ## Инсулин
 
-![Тип инсулина](../images/ConfBuild_Insulin_AAPS30.png)
+![Insulin type](../images/ConfBuild_Insulin_AAPS30.png)
 
-* Выберите кривую, соответствующую типу вашего инсулина.
-* Варианты 'Быстро действующий Oref', Сверхбыстрый Oref' и 'Безпиковый Oref' имеют вид экспоненты. Подробная информация приведена в [документации по OpenAPS](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html#understanding-the-new-iob-curves-based-on-exponential-activity-curves). 
-* Кривые зависят от DIA и времени до пика.
-    
-    * ФИОЛЕТОВАЯ кривая показывает, сколько **инсулина осталось** после введения - его количество снижается с течением времени.
-    * Синяя линия показывает ** активность инсулина**.
+Select the type of insulin you are using.
 
-### DIA
-
-* Длительность работы инсулина не одинакова для всех. Поэтому ее следует проверить самостоятельно. 
-* Но она всегда должна быть минимум 5 часов.
-* Многие люди, использующие ультра-короткие инсулины вроде Fiasp, отмечают что его действие спустя 3-4 часа практически незаметно, даже если остается еще порядка 0.0xx единиц. Это остаточное количество может быть ощутимо во время занятий спортом, например. Поэтому в AAPS время действия инсулина DIA указывается минимум 5 часов.
-* You can read more about that in the Insulin Profile section of [this](../DailyLifeWithAaps/AapsScreens.md#insulin-profile) page.
+More information to understand the Insulin Profile as shown in **AAPS** [here](#AapsScreens-insulin-profile).
 
 ### Различия типов инсулина
 
-* Для 'Коротких', 'Ультракоротких' и 'Lyumjev' инсулинов время действия DIA - единственный параметр, который можно изменить, время пика фиксировано. 
-* Безпиковый позволяет настроить как DIA, так и время пика, эта опция для опытных пользователей, которые знают последствия этих настроек. 
-* The [insulin curve graph](../DailyLifeWithAaps/AapsScreens.md#insulin-profile) helps you to understand the different curves.
-* Эту диаграмму можно вывести на отдельной вкладке, включив соответствующий флажок в конфигураторе, ее также можно найти в выпадающем сэндвич-меню.
+* The options 'Rapid-Acting Oref', Ultra-Rapid Oref', 'Lyumjev' and 'Free-Peak Oref' all have an exponential shape.
+* For 'Rapid-Acting', 'Ultra-Rapid' and 'Lyumjev' the DIA is the only variable you can adjust by yourself, the time to peak is fixed. 
+* Free-Peak allows you to adjust both the DIA and the time to peak, and must only be used by advanced users who know the effects of these settings. 
+* The [insulin curve graph](#AapsScreens-insulin-profile) helps you to understand the different curves.
 
 #### Быстро действующий Oref
 
-![Тип инсулина: быстродействующий Oref](../images/ConfBuild_Insulin_RAO.png)
+![Insulin type Rapid-Acting Oref](../images/ConfBuild_Insulin_RAO.png)
 
-* рекомендуется для Humalog, Novolog и Novorapid
+* recommended for Humalog, Novolog and Novorapid
 * DIA (длительность действия инсулина) = по крайней мере 5.0 часов
-* Макс. пик = 75 мин после инъекции (фиксированный, не регулируется)
+* Макс. peak = 75 minutes after injection (fixed, not adjustable)
 
 #### Сверхбыстрый Oref
 
-![Тип инсулина: сверхбыстрый Oref](../images/ConfBuild_Insulin_URO.png)
+![Insulin type Ultra-Rapid Oref](../images/ConfBuild_Insulin_URO.png)
 
-* рекомендуется для FIASP
+* recommended for FIASP
 * DIA (длительность действия инсулина) = по крайней мере 5.0 часов
-* Макс. пик = 55 мин после инъекции (фиксированный, не регулируется)
+* Макс. peak = 55 minutes after injection (fixed, not adjustable)
 
 (Config-Builder-lyumjev)=
 
 #### Lyumjev
 
-![Тип инсулина: Lyumjev](../images/ConfBuild_Insulin_L.png)
+![Insulin type Lyumjev](../images/ConfBuild_Insulin_L.png)
 
-* Специальный профиль для инсулина Lyumjev
+* special insulin profile for Lyumjev
 * DIA (длительность действия инсулина) = по крайней мере 5.0 часов
-* Макс. пик = 45 мин после инъекции (фиксированный, не регулируется)
+* Макс. peak = 45 minutes after injection (fixed, not adjustable)
 
 #### Безпиковый Oref
 
-![Тип инсулина: Oref со свободными пиками](../images/ConfBuild_Insulin_FPO.png)
+![Insulin type Free Peak Oref](../images/ConfBuild_Insulin_FPO.png)
 
-* Для профиля 'Безпиковый 0ref' можно самостоятельно ввести время пика. Для перехода к расширенным настройкам нажмите на значок шестеренки.
-* Если в профиле не определено более высокое значение, DIA автоматически устанавливается на 5 часов.
-* Этот инсулиновый профиль рекомендуется если используется неподдерживаемый тип инсулина или смесь различных инсулинов.
+* With the "Free Peak 0ref" profile you can individually enter the peak time. To do so click to cogwheel to enter advanced settings.
+* The DIA is automatically set to 5 hours if it is not specified higher in the profile.
+* This effect profile is recommended if an unbacked insulin or a mixture of different insulins is used.
 
 (Config-Builder-bg-source)=
 
 ## Источник данных гликемии
 
-Select the blood glucose source you are using - see [BG Source](../Getting-Started/CompatiblesCgms.md) page for more setup information.
+Select the blood glucose source you are using. See [BG Source](../Getting-Started/CompatiblesCgms.md) page for more setup information.
 
-![Источник ГК в конфигураторе](../images/ConfBuild_BG.png)
+![Config Builder BG source](../images/ConfBuild_BG.png)
 
-* [Самостоятельно собранное приложение Dexcom (BYODA)](https://docs.google.com/forms/d/e/1FAIpQLScD76G0Y-BlL4tZljaFkjlwuqhT83QlFM5v6ZEfO7gCU98iJQ/viewform?fbzx=2196386787609383750&fbclid=IwAR2aL8Cps1s6W8apUVK-gOqgGpA-McMPJj9Y8emf_P0-_gAsmJs6QwAY-o0).
-* [xDrip +](https://xdrip-plus-updates.appspot.com/stable/xdrip-plus-latest.apk)
-* [MM640g](https://github.com/pazaan/600SeriesAndroidUploader/releases)
-* [ Glimp ](https://play.google.com/store/apps/details?id=it.ct.glicemia&hl=de)-поддерживается только версия 4.15.57 и более поздние
-* [Poctech](https://www.poctechcorp.com/en/contents/268/5682.html)
-* [ПриложениеTomato](http://tomato.cool/) для устройства MiaoMiao
-* [Glunovo App](https://infinovo.com/) для системы Glunovo CGM
-* ГК NSClient - не рекомендуется, поскольку замкнутый цикл опирается на передачу мобильных данных / покрытие Wi-Fi в данном случае. Данные CGM будут получены только при наличии онлайн- подключения к сайту NS. Лучше использовать локальную трансляцию из одного из других источников данных мониторинга.
-* Генерировать случайные данные ГК (только демо-режим)
+* [xDrip +](../CompatibleCgms/xDrip.md)
+* [NSClient BG](../CompatibleCgms/CgmNightscoutUpload.md) - only if you know what you are doing, see [BG Source](../Getting-Started/CompatiblesCgms.md).
+* [MM640g](../CompatibleCgms/MM640g.md)
+* [Glimp](#libre1-using-glimp) - only version 4.15.57 and newer are supported
+* [Build Your Own Dexcom App (BYODA)](#DexcomG6-if-using-g6-with-build-your-own-dexcom-app).
+* [Poctech](../CompatibleCgms/PocTech.md)
+* [Tomato App](#libre1-using-tomato) for MiaoMiao device
+* [Glunovo App](https://infinovo.com/) for Glunovo CGM system
+* Random BG: Generates random BG data (Demo mode only)
+
+## Сглаживание
+
+![Сглаживание](../images/ConfBuild_Smoothing.png)
+
+See [Smoothing blood glucose data](../CompatibleCgms/SmoothingBloodGlucoseData.md).
 
 (Config-Builder-pump)=
 
 ## Pump
 
-Выберите помпу, которой пользуетесь.
+Select the pump you are using. See [Compatible pumps](../Getting-Started/CompatiblePumps.md) page for more setup information.
 
-![Выбор помпы в Конфигураторе](../images/ConfBuild_Pump_AAPS30.png)
+![Config Builder Pump selection](../images/ConfBuild_Pump_AAPS32.png)
 
 * [Dana R](../CompatiblePumps/DanaR-Insulin-Pump.md)
-* DanaR Корея (DanaR для корейского рынка)
-* Dana Rv2 (помпа DanaR с неофициальным обновлением прошивки)
+* Dana R Korean (for domestic DanaR pump)
+* Dana Rv2 (DanaR pump with unofficial firmware upgrade)
 * [Dana-i/RS](../CompatiblePumps/DanaRS-Insulin-Pump.md)
-    
-    * Для помпы Dana перейдите в **Дополнительные параметры**, и если необходимо, активируйте BT watchdog. Он отключает bluetooth на одну секунду, если подключение к помпе невозможно. Это помогает на некоторых телефонах, где зависает bluetooth.
-    * [Password for Dana RS pump](../CompatiblePumps/DanaRS-Insulin-Pump.md) must be entered correctly. Пароль не проверялся в предыдущих версиях.
-
 * [Accu Chek Insight](../CompatiblePumps/Accu-Chek-Insight-Pump.md)
-
-* [Accu Chek Combo](../CompatiblePumps/Accu-Chek-Combo-Pump.md) (requires ruffy installation)
-* [Omnompod Eros](../CompatiblePumps/OmnipodEros.md)
-* [Помпа Omnipod DASH](../CompatiblePumps/OmnipodDASH.md)
+* Accu Chek Combo 
+  * [Driver using Ruffy](../CompatiblePumps/Accu-Chek-Combo-Pump.md) (requires ruffy installation)
+  * [Driver with no additional requirement](../CompatiblePumps/Accu-Chek-Combo-Pump-v2.md), added in [AAPS v.3.2](#version3200)
+* Omnipod for [Omnipod Eros](../CompatiblePumps/OmnipodEros.md)
+* Dash for [Omnipod DASH](../CompatiblePumps/OmnipodDASH.md)
 * [Medtronic](../CompatiblePumps/MedtronicPump.md)
 * [Diaconn G8](../CompatiblePumps/DiaconnG8.md)
-* MDI инъекции инсулина шприцем/шприц-ручкой (на основе предложений от AAPS по ведению терапии)
-* Виртуальная помпа (открытый цикл для помпы, не имеющей драйверов - только предложения)
+* [EOPatch2](../CompatiblePumps/EOPatch2.md)
+* [Medtrum](../CompatiblePumps/MedtrumNano.md)
+* Virtual pump: open loop - **AAPS** suggestions only 
+  * as you make you first steps with **AAPS**, during the first [objectives](../SettingUpAaps/CompletingTheObjectives.md)
+  * for pump which doesn't have any driver yet
 
 ## Определение чувствительности
 
-Выберите тип анализа чувствительности. For more details of different designs please [read on here](../DailyLifeWithAaps/SensitivityDetectionAndCob.md). Алгоритм будет сразу же анализировать историю данных и вносить коррективы, если признает, что вы реагируете более чутко (или, наоборот, более резистентно) на инсулин, чем обычно. Подробнее об алгоритме чувствительности можно прочитать в [документации OpenAPS](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html).
+Select the type of sensitivity detection. For more details of different designs please [read on here](../DailyLifeWithAaps/SensitivityDetectionAndCob.md). This will analyze historical data on the go and make adjustments if it recognizes that you are reacting more sensitively (or conversely, more resistant) to insulin than usual. More details about the Sensitivity algorithm can be read in the [OpenAPS docs](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html).
 
-Вы можете вывести график чувствительности на экран, отметив галочкой соответствующий пункт из выпадающего меню графиков. Он изображается в виде белой линии. Note, you need to be in [Objective 8](../SettingUpAaps/CompletingTheObjectives.md#objective-8-adjust-basals-and-ratios-if-needed-and-then-enable-autosens) in order to let Sensitivity Detection/[Autosens](../DailyLifeWithAaps/KeyAapsFeatures.md#autosens) automatically adjust the amount of insulin delivered. До достижения этой цели процент / линия Autosens на диаграмме отображается только для информации.
-
-(Config-Builder-absorption-settings)=
+You can view your sensitivity on the homescreen in an [additional graph](#AapsScreens-section-g-additional-graphs). You can view your sensitivity on the homescreen by selecting SEN and watching the white line. Note, you need to be in [Objective 8](#objectives-objective8) in order to let Sensitivity Detection/[Autosens](#Open-APS-features-autosens) automatically adjust the amount of insulin delivered. Before reaching that objective, the Autosens percentage / the line in your graph is displayed for information only.
 
 ### Настройки усваиваемости
 
-Если вы применяете Oref1 с микроболюсами SMB необходимо установить **min_5m_действия углеводов** на 8. Это значение используется только во время пробелов в мониторинге или когда физическая нагрузка "съедает" весь подъем гликемии, которая в ином случае заставила бы алгоритм AAPS противодействовать углеводам COB организма. At times when [carb absorption](../DailyLifeWithAaps/CobCalculation.md) can't be dynamically worked out based on your bloods reactions it inserts a default decay to your carbs. Этот параметр не приводит к отказам.
+If you use Oref1 with **SMB** you must change **min_5m_carbimpact** to 8. The value is only used during gaps in **CGM** readings or when physical activity "uses up" all the blood glucose rise that would otherwise cause **AAPS** to decay COB. At times when [carb absorption](../DailyLifeWithAaps/CobCalculation.md) can't be dynamically worked out based on your blood's reactions it inserts a default decay to your carbs. Basically, it is a failsafe.
 
 (Config-Builder-aps)=
 
 ## Система ИПЖ
 
-Выберите нужный алгоритм APS для ведения терапии. Подробности выбранного алгоритма можно просмотреть на вкладке OpenAPS(OAPS).
+Select the desired APS algorithm for therapy adjustments. You can view the active detail of the chosen algorithm in the OpenAPS(OAPS) tab.
 
-* OpenAPS AMA (расширенный помощник по питанию, Состояние алгоритма на 2017 год) Говоря простым языком, преимущества алгоритма в том, что после еды и при правильном вводе углеводов система может быстрее устанавливать временный базал.
-* [OpenAPS SMB](../DailyLifeWithAaps/KeyAapsFeatures.md) (super micro bolus, most recent algorithm for advanced users) Note you need to be in [Objective 9](../SettingUpAaps/CompletingTheObjectives.md#objective-9-enabling-additional-oref1-features-for-daytime-use-such-as-super-micro-bolus-smb) in order to use OpenAPS SMB and min_5m_carbimpact must be set to 8 in Config builder > Sensitivity detection > Sensitivity Oref1 settings.
+* OpenAPS AMA 
+  * Advanced Meal Assist: older algorithm not recommended anymore.
+  * In simple terms, the benefits are after you give yourself a meal bolus, the system can high-temp more quickly IF you enter carbs reliably.
+* [OpenAPS SMB](#Open-APS-features-super-micro-bolus-smb) 
+  * Super Micro Bolus: most recent algorithm recommended for all users.
+  * In contrast to AMA, SMB does not use temporary basal rates to control glucose levels, but mainly small **Super Micro Boluses**.
+  * Note : It is recommended to use this algorithm from the beginning, even though you will not actually get SMBs delivered until [Objective 9](#objectives-objective9).
+
+If switching from AMA to SMB algorithm, *min_5m_carbimpact* must be changed manually to **8** (default value for SMB) in [Preferences > Sensitivity detection > Sensitivity Oref1 settings](../SettingUpAaps/Preferences.md).
 
 ## Замкнутый цикл
 
-* Переключение между Открытым циклом, Заvryensv циклом и Приостановкой помпы на низкой ГК.
+This module should not be disabled as it is a core part of **AAPS**.
 
-![Конфигуратор - режим цикла](../images/ConfigBuilder_LoopLGS.png)
+## Constraints
 
-(Config-Builder-open-loop)=
+### Objectives
 
-### Открытый цикл
-
-* AAPS постоянно оценивает все доступные данные (активный инсулин IOB, активные углеводы COB, сахар крови и т. п.) и при необходимости делает предложения о корректировке терапии. 
-* Предложения не будут выполняться автоматически (как при замкнутом цикле) а должны вводиться вручную прямо в помпу или с помощью команды (при пользовании совместимыми помпами Dana R/RS или Accu Chek Combo). 
-* Этот параметр предназначен для знакомства с работой AAPS или для неподдерживаемых помп.
-
-(Config-Builder-closed-loop)=
-
-### Closed Loop/Замкнутый цикл (петля, контур)
-
-* AAPS постоянно оценивает доступные данные (активный инсулин IOB, активные углеводы COB, сахар крови и т. п.) и при необходимости автоматически корректирует лечение (без вашего дальнейшего вмешательства) для достижения целевого диапазона или величины (подача болюса, временная базальная скорость, отключение подачи инсулина во избежание гипогликемии и т.д.). 
-* Замкнутый цикл работает в рамках многочисленных ограничений безопасности, каждое из которых можно задать по отдельности.
-* Closed Loop is only possible if you are in [Objective 6](../SettingUpAaps/CompletingTheObjectives.md#objective-6-starting-to-close-the-loop-with-low-glucose-suspend) or higher and use a supported pump.
-* Обратите внимание: в режиме Замкнутого цикла рекомендуется использовать строгое значение целевой ГК вместо диапазона значений (например, 5,5 ммоль/л или 100 мг/дл вместо 5,0 - 7,0 ммоль/л или 90 - 125 мг/дл).
-
-### Приостановка помпы на низкой ГК
-
-* maxIOB установлен в 0
-* Это означает, что если глюкоза крови падает система уменьшит базу.
-* Если значение глюкозы крови растет - автоматической коррекции не будет. База останется на том же уровне, что записан в выбранном Профиле.
-* Только если базовый IOB отрицательный (от предыдущего отключения при низкой ГК) будет подан дополнительный инсулин для снижения ГК.
-
-### Минимальный запрос на изменения
-
-* При открытогм цикле вы будете получать уведомления каждый раз, когда AAPS рекомендует скорректировать базальную скорость. 
-* Чтобы уменьшить число уведомлений, можно либо использовать более широкий диапазон целевой ГК, либо увеличить процент минимального запроса на изменения.
-* Он определяет относительное изменение, необходимое для активации уведомления.
-
-## Цели (обучающая программа)
-
-AAPS has a learning program (objectives) that you have to fulfill step by step. Подобная организация алгоритма безопасно проведет вас к созданию замкнутой системы. Она гарантирует, что вы все правильно наладили и понимаете, что именно делает система. Это единственный способ понять, что вы можете доверять системе.
-
-You should [export your settings](../Maintenance/ExportImportSettings.md) (including progress of the objectives) on a regularly basis. В дальнейшем, если вам потребуется заменить смартфон (новая покупка, повреждение и т. д.) вы можете просто импортировать эти параметры.
+**AAPS** has a learning program (a series of objectives) that you have to fulfill step by step. This should guide you safely through setting up a closed loop system. It guarantees that you have set everything up correctly and understand what the system does exactly. This is the only way you can trust the system.
 
 See [Objectives](../SettingUpAaps/CompletingTheObjectives.md) page for more information.
 
+## Синхронизация
+
+In this section, you can choose if/where you want **AAPS** to send your data to.
+
+### NSClient or NSClientV3
+
+Can be used as a [reporting server](../SettingUpAaps/SettingUpTheReportingServer.md) and/or for [remote monitoring](../RemoteFeatures/RemoteMonitoring.md), [remote control](../RemoteFeatures/RemoteControl.md).
+
+See [Synchronization with the reporting server](#SetupWizard-synchronization-with-the-reporting-server-and-more) to help you choose between NSClient (v1) and NSClientV3.
+
+### Tidepool
+
+Can be used as a [reporting server](../SettingUpAaps/SettingUpTheReportingServer.md).
+
+See [Tidepool](../SettingUpAaps/Tidepool.md).
+
+### xDrip
+
+Used to **send** data such as treatments to xDrip+.
+
+### Проект Open Humans
+
+See [Open Humans](../SupportingAaps/OpenHumans.md).
+
+### Смарт-часы Wear
+
+Monitor and control **AAPS** using your Android WearOS watch (see [page Watchfaces](../WearOS/WearOsSmartwatch.md)).
+
+### Samsung Tizen
+
+Broadcast data to Samsung's G-Watch Wear App (Tizen OS).
+
+### Garmin
+
+Connection to Garmin device (Fenix, Edge...)
+
 ## Терапия
 
-На вкладке Терапия отражены назначения, загруженные из nightscout. Should you wish to edit or delete an entry (e.g. you ate less carbs than you expected) then select 'Remove' and enter the new value (change the time if necessary) through the [carbs button on the home screen](../DailyLifeWithAaps/AapsScreens.md#bolus--carbs).
+If you view the Treatments (Treat) tab, you can see the treatments that have been uploaded to nightscout. Should you wish to edit or delete an entry (e.g. you ate less carbs than you expected) then select 'Remove' and enter the new value (change the time if necessary) through the [carbs button on the home screen](#screens-bolus-carbs).
 
 ## General
 
 ### Общие замечания
 
-Displays the current state of your loop and buttons for most common actions (see [section The Homescreen](../DailyLifeWithAaps/AapsScreens.md) for details). Доступ к параметрам - через значок шестеренки.
-
-#### Не отключать экран
-
-Параметр «не отключать экран» заставит Android держать экран включенным постоянно. Это полезно для презентаций и т. д. Но опция потребляет больше энергии аккумулятора. Поэтому рекомендуется подключить смартфон к кабелю зарядного устройства.
-
-#### Кнопки
-
-Определите, какие кнопки будут отображаться на домашнем экране.
-
-* Терапия
-* Калькулятор
-* Инсулин
-* Углеводы
-* CGM (открывает) xDrip +
-* Калибровка
-
-Кроме того можно задать короткие ссылки для приращения инсулина и углеводов и определить, должны ли диалоговые окна содержать примечания.
-
-#### БыстрыйБолюс настройки
-
-Создайте кнопки для некоторых стандартных блюд (углеводы и метод вычисления болюса) которые будут отображаться на главном экране. Применяйте для стандартных часто употребляемых блюд. Если для различных блюд указано разное время, у вас всегда будет оответствующая кнопка приема пищи на домашнем экране, в зависимости от времени суток.
-
-Примечание: Кнопка не будет видна вне диапазона времени, для нее созданного или если у вас есть достаточно активного инсулина IOB на углеводы, заданные кнопкой.
-
-![Кнопка мастера быстрой настройки](../images/ConfBuild_QuickWizard.png)
-
-#### Временные цели по умолчанию
-
-Выберите временные цели по умолчанию (длительность и целевые значения ГК). По умолчанию установлены следующие значения:
-
-* ожидаемый прием пищи: цель 72 мг/дл или 4,0 ммоль/л, продолжительность 45 минут
-* нагрузка: цель 140 мг/дл или 7,8 ммоль/л, продолжительность 90 минут
-* гипо: цель 125 мг/дл или 6,9 ммоль/л, продолжительность 45 минут
-
-#### Заполнить стандартное количество инсулина
-
-Укажите значения по уполчанию для прайм заполнения катетера помпы, в зависимости от его типа и длины. 
-
-#### Диапазон для визуализации
-
-Укажите значения высокой и низкой ГК для отображения на графике AAPS и на умных часах. Эти параметры используется только для графического представления и не является целевыми значениями ГК. Например: 70 - 180 мг/дл или 3,9 - 10 ммоль/л
-
-#### сокращенные имена табул
-
-Choose whether the tab titles in AAPS are long (e.g. ACTIONS, LOCAL PROFILE, AUTOMATION) or short (e.g. ACT, LP, AUTO)
+This is the [main screen](#AapsScreens-the-homescreen) of **AAPS** and can not be disabled.
 
 #### Показать поле примечаний в диалогах терапии
 
-Укажите, хотите ли, чтобы при вводе команд отображалось поле для заметок.
+Choose if you want to have a notes field when entering treatments or not.
 
 #### Индикаторы состояния
 
-Choose if you want to have [status lights](../SettingUpAaps/Preferences.md#status-lights) on overview for cannula age, insulin age, sensor age, battery age, reservoir level or battery level. При достижении уровня предупреждения цвет светового сигнала состояния переключится на желтый. Критические сроки будут показаны красным цветом.
+Choose if you want to have [status lights](#Preferences-status-lights) on overview for cannula age, insulin age, sensor age, battery age, reservoir level or battery level. When warning level is reached, the color of the status light will switch to yellow. Critical age will show up in red.
 
 #### Расширенные настройки
 
-**Подать часть инсулина, предложенного мастером болюса**: При пользовании алгоритмом микроболюсов SMB многие не колют все 100% сразу, а дают, например, 75% и позволяют алгоритму SMB самостоятельно справляться с остальным. In this setting, you can choose a default value for the percentage the bolus wizard should calculate with. Если этот параметр составляет 75%, а требуемое конечное количество инсулина 10 ед., то мастер болюса предложит только 7,5 единиц.
+**Deliver this part of bolus wizard result**: When using SMB, many people do not meal-bolus 100% of needed insulin, but only a part of it (e.g. 75 %) and let the SMB with UAM (unattended meal detection) do the rest. In this setting, you can choose a default value for the percentage the bolus wizard should calculate with. If this setting is 75 % and you had to bolus 10u, the bolus wizard will propose a meal bolus of only 7.5 units.
 
-**Включить функции суперболюса в калькуляторе болюса** (Суперболюс отличается от *супер микро болюсов SMB *!): Применяйте с осторожностью и не включайте, пока не узнаете, в чем принцип его работы. В общем виде база следующих двух часов добавляется к болюсу и при этом активируется нулевой временный базал. **Другие функции алгоритма AAPS будут отключены - поэтому применяйте с осторожностью! If you use SMB AAPS looping functions will be disabled according to your settings in ["Max minutes of basal to limit SMB to"](../DailyLifeWithAaps/KeyAapsFeatures.md#max-minutes-of-basal-to-limit-smb-to), if you do not use SMB looping functions will be disabled for two hours.** Details on super bolus can be found [here](https://www.diabetesnet.com/diabetes-technology/blue-skying/super-bolus).
+**Enable super bolus functionality in wizard** (It is different from *super micro bolus*!): Use with caution and do not enable until you learn what it really does. Basically, the basal for the next two hours is added to the bolus and a two hour zero-temp activated. **AAPS looping functions will be disabled - so use with care! If you use SMB AAPS looping functions will be disabled according to your settings in ["Max minutes of basal to limit SMB to"](#Open-APS-features-max-minutes-of-basal-to-limit-smb-to), if you do not use SMB looping functions will be disabled for two hours.** Details on super bolus can be found [here](https://www.diabetesnet.com/diabetes-technology/blue-skying/super-bolus).
 
 (Config-Builder-actions)=
 
 ### Действия
 
-* Кнопки быстрого доступа к некоторым распространенным настройкам.
-* See [AAPS screenshots](../DailyLifeWithAaps/AapsScreens.md#action-tab) for details.
+A tab offering multiple buttons to take [actions](#screens-action-tab) in **AAPS**.
 
 ### Автоматизация
 
-Пользовательские задачи автоматизации ('если-тогда-иначе'). Please [read on here](../DailyLifeWithAaps/Automations.md).
+A tab for managing your [Automations](../DailyLifeWithAaps/Automations.md), starting at [Objective 10](#objectives-objective10).
 
 (Config-Builder-sms-communicator)=
 
 ### СМС-коммуникатор
 
-Allows remote caregivers to control some AAPS features via SMS, see [SMS Commands](../RemoteFeatures/SMSCommands.md) for more setup information.
+Allows remote caregivers to control some **AAPS** features via SMS, see [SMS Commands](../RemoteFeatures/SMSCommands.md) for more setup information.
 
 ### Еда
 
-Отображает предустановленные характеристики еды, определенные в базе данных Nightscout, см [Nightscout Readme](https://github.com/nightscout/cgm-remote-monitor#food-custom-foods) для получения дополнительной информации по параметрам.
+Displays the food presets defined in the Nightscout food database, see [Nightscout Readme](https://github.com/nightscout/cgm-remote-monitor#food-custom-foods) for more setup information.
 
-Примечание: Записи не могут использоваться в калькуляторе AAPS. (Только просмотр)
+Note: Entries cannot be used in the **AAPS** calculator. (View only)
 
 (Config-Builder-wear)=
 
 ### Смарт-часы Wear
 
-Monitor and control AAPS using your Android Wear watch (see [page Watchfaces](../UsefulLinks/WearOsSmartwatch.md)). Настройте параметры (шестеренка) для определения переменных, которые следует учитывать при расчете болюсов (напр. 15-минутный тренд, активные углеводы COB и т.п....).
+Monitor and control AAPS using your Android Wear watch (see [page Watchfaces](../WearOS/WearOsSmartwatch.md)). Use settings (cog wheel) to define which variables should be considered when calculating bolus given though your watch (i.e. 15min trend, COB...).
 
-Если вы хотите подавать болюс и т. д. с часов, тогда в настройках часов Wear следует включить «Управление с часов».
+If you want to bolus etc. from the watch then within "Wear settings" you need to enable "Controls from Watch".
 
-![настройки смарт-часов Wear](../images/ConfBuild_Wear.png)
+![Wear settings](../images/ConfBuild_Wear.png)
 
-При помощи вкладки Wear или многослойного сэндвич-меню (в левой верхней части экрана, если вкладка не отображается) вы можете
+Through Wear tab or hamburger menu (top left of screen, if tab is not displayed) you can
 
-* Повторить отправку всех данных. Может быть полезно, если некоторое время часы не были подключены и вы хотите передать на них данные.
-* Открыть настройки на часах прямо с телефона.
-
-### Cтрока состояния xDrip (часы)
-
-Display loop information on your xDrip+ watchface (if you are not using AAPS/[AAPSv2 watchface](../UsefulLinks/WearOsSmartwatch.md)
-
-### клиент NS
-
-* Настройка синхронизации данных AAPS с Nightscout.
-* Settings in [preferences](../SettingUpAaps/Preferences.md#nsclient) can be opened by clicking the cog wheel.
+* Resend all data. Might be helpful if watch was not connected for some time and you want to push the information to the watch.
+* Open settings on your watch directly from your phone.
 
 ### Обслуживание
 
-Адрес электронной почты и количество журналов/логов для отправки. Обычно не требует изменений.
+Access this tab to export / import settings.
 
 ### Конфигуратор
 
-Используйте вкладку конфигуратора вместо выпадающего сэндвич-меню слева.
+This current tab.

@@ -25,11 +25,11 @@ For our example we are going to make an edit to AndroidAPSdocs. This can be done
 
 ![Fork repo](../images/PR0.png)
 
-2. Go to any page and navigate to the page you want to edit. Click on the black box at bottom left of page with the green word "v: latest" or similar. In the pop up window that appears, click the word "edit" for editing in GitHub.  
+2. Go to any page and navigate to the page you want to edit. You can click on the "Edit in GitHub" link in the upper right corner. This is only possible for English pages. 
 
 ![edit doc](../images/PR1.png)
 
-   Or you can click on the "Edit in GitHub" link in the upper right corner, and then click the pencil icon that appears in the top bar of the page contents to be edited. You will need to be already logged into your Github account to do this (if you don't have one, they are straightforward to set up).
+   Or click the pencil icon that appears in the top bar of the page contents to be edited. You will need to be already logged into your Github account to do this (if you don't have one, they are straightforward to set up).
 
 ![RTD io](../images/PR2.png)
 
@@ -57,7 +57,7 @@ We are using markdown for the docs pages. The file have got the suffix ".md".The
 
 PS: Your fork and branch will still be sitting on your own personal GitHub account. After you get a notification that your PR has been merged, you can delete your branch if you are done with it (Step 8's notification area will provide a link to delete the branch once it has been closed or merged). For future edits, if you follow this procedure the edits will always start with an updated version of the AndroidAPSdocs repositories.  If you choose to use another method to start a PR request (e.g., editing starting from your forked repo's master branch as the starting point), you will need to ensure your repo is up-to-date by performing a "compare" first and merging in any updates that have happened since you last updated your fork.  Since people tend to forget to update their repos, we recommend using the PR process outlined above until you get familiar with performing "compares".
 
-(make-a-PR-code-syntax)=
+(edit-the-docs-code-syntax)=
 ## Code syntax
 
 We are using markdown for the documentation pages. The files have got the suffix ".md".
@@ -156,14 +156,14 @@ Images names should confirm to one of following naming rules. In the example I u
 
 Images are located in the images folder for the english language and propagated to the other languages automatically by Crowdin. You have nothing to do for this!
 
-We are not translating images at the moment.
+We are not translating images at the moment: images should contain the **minimum possible text** to allow accessibility to non-English readers.
 
 (make-a-PR-image-size)=
 Use a reasonable size for the images which must be readable on PC, tablet and mobiles.
 
 * Screenshots from web pages images should be up to **1050 pixels wide**.
 * Diagrams of process flows should be up to **1050 pixels wide**.
-* Screenshots from the app should be up to **500 pixels wide**.
+* Screenshots from the app should be up to **500 pixels wide**. Do not place them side to side if not necessary.
 
 ### Links
 
@@ -441,8 +441,32 @@ A tutorial helps the pupil acquire basic competence. The user will **learn by do
   
 - Conclusion (Level 2 heading)
   
-
-![Image](../images/styleguide04.png)
+  - **The Language of Tutorials**
+  
+      *In this tutorial, you will…*
+  
+      Describe what the learner will accomplish (note - not: “you will learn…”).
+  
+      *First, do x. Now, do y. Now that you have done y, do z.*
+  
+      No room for ambiguity or doubt.
+  
+      *We must always do x before we do y because… (see Explanation for more details).*
+  
+      Provide minimal explanation of actions in the most basic language possible. Link to more detailed explanation.
+  
+      *The output should look something like this…*
+  
+      Give your learner clear expectations.
+  
+      *Notice that… Remember that…*
+  
+      Give your learner plenty of clues to help confirm they are on the right track and orient themselves.
+  
+      *You have built a secure, three-layer hylomorphic stasis engine…*
+  
+      Describe (and admire, in a mild way) what your learner has accomplished (note - not: “you have learned…”)
+  
 
 ##### ![Image](../images/styleguide05.png) How-To Guides (e.g. a recipe)
 
@@ -477,8 +501,20 @@ A how-to guide’s purpose is to help the already-competent user perform a parti
   
 - Conclusion paragraph
   
-
-![Image](../images/styleguide06.png)
+  - **The Language of How-To Guides**
+  
+      *This guide shows you how to…*
+  
+      Describe clearly the problem or task that the guide shows the user how to solve.
+  
+      *If you want x, do y. To achieve w, do z.*
+  
+      Use conditional imperatives.
+  
+      *Refer to the x reference guide for a full list of options.*
+  
+      Don’t pollute your practical how-to guide with every possible thing the user might do related to x.
+  
 
 ##### ![Image](../images/styleguide07.png) Explanation (e.g. Science behind why egg whites stiffen when you beat them)
 
@@ -506,8 +542,28 @@ An explanation clarifies, deepens and broadens the reader’s understanding of a
   
 - Conclusion (Level 2 heading)
   
-
-![Image](../images/styleguide08.png)
+  - **The Language of Explanation**
+  
+    *The reason for x is because historically, y…*
+  
+    Explain.
+  
+    *W is better than z, because…*
+  
+    Offer judgements and even opinions where appropriate..
+  
+    *An x in system y is analogous to a w in system z. However…*
+  
+    Provide context that helps the reader.
+  
+    *Some users prefer w (because z). This can be a good approach, but…*
+  
+    Weigh up alternatives.
+  
+    *An x interacts with a y as follows:…*
+  
+    Unfold the machinery’s internal secrets, to help understand why something does what it does.
+  
 
 ### 2\. AAPS-specific writing/updating notes 
 

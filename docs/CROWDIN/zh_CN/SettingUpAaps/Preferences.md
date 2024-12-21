@@ -1,20 +1,20 @@
 # Preferences
 
-- **Open preferences** by clicking the three-dot menu on the top right side of the home screen.
+- 通过点击主页屏幕右上角的三个点菜单来**打开参数设置**。
 
-  ![Open preferences](../images/Pref2020_Open2.png)
+![打开参数设置](../images/Pref2020_Open2.png)
 
-- You can jump directly to preferences for a certain tab (i.e. pump tab) by opening this tab and clicking Plugin preferences.
+- 您可以通过打开相应的选项卡（例如，泵选项卡）并点击“插件偏好设置”，直接跳转到该选项卡的偏好设置页面。
 
-  ![Open plugin preferences](../images/Pref2020_OpenPlugin2.png)
+![打开插件参数设置](../images/Pref2020_OpenPlugin2.png)
 
-- **Sub-menus** can be opened by clicking the triangle below the sub-menu title.
+- 点击子菜单标题下方的三角形可以**打开子菜单**。
 
-  ![Open submenu](../images/Pref2020_Submenu2.png)
+![打开子菜单](../images/Pref2020_Submenu2.png)
 
-- With the **filter** on top of the preferences screen you can quickly access certain preferences. Just start typing part of the text you are looking for.
+- 在偏好设置屏幕的顶部有一个**筛选器**，您可以通过它快速找到并访问特定的偏好设置项。 只需开始输入您要查找的文本的一部分即可。
 
-  ![Preferences filter](../images/Pref2021_Filter.png)
+![参数设置过滤器](../images/Pref2021_Filter.png)
 
 ```{contents}
 :backlinks: entry
@@ -22,499 +22,448 @@
 ```
 
 (Preferences-general)=
-## General
+## 一般
 
-![Preferences > General](../images/Pref2020_General.png)
+![参数设置 > 一般](../images/Pref2020_General.png)
 
-**Units**
+**单位**
 
-- Set units to mmol/l or mg/dl depending on your preferences.
+- 根据你的偏好设置单位为mmol/l或mg/dl。
 
-**Language**
+**语言**
 
-- New option to use phone's default language (recommended).
+- 新选项：使用手机默认语言（推荐）。
 
-- In case you want AAPS in a different language than your standard phone language you can choose from a broad variety.
+- 如果你想让**AAPS**使用与手机标准语言不同的语言，你可以从多种语言中选择。
 
-- If you use different languages you might sometimes see a language mix. This is due to an android issue that overriding the default android language sometimes doesn't work.
+- 如果你使用不同的语言，有时可能会看到语言混合的情况。 这是由于Android系统的一个问题，即有时覆盖默认的Android语言设置并不起作用。
 
+**患者名称**
 
-**Patient name**
-
-- Can be used if you have to differentiate between multiple setups (i.e. two T1D kids in your family).
+- 如果你需要区分多个设置（例如，家中有两个1型糖尿病患者），可以使用此选项。
 
 (Preferences-protection)=
-### Protection
+### 保护（Protection）
+
+![参数设置 > 一般 - 保护](../images/Pref2020_General2.png)
 
 (Preferences-master-password)=
+#### 主密码
 
-![Preferences > General - Protection](../images/Pref2020_General2.png)
+必须设置主密码才能[导出设置](../Maintenance/ExportImportSettings.md)，因为从版本2.7开始，设置是加密的。
 
-#### Master password
+**生物识别保护功能可能在一加手机上无法正常工作。 这是一些一加手机上已知的问题。**
 
-- Necessary to be able to [export settings](../Maintenance/ExportImportSettings.md) as they are encrypted from version 2.7. **Biometric protection may not work on OnePlus phones. This is a known issue of OnePlus on some phones.**
+![Set master password](../images/MasterPW.png)
 
-- Open Preferences (three-dot menu on top right of home screen)
+#### 设置保护
 
-- Click triangle below "General"
+- 使用密码或手机的生物识别身份验证（例如，[孩子正在使用**AAPS**](../RemoteFeatures/RemoteMonitoring.md)）来保护你的设置。 如果启用此功能，每次访问任何与参数设置相关的视图时，系统都会提示你进行身份验证。
 
-- Click "Master-Password"
+- 如果只想使用主密码来保护[导出的设置](../Maintenance/ExportImportSettings.md)，而使用不同的密码来编辑参数设置，则应使用自定义密码。
 
-- Enter password, confirm password and click ok.
+- 如果使用自定义密码，请点击“设置密码”这一行，按照[上面](#Preferences-master-password)的说明设置主密码。
 
-  ![Set master password](../images/MasterPW.png)
+![保护（Protection）](../images/Pref2020_Protection.png)
 
-#### Settings protection
+#### 应用保护
 
-- Protect your settings with a password or phone's biometric authentication (i.e. [child is using AAPS](../RemoteFeatures/RemoteMonitoring.md)).
+如果应用受到保护，你必须输入密码或使用手机的生物识别身份验证才能打开**AAPS**。
 
-- Custom password should be used if you want to use master password just for securing [exported settings](../Maintenance/ExportImportSettings.md).
+如果输入的密码错误，**AAPS**将立即关闭，但如果之前已成功打开，它仍将在后台运行。
 
-- If you are using a custom password click on line "Settings password" to set password as described [above](#master-password).
+#### 大剂量安全验证
 
-  ![Protection](../images/Pref2020_Protection.png)
+- 如果**AAPS**由小孩使用，并且你通过[短信输注大剂量](../RemoteFeatures/SMSCommands.md)，大剂量安全验证可能很有用。
 
-#### Application protection
+- 在下面的示例中，你看到的是生物识别保护的提示。 如果生物识别身份验证不起作用，请点击白色提示上方的空白处并输入主密码。
 
-- If app is protected you must enter password or use phone's biometric authentication to open AAPS.
-- App will shut down immediately if wrong password is entered - but still run in the background if it was previously opened successfully.
+![提示生物识别保护](../images/Pref2020_PW.png)
 
-#### Bolus protection
+#### 密码和PIN保留时间
 
-- Bolus protection might be useful if AAPS is used by a small child and you [bolus via SMS](../RemoteFeatures/SMSCommands.md).
-
-- In the example below you see the prompt for biometric protection. If biometric authentication does not work, click in the space above the white prompt and enter master password.
-
-  ![Prompt biometric protection](../images/Pref2020_PW.png)
+定义在成功输入密码后，参数设置或大剂量功能保持解锁的时间（以秒为单位）。
 
 (Preferences-skin)=
-#### Skin
+#### 皮肤
+你可以从四种类型的皮肤中选择：
 
-- You can choose from four types of skins:
+![选择皮肤](../images/Pref2021_SkinWExample.png)
 
-  ![Select skin](../images/Pref2021_SkinWExample.png)
+“低分辨率皮肤”带有较短的标签，并移除了年龄/级别，以便在低分辨率屏幕上获得更多可用空间。
 
-- 'Low resolution skin' comes with shorter label and age/level removed to have more available space on very low resolution screen.
+其他皮肤之间的差异取决于手机的显示方向：
 
-- Difference of other skins depend of phone's display orientation.
+##### 竖屏方向
 
-##### Portrait orientation
+- **原始皮肤**和**始终显示在屏幕底部的按钮**是相同的。
+- **大分辨率显示**与其他皮肤相比，所有图形的高度都有所增加。
 
-- **Original Skin** and **Buttons are always displayed on bottom of screen** are identical
-- **Large Display** has an increased size of all graphs compared to other skins
+##### 横屏方向
 
-##### Landscape orientation
+- 使用**原始皮肤**和**大分辨率显示**时，你需要向下滚动才能看到屏幕底部的按钮。
 
-- Using **Original Skin** and **Large Display**, you have to scroll down to see buttons at the bottom of the screen
+- **大分辨率显示**与其他皮肤相比，所有图形的高度都有所增加。
 
-- **Large Display** has an increased size of all graphs compared to other skins
+![适配手机显示方向的皮肤](../images/Screenshots_Skins.png)
 
-  ![Skins depending on phone's display orientation](../images/Screenshots_Skins.png)
+## 概览
 
-(Preferences-overview)=
-## Overview
+在**概览（Overview）**部分，你可以定义主屏的参数设置。
 
-- In overview section you can define preferences for home screen.
+![参数设置 > 概览](../images/Pref2020_OverviewII.png)
 
-  ![Preferences > Overview](../images/Pref2020_OverviewII.png)
+### 保持屏幕常亮
 
-### Keep screen on
-
-- Useful while giving a presentation.
-- It will consume a lot of energy, so it is wise to have your phone plugged into a charger.
+“保持屏幕常亮”选项将强制Android始终保持屏幕开启。 这对于演示等场景很有用 但它会消耗大量电池电量。 因此，建议将手机连接到充电线。
 
 (Preferences-buttons)=
-### Buttons
+### 按钮
 
-- Define which buttons are visible on the bottom of your home screen.
+- 定义主页屏幕底部显示哪些按钮。
 
-  ![Preferences > Buttons](../images/Pref2020_OV_Buttons.png)
+![参数设置 > 按钮](../images/Pref2020_OV_Buttons.png)
 
-- With the increment figure you can define amount for the three buttons in carb and insulin dialogue for easy entry.
+- **增量**选项允许你为碳水化合物和胰岛素对话框中的三个按钮定义数量，以方便输入。
 
-  ![Preferences > Buttons > Insulin](../images/Pref2020_OV_Buttons2.png)
+![参数设置 > 按钮 > 胰岛素](../images/Pref2020_OV_Buttons2.png)
 
-  ![Preferences > Buttons > Carbs](../images/Pref2020_OV_Buttons3.png)
+![参数设置 > 按钮 > 碳水化合物](../images/Pref2020_OV_Buttons3.png)
 
 (Preferences-quick-wizard)=
-### Quick Wizard
+### 快速向导
 
-- If you have a frequent snack or meal, you can use the quick wizard button to easily enter amount of carbs and set calculation basics.
+为某些标准餐食或零食创建自定义按钮，这些按钮将显示在主页屏幕上。 适用于经常吃的标准餐食。
 
-- In setup you define during which time period the button will be visible on your home screen - just one button per period.
+对于每个按钮，你定义碳水化合物和计算大剂量的方法。 然后，你定义按钮在主页屏幕上显示的时间段——每个时间段只能显示一个按钮。 如果当前时间不在指定的时间范围内，或者你的体内活性胰岛素（IOB）足以覆盖快速向导按钮中定义的碳水化合物，则按钮将不会显示。 如果你为不同的餐食指定了不同的时间，你将始终根据一天中的时间，在主页屏幕上看到适当的标准餐食按钮。
 
-  ![Preferences > Quick Wizard Button Setup](../images/Pref2020_OV_QuickWizard.png)
+![参数设置 > 快速向导按钮设置](../images/Pref2020_OV_QuickWizard.png)
 
-- If you click the quick wizard button AAPS will calculate and propose a bolus for those carbs based on your current ratios (considering blood glucose value or insulin on board if set up).
+如果你点击快速向导按钮，**AAPS**将根据当前比率计算并给出一个大剂量建议（参考血糖值和设置的活性胰岛素IOB）。
 
-- The proposal has to be confirmed before insulin is delivered.
+点OK确认之后才会按照建议进行输注。
 
-  ![Preferences > Quick Wizard Button](../images/Pref2020_OV_QuickWizard2.png)
+![参数设置 > 快速向导按钮](../images/Pref2020_OV_QuickWizard2.png)
 
 (Preferences-default-temp-targets)=
-### Default temp targets
+### 默认临时目标
 
-- [Temp targets (TT)](../DailyLifeWithAaps/TempTargets.md) allow you to define change your blood glucose target for a certain time period.
+[临时目标（TT）](../DailyLifeWithAaps/TempTargets.md)允许你为特定的时间段更改血糖目标。 设置默认TT时，你可以轻松地更改活动、即将进食等情况下的目标。
 
-- With setting of default TT you can easily change your target for activity, eating soon etc.
+在这里，你可以更改每个预定义TT的目标和持续时间。 预设值为：
 
-  ![Preferences > Default temp targets](../images/Pref2020_OV_DefaultTT.png)
+* 即将进食：目标72 mg/dL / 4.0 mmol/l，持续时间45分钟
+* 活动：目标140 mg/dL / 7.8 mmol/l，持续时间90分钟
+* 低血糖：目标125 mg/dL / 6.9 mmol/l，持续时间45分钟
 
-- Press long on your target in the top right corner on the home screen or use the shortcuts in the orange “Carbs” button at the bottom.
+![参数设置 > 默认临时目标](../images/Pref2020_OV_DefaultTT.png)
 
-  ![Preferences > Use default temp targets](../images/Pref2020_OV_DefaultTT2.png)
+在这里了解如何[启用临时目标](#TempTargets-where-can-i-select-a-temp-target)。
 
-###
+### 输注/充盈标准胰岛素剂量
 
-### Fill/Prime standard insulin amounts
+如果你想通过**AAPS**填充管路，可以通过[**操作**标签页](#screens-action-tab)进行此操作。
 
-- If you want to fill tube or prime cannula through AAPS you can do this through [actions tab](../DailyLifeWithAaps/AapsScreens.md#action-tab).
-- Pre-set values can be defined in this dialogue.
+可以在此对话框中定义预设值。 根据你的管路长度，选择“填充/灌注”对话框中三个按钮的默认量。
 
 (Preferences-range-for-visualization)=
-### Range for visualization
+### 可视化范围
 
-- Define which part of the graph on the home screen shall be you target range and be filled with green background.
+为**AAPS**概览和智能手表上的血糖图选择高点和低点标记。 这只是可视化，不是你的血糖目标范围。 例如：70 - 180 mg/dl 或 3.9 - 10 mmol/l。
 
-  ![Preferences > Range for visualization](../images/Pref2020_OV_Range2.png)
+![参数设置 > 可视化范围](../images/Pref2020_OV_Range2.png)
 
-### Shorten tab titles
+### 缩写标签标题
 
-- See more tab titles on screen.
+有助于在屏幕上显示更多的标签页标题。
 
-- For example the 'OpenAPS AMA' tab becomes 'OAPS', 'OBJECTIVES' becomes 'OBJ' etc.
+例如，“OpenAPS AMA”标签页变为“OAPS”，“OBJECTIVES”变为“OBJ”等。
 
-  ![Preferences > Tabs](../images/Pref2020_OV_Tabs.png)
+![参数设置 > 标签页](../images/Pref2020_OV_Tabs.png)
 
-### Show notes field in treatments dialogs
+(Preferences-show-notes-field-in-treatments-dialogs)=
+### 在治疗（treatments）对话框中显示备注字段
 
-- Gives you the option to add short text notes to your treatments (bolus wizard, carbs, insulin...)
+允许您为自己的治疗方案（大剂量向导、碳水、胰岛素...）添加简短的文本备注。
 
-  ![Preferences > Notes in treatment dialogs](../images/Pref2020_OV_Notes.png)
+![参数设置 > 治疗对话框中的备注](../images/Pref2020_OV_Notes.png)
 
 (Preferences-status-lights)=
-### Status lights
+### 状态指示灯
 
-- Status lights give a visual warning for
+状态指示灯为以下情况提供视觉警告：
 
-  - Sensor age
-  - Sensor battery level for certain smart readers (see [screenshots page](../DailyLifeWithAaps/AapsScreens.md#sensor-level-battery) for details).
-  - Insulin age (days reservoir is used)
-  - Reservoir level (units)
-  - Cannula age
-  - Pump battery age
-  - Pump battery level (%)
+- 探头使用时间
+- 某些动态传感器的电池电量（详细信息请参阅[屏幕截图页面](#screens-sensor-level-battery)）。
+- 胰岛素使用时间（储液器使用天数）
+- 储液器药量（单位）
+- 管路使用时间
+- 泵电池使用时间
+- 泵电池电量（%）
 
-- If threshold warning is exceeded, values will be shown in yellow.
+如果超过警告阈值，数值将以黄色显示。 如果超过临界阈值，数值将以红色显示。
 
-- If threshold critical is exceeded, values will be shown in red.
+最后一个选项允许您从Nightscout导入那些设置（如果在Nightscout中已定义）。 更多信息请参阅[Nightscout文档](https://nightscout.github.io/nightscout/setup_variables/#age-pills)。
 
-- In versions prior to AAPS 2.7 settings for status lights had to be made in Nightscout settings.
+![参数设置 > 状态指示灯](../images/Pref2020_OV_StatusLights2.png)
 
-  ![Preferences > Status Lights](../images/Pref2020_OV_StatusLights2.png)
+(Preferences-deliver-this-part-of-bolus-wizard-result)=
+### 输注大剂量向导计算结果的一部分（Deliver this part of bolus wizard result）
 
-### Deliver this part of bolus wizard result
+设置使用大剂量向导计算时使用的[默认百分比](#AapsScreens-section-j)。
 
-Set the [default percentage](../DailyLifeWithAaps/AapsScreens.md#section-j) of the bolus calculated when using the bolus wizard.
+默认值为100%：不进行校正。 即使在这里设置了不同的值，你每次使用大剂量向导时仍然可以更改它。 如果这里设置为75%，并且你需要输注10U，大剂量向导将仅建议7.5单位的餐时大剂量。
 
-Default is 100%: no correction. Even when setting a different value here, you can still change each time you use the bolus wizard.
+在使用[SMB](#objectives-objective9)时，许多人不会输注所需胰岛素的100%，而只是其中的一部分（例如75%），并让SMB与UAM（无人值守用餐检测）完成其余部分。 下面这些情况使用低于100%的值可能很有用：
+* 对于消化缓慢的人：提前输送所有大剂量可能会导致低血糖，因为胰岛素的作用比消化快。
+* 为**AAPS**自己处理**血糖升高**留下更多空间。 在这两种情况下，如果认为合适，**AAPS**将通过SMB补偿缺失的部分大剂量。
 
-When using [SMB](../SettingUpAaps/CompletingTheObjectives.md#objective-9-enabling-additional-oref1-features-for-daytime-use-such-as-super-micro-bolus-smb), using a value lower than 100% here can be useful:
-* for people with slow digestion: sending all the bolus upfront can cause hypo because the insulin action is faster than the digestion.
-* to leave more room to *AAPS** to deal by itself with **BG rise**. In both cases, **AAPS** will compensate the missing part of the bolus with SMBs, if/when deemed adequate.
+### 启用大剂量顾问（bolus advisor）
 
-### Advanced Settings (Overview)
+![大剂量顾问](../images/BolusAdvisor.png)
 
-![Preferences > Advanced Settings](../images/Pref2021_OV_Adv.png)
+启用后，在高血糖状态下使用大剂量向导时，你将收到一个警告，提示你是否希望给个提前大剂量，然后等**血糖**回到范围内时再进食。
 
-(Preferences-superbolus)=
-#### Superbolus
+### 启用大剂量提醒
 
-- Option to enable superbolus in bolus wizard.
-- [Superbolus](https://www.diabetesnet.com/diabetes-technology/blue-skying/super-bolus/) is a concept to "borrow" some insulin from basal rate in the next two hours to prevent spikes.
+% todo
 
-## Treatment safety
+(Preferences-advanced-settings-overview)=
+### 高级设置（概览）
 
-### Patient type
+![参数设置 > 高级设置](../images/Pref2021_OV_Adv.png)
 
-- Safety limits are set based on the age you select in this setting.
-- If you start hitting these hard limits (like max bolus) it's time to move one step up.
-- It's a bad idea to select higher than real age because it can lead to overdosing by entering the wrong value in insulin dialog (by skipping the decimal dot, for example).
-- If you want to know the actual numbers for these hard-coded safety limits, scroll to the algorithm feature you are using on [this page](../DailyLifeWithAaps/KeyAapsFeatures.md).
+#### 超级大剂量（Superbolus）
 
-### Max allowed bolus \[U\]
+在大剂量向导中启用超级大剂量选项。
 
-- Defines maximum amount of bolus insulin that AAPS is allowed to deliver at once.
-- This setting exists as a safety limit to prevent the delivery of a massive bolus due to accidental input or user error.
-- It is recommended to set this to a sensible amount that corresponds roughly to the maximum amount of bolus insulin that you are ever likely to need for a meal or correction dose.
-- This restriction is also applied to the results of the bolus calculator.
+[超级大剂量](https://www.diabetesnet.com/diabetes-technology/blue-skying/super-bolus/)的概念是从未来两小时的基础率中提前“借”过来一部分胰岛素，从而防止血糖飙升。 它与*超级微小大剂量SMB*不同！
 
-### Max allowed carbs \[g\]
+请谨慎使用，并且在了解它真正的作用之前不要启用它。 基本上，接下来两小时的基础率会被添加到大剂量中，并激活两小时的零临时基础率。 **AAPS闭环功能将被禁用——因此请谨慎使用！ **如果您使用SMB，**AAPS的闭环功能将根据您在[“SMB限制基础率的时间上限（分钟）”](#Open-APS-features-max-minutes-of-basal-to-limit-smb-to)中的设置而被禁用；如果您不使用SMB，循环功能将被禁用两个小时。**有关超级大剂量的详细信息，请[点击此处](https://www.diabetesnet.com/diabetes-technology/blue-skying/super-bolus)查看。
 
-- Defines the maximum amount of carbs that AAPS bolus calculator is allowed to dose for.
-- This setting exists as a safety limit to prevent the delivery of a massive bolus due to accidental input or user error.
-- It is recommended to set this to a sensible amount that corresponds roughly to the maximum amount of carbs that you are ever likely to need for a meal.
+## 治疗安全
 
-## Loop
+(preferences-patient-type)=
+### 患者类型
+
+- 安全限制是根据你在这里选择的年龄来设置的。
+- 如果你开始触及这些硬性限制（比如最大剂量），那就是时候更进一步了。
+- 选择高于实际年龄是不明智的，因为如果在胰岛素对话框中输错数值（例如跳过小数点）可能会导致用药过量。
+- 要了解这些硬性安全限制的具体数值，请在[此页面](../DailyLifeWithAaps/KeyAapsFeatures.md)上按您正在使用的算法来找。
+
+### 允许的最大大剂量
+
+- 定义**AAPS**一次输注所允许的最大胰岛素量（以胰岛素单位计算）。
+- 此设置作为安全限制存在，以防止因意外输入或用户错误而注入大量胰岛素。
+- 建议将此设置为一个合理的数值，该数值大致对应于您一餐或校正剂量所需的最大胰岛素量。
+- 此限制也适用于大剂量计算器的结果。
+
+### 最大允许碳水化合物
+
+- 定义**AAPS**大剂量计算器计算结果所允许覆盖的最大碳水化合物量（以克计算）。
+- 此设置作为安全限制存在，以防止因意外输入或用户错误而注入大量胰岛素。
+- 建议将其设置为一个合理的量，大致对应于你一顿饭可能摄入的最大碳水化合物量。
+
+## 闭环（Loop）
 
 (Preferences-aps-mode)=
-### APS mode
+### APS模式
+在开环、闭环和低血糖暂停（LGS）之间切换。
 
-- Toggle between open and closed looping as well as low glucose suspend (LGS)
-- **Open looping** means TBR suggestions are made based on your data and appear as a notification. After manual confirmation, the command to dose insulin will be transferred to pump. Only if you use virtual pump you have to enter it manually.
-- **Closed looping** means TBR suggestions are automatically sent to your pump without confirmation or input from you.
-- **Low glucose suspend** is similar to closed looping, but overrides the maxIOB setting to zero. This means that if blood glucose is dropping it can reduce the basal rate, but if blood glucose is rising then it will only increase the basal rate if the basal IOB is negative (e.g. from a previous Low Glucose Suspend).
+![配置构建器 - 循环模式](../images/ConfigBuilder_LoopLGS.png)
+
+(Preferences-pen-loop)=
+#### 开环（Open Loop）
+**AAPS**连续评估所有可用数据（IOB、COB、BG...），如有必要，会就如何调整治疗（如临时基础率）提出建议。
+
+建议不会像闭环模式中那样自动执行。 如果使用虚拟泵，用户必须手动将建议输入到泵中，如果**AAPS**连着真实的泵，用户需要通过相应的按钮来执行操作。
+
+此选项适用于了解**AAPS**的工作原理，或者你使用的是不受支持的泵。 在**[目标5](#objectives-objective5)**结束之前，无论你做出什么选择，你都将处于开环模式。
+
+(preferences-closed-loop)=
+#### 闭环
+
+**AAPS**连续评估所有可用数据（IOB、COB、BG...），并在必要时（_即_无需你进一步干预）自动调整治疗以达到设定的[目标范围或值](#profile-glucose-targets)（大剂量输注、临时基础率、胰岛素关闭以避免低血糖等）。
+
+闭环在多个安全限制内工作，这些限制可以单独设置。
+
+闭环仅在达到**[目标6](#objectives-objective6)**或更高，并且使用已经支持的泵时才可用。
+
+#### 低血糖暂停（LGS）
+
+在此模式下，[maxIOB](#Open-APS-features-maximum-total-iob-openaps-cant-go-over)设置为零。
+
+这意味着如果血糖正在下降，**AAPS**可以降低你的基础率。 但如果血糖正在上升，则不会自动进行校正。 您的基础率将保持与您当前**个人设置**中定义的一致。 仅当基础率IOB为负值时（缘于之前的低血糖暂停LGS），才会额外给予胰岛素以降低**血糖（BG）**。
 
 (Preferences-minimal-request-change)=
-### Minimal request change \[%\]
+### 最小请求更改（Minimal request change）
 
-- When using open loop you will receive notifications every time AAPS recommends to adjust basal rate.
-- To reduce number of notifications you can either use a wider BG target range or increase percentage of the minimal request rate.
-- This defines the relative change required to trigger a notification.
+在**开环**模式下，每次**AAPS**建议调整基础率，你都会收到通知。 为了减少通知的数量，您可以要么使用[更宽的血糖目标范围](#profile-glucose-targets)，要么提高最小请求率的百分比。 这定义了触发通知所需的相对变化量（如果建议的基础率变化低于这个值，AAPS会忽略掉，也就不会通知你）。
 
-(Preferences-advanced-meal-assist-ama-or-super-micro-bolus-smb)=
-## Advanced Meal Assist (AMA) or Super Micro Bolus (SMB)
+## 高级膳食助手（AMA）或超级微小大剂量（SMB）
 
-Depending on your settings in [config builder](../SettingUpAaps/ConfigBuilder.md) you can choose between two algorithms:
+根据你在[配置构建器](../SettingUpAaps/ConfigBuilder.md)中的设置，你可以选择三种算法之一：
 
-- [Advanced meal assist (OpenAPS AMA)](../DailyLifeWithAaps/KeyAapsFeatures.md#advanced-meal-assist-ama) - state of the algorithm in 2017
-- [Super Micro Bolus (OpenAPS SMB)](../DailyLifeWithAaps/KeyAapsFeatures.md#super-micro-bolus-smb) - most recent algorithm recommended for beginners
+- [高级膳食助手（OpenAPS AMA）](#Open-APS-features-advanced-meal-assist-ama) - 发布于2017年的算法
+- [超级微小大剂量（OpenAPS SMB）](#Open-APS-features-super-micro-bolus-smb) - 推荐给初学者的最新算法
+- [动态ISF](../DailyLifeWithAaps/DynamicISF.md) - 2024年发布，从**[目标11](#objectives-objective11)**开始可用
 
-### OpenAPS AMA settings
+### OpenAPS AMA（高级膳食助手）
 
-- Allows the system to high-temp more quickly after a meal bolus IF you enter carbs reliably.
-- More details about the settings and Autosens can be found in the [OpenAPS docs](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html).
-
-(Preferences-max-u-h-a-temp-basal-can-be-set-to)=
-#### Max U/h a Temp Basal can be set to
-
-- Exists as a safety limit to prevent AAPS from ever being capable of giving a dangerously high basal rate.
-- The value is measured in units per hour (U/h).
-- It is advised to set this to something sensible. A good recommendation is to take the **highest basal rate** in your profile and **multiply it by 4**.
-- For example, if the highest basal rate in your profile was 0.5 U/h you could multiply that by 4 to get a value of 2 U/h.
-- See also [detailed feature description](../DailyLifeWithAaps/KeyAapsFeatures.md#max-uh-a-temp-basal-can-be-set-to-openaps-max-basal).
-
-#### Maximum basal IOB OpenAPS can deliver \[U\]
-
-- Amount of additional basal insulin (in units) allowed to accumulate in your body, on top of your normal basal profile.
-- Once this value is reached, AAPS will stop giving additional basal insulin until your basal Insulin on Board (IOB) has decayed to within this range again.
-- This value **does not consider bolus IOB**, only basal.
-- This value is calculated and monitored independently of your normal basal rate. It is only the additional basal insulin on top of that normal rate that is considered.
-
-When you begin looping, **it is advised to set Max Basal IOB to 0** for a period of time, while you are getting used to the system. This prevents AAPS from giving any additional basal insulin at all. During this time AAPS will still be able to limit or turn off your basal insulin to help prevent hypoglycaemia. This is an important step in order to:
-
-- Have a period of time to safely get used to the AAPS system and monitor how it works.
-- Take the opportunity to perfect your basal profile and Insulin Sensitivity Factor (ISF).
-- See how AAPS limits your basal insulin to prevent hypoglycaemia.
-
-When you feel comfortable, you can allow the system to start giving you additional basal insulin, by raising the Max Basal IOB value. The recommended guideline for this is to take the **highest basal rate** in your profile and **multiply it by 3**. For example, if the highest basal rate in your profile was 0.5 U/h you could multiply that by 3 to get a value of 1.5 U/h.
-
-- You can start conservatively with this value and increase it slowly over time.
-- These are guidelines only; everyone's body is different. You may find you need more or less than what is recommended here, but always start conservatively and adjust slowly.
-
-**Note: As a safety feature, Max Basal IOB is hard-limited to 7u.**
-
-#### Autosens
-
-- [Autosens](../DailyLifeWithAaps/KeyAapsFeatures.md#autosens) looks at blood glucose deviations (positive/negative/neutral).
-- It will try and figure out how sensitive/resistant you are based on these deviations and adjust basal rate and ISF based on these deviations.
-- If you select "Autosens adjust target, too" the algorithm will also modify your glucose target.
-
-#### Advanced settings (OpenAPS AMA)
-
-- Normally you do not have to change the settings in this dialogue!
-- If you want to change them anyway make sure to read about details in [OpenAPS docs](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html#) and to understand what you are doing.
+OpenAPS AMA的所有设置均在[AAPS关键功能>高级膳食助手（AMA）](#Open-APS-features-advanced-meal-assist-ama)中有专栏描述。
 
 (Preferences-openaps-smb-settings)=
-### OpenAPS SMB settings
+### OpenAPS SMB（超级微小大剂量）
 
-- In contrast to AMA, [SMB](../DailyLifeWithAaps/KeyAapsFeatures.md#super-micro-bolus-smb) does not use temporary basal rates to control glucose levels, but mainly small super micro boluses.
+OpenAPS SMB的所有设置均在[AAPS关键功能>超级微小大剂量（SMB）](#Open-APS-features-super-micro-bolus-smb)中有专栏描述。
 
-- You must have started [objective 9](../SettingUpAaps/CompletingTheObjectives.md#objective-9-enabling-additional-oref1-features-for-daytime-use-such-as-super-micro-bolus-smb) to use SMB.
+### 动态ISF（胰岛素敏感系数，Dynamic ISF）
 
-- The first three settings are explained [above](#max-uh-a-temp-basal-can-be-set-to).
+动态ISF的所有设置均在[动态ISF](../DailyLifeWithAaps/DynamicISF.md)中有专门描述。
 
-- Details on the different enable options are described in [OpenAPS feature section](../DailyLifeWithAaps/KeyAapsFeatures.md#enable-smb).
+## 碳水吸收率设置
 
-- *How frequently SMBs will be given in min* is a restriction for SMB to be delivered only every 4 min by default. This value prevents the system from issuing SMB too often (for example in case of a temp target being set). You should not change this setting unless you know exactly about consequences.
+(Preferences-min_5m_carbimpact)=
+### 5分钟内的最小碳水影响（min_5m_carbimpact）
 
-- If 'Sensitivity raises target' or 'Resistance lowers target' is enabled [Autosens](../DailyLifeWithAaps/KeyAapsFeatures.md#autosens) will modify your glucose target according to your blood glucose deviations.
+该算法使用BGI（血糖影响）来确定[碳水化合物何时被吸收](../DailyLifeWithAaps/CobCalculation.md)。
 
-- If target is modified it will be displayed with a green background on your home screen.
+有时，基于血糖反应无法动态计算出碳水化合物的吸收情况，**AAPS**会为你的碳水化合物插入一个默认衰减。 基本上，它是一个故障保护机制。 这个值只在两种情况下起效，一是**CGM**读数缺失时，二是运动“消耗了”本该由**AAPS**的COB来覆盖的血糖时。
 
-  ![Target modified by autosens](../images/Home2020_DynamicTargetAdjustment.png)
+简而言之：算法“知道”在当前剂量胰岛素等的影响下，你的血糖*应该*如何变化。 每当出现与预期行为的正偏差时，就会吸收/衰减一些碳水化合物（衰减，decay，应该是说AAPS根据算法来减少数值的意思）。 数值越大=吸收越多的碳水化合物。
 
-(Preferences-carb-required-notification)=
-#### Carb required notification
+min_5m_carbimpact定义了每5分钟的默认碳水化合物吸收影响。 有关更多详细信息，请参阅[OpenAPS文档](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html?highlight=carbimpact#min-5m-carbimpact)。
 
-- This feature is only available if SMB algorithm is selected.
+min_5m_carbimpact的标准值：AMA算法为5，SMB算法为8。
 
-- Eating of additional carbs will be suggested when the reference design detects that it requires carbs.
+当使用min_5m_impact时，主页屏幕上的COB图会在顶部放置一个橙色圆圈。
 
-- In this case you will receive a notification which can be snoozed for 5, 15 or 30 minutes.
+![COB图](../images/Pref2020_min_5m_carbimpact.png)
 
-- Additionally the required carbs will be displayed in the COB section on your home screen.
+### 膳食最大吸收时间
 
-- A threshold can be defined - minimum amount of carbs needed to trigger a notification.
+如果你经常吃高脂肪或高蛋白膳食，则需要增加膳食吸收时间。
 
-- Carb required notifications can be pushed to Nightscout if wished, in which case an announcement will be shown and broadcast.
+### 高级设置 - 自动灵敏度比率（autosens ratio）
 
-  ![Display carbs required on home screen](../images/Pref2020_CarbsRequired.png)
+![碳水吸收率设置](../images/Pref2020_Absorption.png)
 
-#### Advanced settings (OpenAPS SMB)
+- 定义最小和最大[自动灵敏度（autosens）](#Open-APS-features-autosens)比率。
+- 通常，不应更改标准值（最大1.2，最小0.7）。
 
-- Normally you do not have to change the settings in this dialogue!
-- If you want to change them anyway make sure to read about details in [OpenAPS docs](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html#) and to understand what you are doing.
+## Pump
 
-## Absorption settings
+### BT Watchdog
 
-![Absorption settings](../images/Pref2020_Absorption.png)
+如有必要请激活蓝牙看门狗（例如，对于Dana泵）。 如果无法与泵建立连接，它将蓝牙关闭一秒钟。 这可能有助于解决某些手机上的蓝牙卡顿问题。
 
-### min_5m_carbimpact
+## 泵设置
 
-- The algorithm uses BGI (blood glucose impact) to determine when carbs are absorbed.
+这里的选项将根据你在[配置构建器](#Config-Builder-pump)中选择的泵驱动程序而有所不同。  根据[与泵相关的说明](../Getting-Started/CompatiblePumps.md)配对并设置你的泵。
 
-- The value is only used during gaps in CGM readings or when physical activity “uses up” all the blood glucose rise that would otherwise cause AAPS to decay COB.
+## Tidepool
 
-- At times when carb absorption can’t be dynamically worked out based on your blood's reactions it inserts a default decay to your carbs. Basically, it is a failsafe.
-
-- To put it simply: The algorithm "knows" how your BGs *should* behave when affected by the current dose of insulin etc.
-
-- Whenever there is a positive deviation from the expected behaviour, some carbs are absorbed/decayed. Big change=many carbs etc.
-
-- The min_5m_carbimpact does define the default carb absorption impact per 5 minutes. For more details see [OpenAPS docs](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html?highlight=carbimpact#min-5m-carbimpact).
-
-- Standard value for AMA is 5, for SMB it's 8.
-
-- The COB graph on the home screen indicates when min_5m_impact is being used by putting an orange circle at the top.
-
-  ![COB graph](../images/Pref2020_min_5m_carbimpact.png)
-
-### Maximum meal absorption time
-
-- If you often eat high fat or protein meals you will need to increase your meal absorption time.
-
-### Advanced settings - autosens ratio
-
-- Define min. and max. [autosens](../DailyLifeWithAaps/KeyAapsFeatures.md#autosens) ratio.
-- Normally standard values (max. 1.2 and min. 0.7) should not be changed.
-
-## Pump settings
-
-The options here will vary depending on which pump driver you have selected in [Config Builder](../SettingUpAaps/ConfigBuilder.md#pump).  Pair and set your pump up according to the pump related instructions:
-
-- [DanaR Insulin Pump](../CompatiblePumps/DanaR-Insulin-Pump.md)
-- [DanaRS Insulin Pump](../CompatiblePumps/DanaRS-Insulin-Pump.md)
-- [罗氏Accu-Chek Combo胰岛素泵](../CompatiblePumps/Accu-Chek-Combo-Pump.md)
-- [Accu Chek Insight Pump](../CompatiblePumps/Accu-Chek-Insight-Pump.md)
-- [Medtronic Pump](../CompatiblePumps/MedtronicPump.md)
-
-If using AAPS to open loop then make sure you have selected Virtual Pump in config builder.
+在[Tidepool](../SettingUpAaps/Tidepool.md)页面上有更多信息。
 
 (Preferences-nsclient)=
 ## NSClient
 
 ![NSClient](../images/Pref2020_NSClient.png)
 
-Original communication protocol, can be used with older Nightscout versions.
+原始通信协议，可与老版本的Nightscout配合使用。
 
-- Set your *Nightscout URL* (i.e. <https://yoursitename.yourplaform.dom>).
-  - **Make sure that the URL is WITHOUT /api/v1/ at the end.**
-- The *[API secret](https://nightscout.github.io/nightscout/setup_variables/#api-secret-nightscout-password)* (a 12 character password recorded in your Nightscout variables).
-- This enables data to be read and written between both the Nightscout website and AAPS.
-- Double check for typos here if you are stuck in Objective 1.
+- 设置您的*Nightscout网址*（例如<https://yoursitename.yourplaform.dom>）。
+- **确保网址末尾没有 /api/v1/。**
+- *[API密钥](https://nightscout.github.io/nightscout/setup_variables/#api-secret-nightscout-password)*（记录在您的Nightscout变量文件中的一个12字符密码）。
+- 这使得数据能够在Nightscout网站和**AAPS**之间读取和写入。
+- 如果您在目标1中遇到了问题，请仔细检查此处是否有拼写错误。
 
 ## NSClientV3
 
 ![NSClientV3](../images/Pref2024_NSClientV3.png)
 
-[New protocol introduced with AAPS 3.2.](../Maintenance/ReleaseNotes.md#important-comments-on-using-v3-versus-v1-api-for-nightscout-with-aaps) Safer and more efficient.
+[AAPS 3.2引入的新协议。](#Important-comments-on-using-v3-versus-v1-API-for-Nightscout-with-AAPS) 更安全、更高效。
 
 ```{admonition} V3 data uploaders
-:class: warning
-
-When using NSClientV3, all uploaders must be using the API V3. Since most are not compatible yet, this means **you must let AAPS upload all data** (BG, treatments, ...) to Nightscout and disable all other uploaders if they're not V3 compliant.
+:class:警告
+当使用NSClientV3时，所有数据上传器都必须使用API V3。 由于大多数上传器目前还不兼容，这意味着**您必须让**AAPS**上传所有数据**（血糖值、治疗方案等）到Nightscout，并禁用所有其他非V3兼容的上传器。
 ```
 
-- Set your *Nightscout URL* (i.e. <https://yoursitename.yourplaform.dom>).
-  - **Make sure that the URL is WITHOUT /api/v1/ at the end.**
-- In Nightscout, create an *[Admin token](https://nightscout.github.io/nightscout/security/#create-a-token)* (requires [Nightscout 15](https://nightscout.github.io/update/update/) to use the V3 API) and enter it in **NS access token** (not your API Secret!).
-- This enables data to be read and written between both the Nightscout website and AAPS.
-- Double check for typos here if you are stuck in Objective 1.
-- Leave Connect to websockets enabled (recommended).
+- 设置您的*Nightscout网址*（例如<https://yoursitename.yourplaform.dom>）。
+- **确保网址末尾没有 /api/v1/。**
+- 在Nightscout中，创建一个*[管理员令牌](https://nightscout.github.io/nightscout/security/#create-a-token)*（使用V3 API需要[Nightscout 15](https://nightscout.github.io/update/update/)版本）并将其输入到**NS访问令牌**中（不是您的API密钥！）。
+- 这使得数据能够在Nightscout网站和**AAPS**之间读取和写入。
+- 如果您在目标1中遇到了问题，请仔细检查此处是否有拼写错误。
+- 保持启用Websockets连接（推荐）。
 
-### Synchronization
+### 同步
 
-Synchronization choices will depend on the way you will want to use AAPS.
+同步选项将取决于您希望使用**AAPS**的方式。
 
-You can select which data you want to [upload and download to or from Nightscout](../SettingUpAaps/Nightscout.md#aaps-settings).
+您可以选择您想要[从Nightscout上传和下载哪些数据](#Nightscout-aaps-settings)。
 
-### Alarm options
+### 报警选项
 
-![Alarm options](../images/Pref2024_NSClient_Alarms.png)
+![报警选项](../images/Pref2024_NSClient_Alarms.png)
 
-- Alarm options allows you to select which Nightscout alarms to use through the app. AAPS will alarm when a Nightscout alarms trigger.
-  - For the alarms to sound you need to set the Urgent High, High, Low and Urgent Low alarm values in your [Nightscout variables](https://nightscout.github.io/nightscout/setup_variables/#alarms).
-  - They will only work whilst you have a connection to Nightscout and are intended for parent/caregivers.
-  - If you have the CGM source on your phone (i.e. xDrip+ or BYODA) then use those alarms instead of Nightscout Alarms.
-- Create notifications from Nightscout [announcements](https://nightscout.github.io/nightscout/discover/#announcement) will echo Nightscout announcements in the AAPS notifications bar.
-- You can change stale data and urgent stale data alarms threshold when no data is received from Nightscout after a certain time.
+- “警报选项”允许您选择要通过该应用程序使用的Nightscout警报。 当Nightscout警报触发时，**AAPS**将会发出警报。
+- 为了使警报响起，您需要在您的[Nightscout变量](https://nightscout.github.io/nightscout/setup_variables/#alarms)中设置紧急高血糖、高血糖、低血糖和紧急低血糖警报值。
+- 它们只有在您与Nightscout保持连接时才会起作用，并且是为家长/护理人员设计的。
+- 如果您的手机上有**动态（CGM）**数据应用（如xDrip+或BYODA），则请使用这些警报而不是Nightscout警报。
+- “从Nightscout[公告](https://nightscout.github.io/nightscout/discover/#announcement)创建通知”功能将在**AAPS**通知栏中重复显示Nightscout公告。
+- 当一段时间没有从Nightscout接收到数据时，您可以更改数据超时警报和紧急数据超时警报的阈值。
 
-### Connection settings
+### 连接设置
 
-![NSClient connection settings](../images/ConfBuild_ConnectionSettings.png)
+![NSClient 连接设置](../images/ConfBuild_ConnectionSettings.png)
 
-- Connection settings define when Nightscout connection will be enabled.
-- Restrict Nightscout upload to Wi-Fi only or even to certain Wi-Fi SSIDs.
-- If you want to use only a specific WiFi network you can enter its WiFi SSID.
-- Multiple SSIDs can be separated by semicolon.
-- To delete all SSIDs enter a blank space in the field.
+- 连接设置定义了何时启用与Nightscout的连接。
+- 将Nightscout上传限制为仅通过Wi-Fi进行，甚至限制为特定的Wi-Fi SSID。
+- 如果您只想使用特定的Wi-Fi网络，可以输入其Wi-Fi SSID。
+- 多个SSID可以用分号分隔。
+- 要在字段中删除所有SSID，请输入一个空格。
 
 (Preferences-advanced-settings-nsclient)=
-### Advanced settings (NSClient)
+### 高级设置（NSClient）
 
-![NS Client advanced settings](../images/Pref2024_NSClientAdv.png)
+![NSClient 高级设置](../images/Pref2024_NSClientAdv.png)
 
-Options in advanced settings are self-explanatory.
+高级设置中的选项都是一看就能明白。
 
-## SMS Communicator
+## SMS短信通讯器
 
-- Options will only be displayed if SMS communicator is selected in [Config Builder](../SettingUpAaps/ConfigBuilder.md#sms-communicator).
-- This setting allows remote control of the app by texting instructions to the patient's phone which the app will follow such as suspending loop, or bolusing.
-- Further information is described in [SMS Commands](../RemoteFeatures/SMSCommands.md).
-- Additional safety is obtained through use of an authenticator app and additional PIN at token end.
+有关更多信息，请访问专门的[SMS命令](../RemoteFeatures/SMSCommands.md)页面。
 
-## Automation
+## 自动操作
 
-Select which location service shall be used:
+选择要使用的定位服务：
 
-- Use passive location: AAPS only takes locations if other apps are requesting it
-- Use network location: Location of your Wi-Fi
-- Use GPS location (Attention! May cause excessive battery drain!)
+- 使用被动位置：只有当其他应用请求时，**AAPS**才会获取位置信息。
+- 使用网络位置：您的Wi-Fi位置
+- 使用GPS位置（注意！ 可能会导致电池电量飞降！）
 
-## Local alerts
+## 本地警报
 
-![Local alerts](../images/Pref2020_LocalAlerts.png)
+![本地警报](../images/Pref2020_LocalAlerts.png)
 
-- Settings should be self-explanatory.
+设置一看就能明白。
 
-## Data choices
+## 数据选择
 
-![Data choices](../images/Pref2020_DataChoice.png)
+![数据选择](../images/Pref2020_DataChoice.png)
 
-- You can help develop AAPS further by sending crash reports to the developers.
+您可以通过向开发者发送崩溃报告来帮助**AAPS**进一步发展。
 
-## Maintenance settings
+## 维护设置
 
-![Maintenance settings](../images/Pref2020_Maintenance.png)
+![维护设置](../images/Pref2020_Maintenance.png)
 
-- Standard recipient of logs is <logs@aaps.app>.
+日志的标准接收者是<logs@aaps.app>。
 
-## Open Humans
+## 开源人类项目（Open Humans）
 
-- You can help the community by donating your data to research projects! Details are described on the [Open Humans page](../SupportingAaps/OpenHumans.md).
+You can help the community by donating your data to research projects! 详细信息在[Open Humans页面](../SupportingAaps/OpenHumans.md)上有描述。
 
-- In Preferences you can define when data shall be uploaded
-
-  - only if connected to WiFi
-  - only if charging
+在“首选项”中，您可以定义何时上传数据。
+- 仅在连接到Wi-Fi时
+- 仅在充电时

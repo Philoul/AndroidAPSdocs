@@ -1,9 +1,15 @@
+- - -
+orphan: true
+- - -
+
 # Syai X1
 
-## Using X1 And Syai Tag app
 
-- Install the apk from <https://play.google.com/store/apps/details?id=com.syai.tag>.
+## Использование X1 и Syai Tag
 
-- Start X1 sensor
+-   Установите приложение с <https://play.google.com/store/apps/details?id=com.syai.tag>.
 
-- Select Syai Tag in [ConfigBuilder, BG Source](../SettingUpAaps/ConfigBuilder.md#bg-source).
+-   Start X1 sensor
+
+- Выберите Syai Tag в [Конфигураторе, Источник ГК](#Config-Builder-bg-source).
+

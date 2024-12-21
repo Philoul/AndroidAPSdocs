@@ -1,39 +1,43 @@
-# Making changes to your AAPS configuration
+# 修改AAPS配置
 
-After you have completed the **Setup Wizard** you don't need to run the entire Wizard again if you want to only change parts of the configuration.
+在完成**[设置向导](../SettingUpAaps/SetupWizard.md)**后，如果您只想更改**AAPS**配置的某些部分，则无需再次运行整个向导。
 
-There are three routes to change the different configuration settings, which route you take is simply a matter of convenience, each route leads to the same configuration settings.
+有三种途径可以更改AAPS的配置。 选择哪种途径主要取决于您的便利性或个人偏好，因为每种途径都可以到达相同的配置设置。
 
-These are as follows:
+这些途径如下：
 
-1. Config builder,
-2. Three dot menu on the right and select "preferences" or
-3. Three dot menu on the right and select "plugin preferences".
+1. 配置文件构建器
+1. 点击右侧的三个点菜单，选择“Preferences（偏好设置）”
+1. 点击右侧的三个点菜单，选择“Plugin preferences（插件偏好设置）”
 
-Here we explain which option is most convenient for each situation:
+在这里，我们解释一下在每种情况下哪种选择最为方便：
 
-## Config builder
+## 配置构建器
 
-The **config builder** is used if you want to **enable plugins** and their **visibility** in the top level menu. If they are enabled, they will still run, you can decide if you want to be able to see them in the top menu or not.
+![打开配置构建器](../images/ConfBuild_Open_AAPS30.png)
 
-Plugins which you have not enabled (_i.e._ disabled) plugins can not be made visible. For example, when you first start with **AAPS** on **objective 1**, you cannot yet use **automations**, so the **automations** plugin cannot be enabled and made visible in the top menu.
+如果您想**启用插件**及其在顶层菜单中的**可见性**，请使用**配置构建器**。 一旦启用，这些**插件**将始终运行，并且您可以决定是否在顶层菜单中看到它们。 禁用的插件无法使其可见。
 
-**Config builder** is the easiest way to further modify your configuration after you have used the **Setup Wizard**.
+您可以使用每个已激活插件旁边的齿轮图标来访问其设置。
 
-The documentation relating to the config builder is available [here](../SettingUpAaps/ConfigBuilder.md).
+有关配置构建器的文档，请点击[此处](../SettingUpAaps/ConfigBuilder.md)查阅。
 
 ## Preferences
 
-The preferences dialogue can be reached via the top right three dot menu on the **home screen** of AAPS. It gives you the possibility to change the configuration of **all enabled plugins at once**.
+![打开参数设置](../images/Pref2020_Open2.png)
 
-This is a good route if you are not really sure where to look for an configuration option, but it can be a bit tedious if you know you want to change the configuration for just one specific plugin.
+**偏好设置**对话框可以通过**AAPS**中任何选项卡的右上角<0>三个点</0>菜单进入。 这允许您**在一个位置更改所有已启用插件的配置**。
 
-The documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).
+如果您不确定在哪里查找配置选项，这是一个不错的选择，但如果您知道只想更改某个特定插件的配置，它可能会有点繁琐。
 
-## Plugin preferences
+有关偏好设置的文档，请[点击此处](/SettingUpAaps/Preferences.md)查阅。
 
-The **plugin preferences** dialogue can be reached via the top right three dot menu on the home screen of AAPS. It provides the possibility to change the configuration of the plugin currently on screen.
+## 插件选项
 
-This is a good route if you know that _e.g._ you _just_ want to change the configuration for BYODA. Then, you would select the tab "BYODA" on the top menu of **AAPS**, and then once you are on the BYODA page, in the top right, select the three dot menu and then the "plugin preferences" entry. You are taken directly to the preferences dialogue specifically for the BYODA plugin.
+![打开插件参数设置](../images/Pref2020_OpenPlugin2.png)
 
-This is a "short cut" to the general preferences dialogue, the documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).
+**插件偏好设置**对话框可以通过AAPS主页屏幕的右上角**三个点**菜单进入。 它允许您更改**当前屏幕上插件的配置**。
+
+例如，如果您知道想要更改BYODA的配置， 那么您需要在**AAPS**顶部菜单上选择“BYODA”选项卡，然后在BYODA页面上，点击右上角的_三个点_菜单，然后选择“插件偏好设置”条目。 您会被直接带到专门用于BYODA插件的偏好设置对话框。
+
+这是进入通用偏好设置对话框的“快捷方式”，有关偏好设置的文档，请[点击此处](../SettingUpAaps/Preferences.md)查阅。

@@ -1,39 +1,43 @@
-# Modifier la configuration AAPS
+# Making changes to your AAPS' configuration
 
-Après avoir complété l'**Assistant de Configuration**, vous n'avez pas besoin de le ré-exécuter en totalité si vous souhaitez uniquement changer quelques paramètres.
+After you have completed the **[Setup Wizard](../SettingUpAaps/SetupWizard.md)**, you don't need to run the entire Wizard again if you want to only change parts of your **AAPS**' configuration.
 
-Il y a trois possibilités pour accéder aux différents paramètres, vous les utiliserez simplement selon votre préférence. Chaque voie mène aux mêmes paramètres.
+There are three routes to change AAPS’ configuration. As to which route you take, it is simply a matter of convenience or personal preference as each route leads to the same configuration settings.
 
 Ces possibilités sont les suivantes :
 
 1. Menu hamburger à gauche, puis "Configuration",
-2. Menu trois points sur la droite, puis "Préférences" ou
-3. Menu trois points sur la droite, puis "Préférences du plugin".
+1. Three dot menu on the right and select "Preferences" or
+1. Three dot menu on the right and select "Plugin preferences".
 
 Nous expliquons ci-dessous quelle option est la plus pratique pour chaque situation :
 
 ## Configuration
 
-La **Configuration** est utilisée pour **activer des plugins** et/ou modifier leur **visibilité** dans le menu de niveau supérieur. Lorsqu'un plugin est activé, il s'exécutera toujours. Vous pouvez décider si vous voulez le voir dans le menu supérieur ou non.
+![Open Config Builder](../images/ConfBuild_Open_AAPS30.png)
 
-Les plugins que vous n'avez pas activés (donc désactivés) ne peuvent pas être rendus visibles. Par exemple, lorsque vous commencez avec **AAPS** sur l'**objectif 1**, vous ne pouvez pas encore utiliser les **automatisations**, donc le plugin **automatisations** ne peut pas être activé et rendu visible dans le menu supérieur.
+The **config builder** is used if you want to **enable plugins** and their **visibility** in the top level menu. Once enabled, the **plugins** will always run, and you can decide if you want to be able to see them in the top menu or not. Disabled plugins can not be made visible.
 
-Le menu de **Configuration** est le moyen le plus simple de modifier davantage votre configuration après avoir terminé l'**Assistant de configuration**.
+You can use the cogwheel next to each activated plugin to access its settings.
 
 The documentation relating to the config builder is available [here](../SettingUpAaps/ConfigBuilder.md).
 
 ## Préférences
 
-L'écran des préférences peut être atteint via le menu à trois points en haut à droite de l'**écran d'accueil** de AAPS. It gives you the possibility to change the configuration of **all enabled plugins at once**.
+![Open preferences](../images/Pref2020_Open2.png)
 
-C'est une bonne façon de faire si vous n'êtes pas vraiment sûr de l'endroit où chercher une option, mais cela peut être un peu fastidieux si vous savez que vous voulez changer la configuration pour un plugin spécifique seulement.
+The **preferences** dialogue can be reached via the top right _three dots_ menu on any tab of **AAPS**. This allows to change the configuration of **all enabled plugins in a single place**.
+
+This is a good route if you are not really sure where to look for a configuration option, but it can be a bit tedious if you know you want to change the configuration for just one specific plugin.
 
 The documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).
 
 ## Préférences du plugin
 
-L'écran des **préférences du plugin** se trouve dans le menu à trois points en haut à droite de l'**écran d'accueil** de AAPS. It provides the possibility to change the configuration of the plugin currently on screen.
+![Open plugin preferences](../images/Pref2020_OpenPlugin2.png)
 
-C'est une bonne façon de faire si vous savez que _par ex._, vous voulez juste changer la configuration pour BYODA. Sélectionnez alors l'onglet "BYODA" dans le menu supérieur de **AAPS**, puis une fois sur la page BYODA, en haut à droite, sélectionnez le menu à trois points, puis l'entrée "Préférences du plugin". Vous arrivez directement sur la section des préférences du plugin BYODA.
+The **plugin preferences** dialogue can be reached via the top right _three dots_ menu on the home screen of **AAPS**. It allows to change the configuration of the **plugin currently on screen**.
 
-This is a "short cut" to the general preferences dialogue, the documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).
+For example, this is a good route if you know that you want to change the configuration for BYODA. Then, you would select the tab "BYODA" on the top menu of **AAPS**, and then once you are on the BYODA page, in the top right, select the _three dots_ menu and then the "plugin preferences" entry. Vous arrivez directement sur la section des préférences du plugin BYODA.
+
+This is a "shortcut" to the general preferences dialogue, the documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).

@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # Algemene CGM aanbevelingen
 
 ## Kalibraties
@@ -17,11 +21,12 @@ When setting sensor, it is recommended not to press the inserter too firmly in o
 
 After setting the sensor, the transmitter can be clicked into the sensor holder. Let op First click in the square side and then press down the round side.
 
+(general-cgm-troubleshooting)=
 ## Troubleshooting
 
 ### Verbindingsproblemen
 
-Bluetooth connection may be disturbed by other nearby Bluetooth devices such as blood glucose meters, headsets, tablets or kitchen devices such as microwave ovens or ceramic hobs. In this case xdrip does not display any BG values. When bluetooth connection is restabilised the data is backfilled.
+Bluetooth connection may be disturbed by other nearby Bluetooth devices such as blood glucose meters, headsets, tablets or kitchen devices such as microwave ovens or ceramic hobs. In this case xDrip+ does not display any BG values. When Bluetooth connection is re-established the data is backfilled.
 
 ### Sensor Fout
 
@@ -31,10 +36,10 @@ Often a "Sensor Error" can be corrected by immediate drinking and massage around
 
 ### 'Springende' waardes
 
-You might try to change settings for noise blocking in xdrip (Settings - Inter-App Settings - Noise Blocking) i.e. "Block Very High noise and worse". See also [Smoothing BG data](../CompatibleCgms/SmoothingBloodGlucoseData.md).
+You might try to change settings for noise blocking in xDrip+ (Settings - Inter-App Settings - Noise Blocking) i.e. "Block Very High noise and worse". See also [Smoothing BG data](../CompatibleCgms/SmoothingBloodGlucoseData.md).
 
 ### Negatieve sensorleeftijd
 
 ![Negative sensor age](../images/Troubleshooting_SensorAge.png)
 
-This occurs if there is either a double "CGM Sensor Insert" entry in [actions tab / menu](../DailyLifeWithAaps/AapsScreens.md#action-tab) or a sensor insert with wrong date. Go to treatments tab \> careportal and delete the wrong entry.
+This occurs if there is either a double "CGM Sensor Insert" entry in [actions tab / menu](#screens-action-tab) or a sensor insert with wrong date. Go to treatments tab \> careportal and delete the wrong entry.

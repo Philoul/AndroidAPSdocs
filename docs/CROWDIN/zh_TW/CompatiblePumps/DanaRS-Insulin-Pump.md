@@ -1,6 +1,12 @@
+* * *
+
+orphan: true
+
+* * *
+
 # DanaRS 和 Dana-i 幫浦
 
-*這些說明適用於配置 2017 年之後的 DanaRS 或更新的 Dana-i 幫浦。 如果您擁有原始的 DanaR，請訪問[DanaR 胰島素幫浦](./DanaR-Insulin-Pump.md)。*
+*這些說明適用於配置 2017 年之後的 DanaRS 或更新的 Dana-i 幫浦。 如果您擁有原始的 DanaR，請讀取[DanaR 胰島素幫浦](./DanaR-Insulin-Pump.md)。*
 
 **Dana RS v3 韌體從 AAPS 版本 2.7 開始支援使用。**
 
@@ -23,7 +29,7 @@
 * 點擊右上角的三個點選擇選單。 
 * 選擇「Dana-i/RS 偏好設定」。
 * 點擊「選定的幫浦」。
-* 在配對視窗中點擊你的幫浦條目。
+* 在配對視窗中點擊你的幫浦項目。
     
     ![AAPS 配對 Dana-i/RS](../images/DanaRS_i_Pairing.png)
 
@@ -104,9 +110,9 @@
 ![胰島素注射警報](../images/DanaRS_Error_bolus.png)
 
 * 大多數情況下，這只是通訊問題，正確劑量的胰島素已經注射完畢。
-* 檢查幫浦歷史記錄（在幫浦或透過 Dana 標籤 > 幫浦歷史 > 注射記錄），確認正確的注射劑量。
-* 如果您希望，請在 [治療選項卡](../DailyLifeWithAaps/AapsScreens.md#bolus--carbs) 中刪除錯誤的條目。
-* 實際注射量會在下次連線時讀取並記錄。 要強制此操作，請按下 Dana 標籤上的藍牙圖示，或等待下一次連線。
+* 檢查幫浦歷史紀錄（在幫浦或透過 Dana 標籤 > 幫浦歷史 > 注射紀錄），確認正確的注射劑量。
+* 如果您希望，請在 [治療選項卡](#screens-bolus-carbs) 中刪除錯誤的項目。
+* 實際注射量會在下次連線時讀取並紀錄。 要強制此操作，請按下 Dana 標籤上的藍牙圖示，或等待下一次連線。
 
 ## 更換手機時的特別注意事項
 
@@ -129,4 +135,4 @@
 
 ## Dana RS 幫浦跨時區旅行
 
-有關跨時區旅行的資訊請參見[使用幫浦的時區旅行](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars)頁面。
+有關跨時區旅行的訊息，請參見[幫浦旅行時的時區](#timezone-traveling-danarv2-danars)。

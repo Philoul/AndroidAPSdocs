@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # Accu-Chek Insight Pumpe
 
 **Diese Software ist Teil einer DIY-Lösung (Do It Yourself = Eigenbau) einer künstlichen Bauchspeicheldrüse und kein kommerzielles Produkt. Daher bist DU gefordert. DU musst lesen, lernen und verstehen, was das System macht und wie du es bedienst. Das System wird Dir nicht alle Schwierigkeiten Deiner Diabetestherapie abnehmen, aber wenn Du willens bist, die nötige Zeit zu investieren, dann kann es die Ergebnisse Deiner Therapie verbessern und die Lebensqualität erhöhen. Überstürze nichts. Nimm dir Zeit zum Lernen. Du bist ganz alleine dafür verantwortlich, was Du mit dem System machst.**
@@ -54,7 +60,7 @@ Hinweis: Es besteht keine permanente Verbindung zwischen Pumpe und Smartphone. E
 
 ## Einstellungen in AAPS
 
-**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](../SettingUpAaps/Preferences.md#advanced-settings-nsclient)).
+**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](#Preferences-advanced-settings-nsclient)).
 
 ![Screenshot der Insight Einstellungen](../images/Insight_settings.png)
 
@@ -122,7 +128,7 @@ Abhängig von der Version der Pumpen-Firmware kann die Insight bei Bolusabgabe (
 
 * Firmware 1.x: Grundsätzlich keine Vibration
 * Firmware 2.x: Vibration kann nicht deaktiviert werden.
-* Firmware 3.x: AAPS Bolusabgabe ohne Vibration. (minimum [version 2.6.1.4](../Maintenance/ReleaseNotes.md#version-2614))
+* Firmware 3.x: AAPS Bolusabgabe ohne Vibration. (minimum [version 2.6.1.4](#Releasenotes-version-2-6-1-4))
 
 Die Firmware-Version kann im Menü der Pumpe nachgesehen werden.
 
@@ -150,4 +156,4 @@ Schalte dann Bluetooth auf Pumpe und Smartphone für etwa 10 Sekunden aus und sc
 
 ## Mit der Insight Pumpe über Zeitzonen hinweg reisen
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#insight).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-insight).

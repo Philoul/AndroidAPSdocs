@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # Accu-Chek Insight Pump
 
 **This software is part of a DIY artificial pancreas solution and is not a product, but requires YOU to read, learn and understand the system including how to use it. It is not something that does all your diabetes management for you but allows you to improve your diabetes and your quality of life, if you're willing to put in the time required. Don't rush into it, but allow yourself time to learn. You alone are responsible for what you do with it.**
@@ -40,7 +46,7 @@ Note: AAPS will write data always in **first basal rate profile in the pump**.
     
     ![Screenshot of Insight Pairing 3](../images/Insight_Pairing3.png)
 
-* Success! Pat yourself on the back for successfully pairing your pump with AAPS.
+* 成功! Pat yourself on the back for successfully pairing your pump with AAPS.
     
     ![Screenshot of Insight Pairing 4](../images/Insight_Pairing4.png)
 
@@ -54,7 +60,7 @@ Note: There will be no permanent connection between pump and phone. A connection
 
 ## Settings in AAPS
 
-**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](../SettingUpAaps/Preferences.md#advanced-settings-nsclient)).
+**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](#Preferences-advanced-settings-nsclient)).
 
 ![Screenshot of Insight Settings](../images/Insight_settings.png)
 
@@ -122,7 +128,7 @@ Depending on the firmware version of your pump, the Insight will vibrate briefly
 
 * Firmware 1.x: No vibration by design.
 * Firmware 2.x: Vibration cannot be disabled.
-* Firmware 3.x: AAPS delivers bolus silently. (minimum [version 2.6.1.4](../Maintenance/ReleaseNotes.md#version-2614))
+* Firmware 3.x: AAPS delivers bolus silently. (minimum [version 2.6.1.4](#Releasenotes-version-2-6-1-4))
 
 Firmware version can be found in the menu.
 
@@ -136,7 +142,7 @@ The Insight pump has a small internal battery to keep essential functions like t
 
 ## Insight specific errors
 
-### Extended bolus
+### 扩展大剂量(方波)
 
 Just use one extended bolus at a time as multiple extended boluses at the same time might cause errors.
 
@@ -150,4 +156,4 @@ In this case turn off bluetooth on pump AND smartphone for about 10 seconds and 
 
 ## Crossing time zones with Insight pump
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#insight).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-insight).

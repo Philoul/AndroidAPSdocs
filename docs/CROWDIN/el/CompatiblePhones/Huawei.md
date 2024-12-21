@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # Πώς να διαμορφώσετε ένα τηλέφωνο Huawei
 
 Υπάρχουν διάφορες επιλογές, μερικές συγκεκριμένες για Android, μερικές συγκεκριμένες για Huawei:
@@ -27,9 +33,9 @@
     
     ![Huawei - κλείδωμα εφαρμογής](../images/Huawei_LockApp.png)
 
-For xdrip+, you can also enable persistent notifications (within xdrip+ app):
+For xDrip+, you must enable persistent notifications (within xDrip+ app):
 
-* Ρυθμίσεις / Λιγότερο κοινές ρυθμίσεις / άλλες επιλογές misc / Run Collector στο προσκήνιο
+* Settings / less common settings / other misc options / Run Collector in foreground
   
   ![xdrip + ρυθμίσεις - συλλέκτης στο προσκήνιο](../images/xdrip_collector_foreground.png)
 

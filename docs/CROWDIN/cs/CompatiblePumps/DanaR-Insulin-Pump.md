@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # DanaR Pumpa
 
 *Tyto pokyny jsou určeny pro konfiguraci aplikace a vaší pumpy, pokud máte DanaR. Visit [DanaRS Insulin Pump](./DanaRS-Insulin-Pump.md) if you have the DanaRS launched in 2017 instead.*
@@ -23,4 +29,4 @@
 
 ## Cestování časovými pásmy s čerpadlem Dana R
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

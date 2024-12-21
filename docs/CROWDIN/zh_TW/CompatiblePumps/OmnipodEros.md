@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # AAPS Omnipod 胰島素幫浦驅動程式文件
 
 以下是配置 Omnipod Eros 代幫浦的說明（**不包括 Omnipod Dash**）。 從 AAPS 2.8 版本開始，AAPS 支援 Omnipod 驅動程式。
@@ -25,7 +29,7 @@
 
 > 運作 AAPS 並向 Pod 通訊裝置發送控制指令的組件。
 > 
-> > - 支援[Omnipod 驅動的 Android 手機](https://docs.google.com/spreadsheets/d/1eNtXAWwrdVtDvsvXaR_72wgT9ICjZPNEBq8DbitCv_4/edit)，並配置有 AAPS 2.8 及相關元件。
+> > - 支援[Omnipod 驅動的 Android 手機](#Phones-list-of-tested-phones)，並配置有 AAPS 2.8 及相關元件。
 
 - ![Omnipod_Pod](../images/omnipod/Omnipod_Pod.png)  **胰島素輸送裝置**
 
@@ -73,7 +77,7 @@
 
 透過左上角的 **漢堡選單** 進入 **組態建置工具 (1)** ➜**幫浦** ➜**Omnipod**，選擇標為 **Omnipod** 的 **單選按鈕 (2)**。 勾選 **設定齒輪圖示 (3)** 旁邊的 **勾選框(4)**， Omnipod 選單將會以標籤的形式顯示在 AAPS 界面中，標題為 **POD**。 此處在文件中被稱為 **Omnipod (POD)** 標籤。
 
-> **注意：** 可以在本文件的[Omnipod 設置部分](#omnipod-settings)中找到更快速訪問**Omnipod 設置**的方法。
+> **注意：** 可以在本文件的[Omnipod 設置部分](#omnipod-settings)中找到更快速讀取**Omnipod 設置**的方法。
 > 
 > ![Enable_Omnipod_Driver_3](../images/omnipod/Enable_Omnipod_Driver_3.png) ![Enable_Omnipod_Driver_4](../images/omnipod/Enable_Omnipod_Driver_4.png)
 
@@ -91,7 +95,7 @@
 
 > ![refresh_pod_status](../images/omnipod/ICONS/omnipod_overview_refresh_pod_status.png) 重新整理幫浦連線和狀態
 > 
-> ![pod_management](../images/omnipod/ICONS/omnipod_overview_pod_management.png) 幫浦管理（啟動，停用，播放測試嗶聲，RileyLink 狀態和幫浦歷史記錄）
+> ![pod_management](../images/omnipod/ICONS/omnipod_overview_pod_management.png) 幫浦管理（啟動，停用，播放測試嗶聲，RileyLink 狀態和幫浦歷史紀錄）
 
 (OmnipodEros-rileylink-setup)=
 
@@ -177,9 +181,9 @@
 
 10. 幫浦管理選單畫面現在應顯示 **啟動幫浦 (1)** 按鈕 *已停用* 和 **停用幫浦 (2)** 按鈕 *已啟用*。 這是因為目前有一個 Pod 處於啟用狀態，必須先停用目前啟用的 Pod 才能註冊另一個 Pod。
 
-    點擊手機上的返回按鈕返回 **Omnipod (POD)** 標籤畫面，現在會顯示你活動的幫浦會話資訊，包括目前基礎速率、幫浦儲庫水平、胰島素投放量、幫浦錯誤和警報。
+    點擊手機上的返回按鈕返回 **Omnipod (POD)** 標籤畫面，現在會顯示你活動的幫浦會話資訊，包括目前基礎速率、幫浦儲庫數值、胰島素投放量、幫浦錯誤和警報。
 
-    有關顯示信息的更多詳細信息，請參見本文件的[Omnipod (POD) 標籤](#omnipod-pod-tab)部分。
+    有關顯示訊息的更多詳細訊息，請參見本文件的[Omnipod (POD) 標籤](#omnipod-pod-tab)部分。
 
     ![Activate_Pod_14](../images/omnipod/Activate_Pod_14.png) ![Activate_Pod_15](../images/omnipod/Activate_Pod_15.png)
 
@@ -283,9 +287,9 @@
 
 (OmnipodEros-view-pod-history)=
 
-### 查看 Pod 歷史記錄
+### 查看 Pod 歷史紀錄
 
-本節將向你展示如何查看你的活動 Pod 歷史記錄，並根據不同的操作類別進行篩選。 POD 歷史工具允許你查看目前啟用 POD在其三天（72 - 80 小時）壽命期間執行的動作和結果。
+本節將向你展示如何查看你的活動 Pod 歷史紀錄，並根據不同的操作類別進行篩選。 POD 歷史工具允許你查看目前啟用 POD在其三天（72 - 80 小時）壽命期間執行的動作和結果。
 
 此功能對於驗證注射、TBR 和已完成的基礎變更很有用，但你可能不確定他們是否完成。 其餘類別對於一般問題排除問題和確定故障前發生的事件順序也很有幫助。
 
@@ -299,9 +303,9 @@
 
    > ![Pod_History_3](../images/omnipod/Pod_History_3.png) ![Pod_History_4](../images/omnipod/Pod_History_4.png)
 
-### 查看 RileyLink 設定和歷史記錄
+### 查看 RileyLink 設定和歷史紀錄
 
-本節將向你展示如何查看你啟用 POD和 RileyLink 的設定及其通訊歷史記錄。 當進入此功能後，將分為兩個部分：**設定**和**歷史**。
+本節將向你展示如何查看你啟用 POD和 RileyLink 的設定及其通訊歷史紀錄。 當進入此功能後，將分為兩個部分：**設定**和**歷史**。
 
 此功能的主要用途是當你的 POD 通訊設備超出手機藍牙範圍且**RileyLink 狀態**報告**RileyLink 無法連線**。 主**Omnipod（POD）**頁籤上的**重新整理**按鈕將手動嘗試重新建立與 Omnipod 設定中目前配置的 RileyLink 的藍牙通訊。
 
@@ -360,11 +364,12 @@
 > - **Last Device Contact:**  POD 最後一次與通訊設備接觸的日期和時間。
 > - **Refresh button** 手動重新整理此頁面的設定。
 
+(omnipod-eros-rileylink-and-active-pod-history)=
 #### RileyLink 和啟動 Pod 歷史
 
-此頁面按時間倒序提供 RileyLink 或目前連線的 POD 每個狀態或動作的訊息。 整個歷史記錄僅適用於目前啟動的 POD ， POD 更換後，此歷史記錄將被清除，並且僅顯示新註冊的 POD 的事件。
+此頁面按時間倒序提供 RileyLink 或目前連線的 POD 每個狀態或動作的訊息。 整個歷史紀錄僅適用於目前啟動的 POD ， POD 更換後，此歷史紀錄將被清除，並且僅顯示新註冊的 POD 的事件。
 
-1. 進入 **Omnipod (POD)** 標籤頁，按下 **POD 管理 (1)** 按鈕以查看 **Pod Management** 選單，然後按下 **Pod History (2)** 按鈕以查看 **Settings** 和 **History** 頁面。 點擊 **HISTORY (3)** 文字以顯示 RileyLink 和目前啟動 POD 會話的全部歷史記錄。
+1. 進入 **Omnipod (POD)** 標籤頁，按下 **POD 管理 (1)** 按鈕以查看 **Pod Management** 選單，然後按下 **Pod History (2)** 按鈕以查看 **Settings** 和 **History** 頁面。 點擊 **HISTORY (3)** 文字以顯示 RileyLink 和目前啟動 POD 會話的全部歷史紀錄。
 
    > ![RileyLink_Statistics_History_1](../images/omnipod/RileyLink_Statistics_History_1.png) ![RileyLink_Statistics_History_2](../images/omnipod/RileyLink_Statistics_History_2.png)
    > 
@@ -428,7 +433,7 @@
 
 - **總輸送量：** 顯示從儲液中輸送的胰島素總單位數。 *注意，這是一個近似值，因為幫浦啟動和填充過程並不精準。*
 
-- **錯誤：** 顯示遇到的最後一個錯誤。 檢查[藥囊歷史](#view-pod-history)、[RileyLink 歷史](#rileylink-and-active-pod-history)及日誌文件，以了解過去的錯誤及更多詳細信息。
+- **錯誤：** 顯示遇到的最後一個錯誤。 檢查[藥囊歷史](#view-pod-history)、[RileyLink 歷史](#omnipod-eros-rileylink-and-active-pod-history)及日誌文件，以了解過去的錯誤及更多詳細訊息。
 
 - **啟用 Pod 警報：** 保留目前啟用 Pod 上運作的警報。 通常在幫浦到期超過 72 小時且原生幫浦嗶聲警告運作時使用。
 
@@ -442,7 +447,7 @@
   > 
   > 用於重新整理 Pod 狀態並消除顯示 (不確定) 訊息的狀態欄位。
   > 
-  > 請參閱下面的[故障排除部分](#troubleshooting)以獲取額外信息。
+  > 請參閱下面的[問題排除部分](#troubleshooting)以獲取額外訊息。
 
 - **幫浦管理：**
 
@@ -540,7 +545,7 @@
   > 按下此按鈕將重置目前連線的幫浦連線裝置配置。
   > 
   > > - 當通訊開始時，特定資料將發送至 RileyLink 並設置為 > - 記憶體暫存器已設置 > - 通訊協議已設置 > - 已設置調頻無線電頻率 
-  > > - 請參見本表末尾的[附加說明](#reset-rileylink-config-notes)
+  > > - 請參見本表末尾的[附加說明](#OmnipodEros-reset-rileylink-config-notes)
 
 - **讀取脈搏日誌：**
 
@@ -569,7 +574,7 @@ Omnipod 驅動程式設置可透過左上角的**漢堡選單**中的**設置生
 
 ![Omnipod_設置_2](../images/omnipod/Omnipod_Settings_2.png)
 
-下方列出了設定組；大多數條目可透過切換開關啟用或停用：
+下方列出了設定組；大多數項目可透過切換開關啟用或停用：
 
 ![Omnipod_設置_3](../images/omnipod/Omnipod_Settings_3.png)
 
@@ -586,7 +591,7 @@ Omnipod 驅動程式設置可透過左上角的**漢堡選單**中的**設置生
 - 啟用 - 報告支援的幫浦連線裝置的目前電池電量。
 - 停用 - 報告值為 n/a。
 
-- **在動作中啟用電池更換記錄：**若你啟用了此設置，且啟用了上方的電池報告設置，則在動作選單中將啟用電池更換按鈕。  部分幫浦連線裝置現在可以使用可更換的普通電池。  此選項允許你記錄並重設電池壽命計時器。
+- **在動作中啟用電池更換紀錄：**若你啟用了此設置，且啟用了上方的電池報告設置，則在動作選單中將啟用電池更換按鈕。  部分幫浦連線裝置現在可以使用可更換的普通電池。  此選項允許你紀錄並重設電池壽命計時器。
 
 ### 確認嗶聲提示
 
@@ -748,9 +753,9 @@ Pod 會因多種問題偶爾發生故障，包括 Pod 本身的硬體問題。 �
 
 Pod 基礎率設定失敗的資訊性警報，你需要按下 Omnipod 標籤上的*重新整理*按鈕。
 
-#### 無法確認 SMB 注射是否成功。 如果你確定注射未成功，應手動從治療中刪除 SMB 條目。
+#### 無法確認 SMB 注射是否成功。 如果你確定注射未成功，應手動從治療中刪除 SMB 項目。
 
-警報 SMB 注射成功無法驗證，你需要檢查 Omnipod 分頁中的*最後注射*欄位，確認 SMB 注射是否成功，若未成功，請從治療分頁中移除此條目。
+警報 SMB 注射成功無法驗證，你需要檢查 Omnipod 分頁中的*最後注射*欄位，確認 SMB 注射是否成功，若未成功，請從治療分頁中移除此項目。
 
 #### 不確定「任務注射/TBR/SMB」是否完成，請手動確認是否成功。
 

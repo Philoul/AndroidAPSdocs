@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # Für Benutzer anderer CGM-Systeme, deren Daten zu Nightscout hochgeladen werden
 
 Wenn Du ein anderes CGM-System nutzt, dessen Daten **nur** an [Nightscout](https://nightscout.github.io/) gesendet werden können.
@@ -7,4 +11,4 @@ Wenn Du Netzwerkprobleme hast, Deine Nightscout-Seite nicht verfügbar ist oder 
 ```
 
 -   Richte den NSClient mit den Informationen zu Deiner Nightscout-Seite ein.
--   Select NSClient BG in [ConfigBuilder, BG Source](../SettingUpAaps/ConfigBuilder.md#bg-source).
+-   Select NSClient BG in [ConfigBuilder, BG Source](#Config-Builder-bg-source).

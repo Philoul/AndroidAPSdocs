@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # 다나R 펌프
 
 *다음 지침은 다나R에서 앱과 펌프를 구성하기 위한 것입니다. Visit [DanaRS Insulin Pump](./DanaRS-Insulin-Pump.md) if you have the DanaRS launched in 2017 instead.*
@@ -23,4 +29,4 @@
 
 ## 다나R 펌프 사용시 다른 시간대 국가로의 여행
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

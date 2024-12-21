@@ -5,11 +5,15 @@ Please follow the instructions in the [update manual](UpdateToNewVersion). Μπ�
 
 You will receive the following information as soon as a new update is available:
 
-![Update info](../images/AAPS_LoopDisable90days.png)
+![Update info](../images/AAPS_LoopLGS60days.png)
 
-Τότε έχετε 60 ημέρες για να ενημερώσετε. If you do not update within these 60 days AAPS will fall back to LGS (low glucose suspend - see [glossary](../UsefulLinks/Glossary.md)) as in [objective 6](../SettingUpAaps/CompletingTheObjectives.md#objective-6-starting-to-close-the-loop-with-low-glucose-suspend).
+
+
+Τότε έχετε 60 ημέρες για να ενημερώσετε. If you do not update within these 60 days AAPS will fall back to LGS (low glucose suspend - see [glossary](../UsefulLinks/Glossary.md)) as in [objective 6](#objectives-objective6).
 
 Αν δεν ενημερώσετε για άλλες 30 ημέρες (90 ημέρες από την ημερομηνία νέας κυκλοφορίας), το AAPS θα μεταβεί σε ανοιχτό κύκλωμα.
+
+![Update info](../images/AAPS_LoopDisable90days.png)
 
 Σας παρακαλούμε να καταλάβετε ότι αυτή η αλλαγή δεν έχει σκοπό να σας δυσκολέψει, αλλά γίνετε για λόγους ασφαλείας. New versions of AAPS do not only provide new features but also important safety fixes. Therefore it is necessary that every user updates a.s.a.p.. Δυστυχώς υπάρχουν ακόμα αναφορές σφαλμάτων από πολύ παλιές εκδόσεις, γι 'αυτό προσπαθείστε να βελτιώσετε την ασφάλεια για κάθε χρήστη και ολόκληρη την κοινότητα του DIY. Ευχαριστώ για την κατανόηση.
 
@@ -21,6 +25,9 @@ The first test version started already in 2015. In 2016 has been the first relea
 The chronology of these releases is not available at the moment but as this questions is asked severeal times we document it here.
 
 ```
+![AAPS 1.0](../images/update/AAPS1.0.png)
+
+(maintenance-android-version-aaps-version)=
 
 ## Android version and AAPS version
 
@@ -28,10 +35,15 @@ If your smartphone uses an Android Version older than Android 9 you will not be 
 
 In order to allow users with older Android to use older version of AAPS new versions were pushed which only change version verification. No other improvements are included.
 
-### Android 9 and up
+### Android 11 and up
 
 - Use latest AAPS version
 - Download AAPS Code from <https://github.com/nightscout/AndroidAPS>
+
+### Android 9,10
+
+- Use AAPS version **3.2.0.4**
+- Download AAPS Code from <https://github.com/nightscout/AndroidAPS> branch 3.2.0.4
 
 ### Android 8
 
@@ -45,8 +57,20 @@ In order to allow users with older Android to use older version of AAPS new vers
 
 ## WearOS version
 
-- AAPS 3.2 requires at least WearOS API level 28 (Android 9)
+- AAPS requires at least WearOS API level 28 (Android 9)
 
+```{tip}
+WearOS 5, API level 34 (Android 14) has [limitations](#BuildingAapsWearOs-WearOS5).
+```
+
+(version3300)=
+## Version 3.3.0.0
+
+Version 3.3 is close ! Use the version switcher at the bottom right of your screen to see what's new.
+
+![Open language menu](../images/documentation_language_menu.png)
+
+(version3200)=
 ## Version 3.2.0.0 dedicated to @Philoul
 
 Release date: 23-10-2023
@@ -55,7 +79,7 @@ Release date: 23-10-2023
 
 - NS 15 is required
 - While using websockets in NS v3 plugin treatments entered through NS UI (plus button) and other applications using v1 API are not sent to AAPS. This will be fixed in future release of NS. Always use the same client (v1 or v3) in AAPS and AAPSClient until NS fully switch to v3 internaly. The same is valid for AAPS and AAPSClient itself.
-- Websockets in v3 plugin works similiar way to v1 plugin. Without websockets enabled AAPS schedules regularly downloads from NS which should lead to lower power consumption because NS is not permanently connected. On the oposite side it means delays in exchanging data. Please read [here](ReleaseNotes#important-comments-on-using-v3-versus-v1-api-for-nightscout-with-aaps) the important comments from the dev team before you use it!
+- Websockets in v3 plugin works similiar way to v1 plugin. Without websockets enabled AAPS schedules regularly downloads from NS which should lead to lower power consumption because NS is not permanently connected. On the oposite side it means delays in exchanging data. Please read [here](#Important-comments-on-using-v3-versus-v1-API-for-Nightscout-with-AAPS) the important comments from the dev team before you use it!
 - If you are using xdrip as cgm source you must select it again after update due to internal changes
 - Tidepool can be used as a replacement of NS to pass first objective
 - If you send to xDrip+ you must configure xDrip synchronization plugin. In order to receive BGs from AAPS in xDrip, “xDrip+ Sync Follower” must be selected as source
@@ -141,7 +165,7 @@ RECOMMENDED SETTING
 - huge UI improvement, cleanup and unification, migration to material design, styles, white theme, new icons. @Andries-Smit @MilosKozak @osodebailar @Philoul
 - widget @MilosKozak
 - Aidex CGM support @andyrozman @markvader (Pumpcontrol only)
-- Watch [Wear OS tiles](../UsefulLinks/WearOsSmartwatch.md#wear-os-tiles), translations @Andries-Smit
+- Watch [Wear OS tiles](#WearOsSmartwatch-wear-os-tiles), translations @Andries-Smit
 - Wear code refactored. Not backward compatible anymore @MilosKozak
 - a11y improvements @Andries-Smit
 - new protection option PIN @Andries-Smit
@@ -200,9 +224,9 @@ RECOMMENDED SETTING
 
 - You can start activity temporary target during creation of profile switch @MilosKozak
 
-- NSProfile is gone, just local profile can be used. Local profile can be [synced to NS](../Maintenance/Update3_0.md#nightscout-profile-cannot-be-pushed). @MilosKozak.
+- NSProfile is gone, just local profile can be used. Local profile can be [synced to NS](#Update3_0-nightscout-profile-cannot-be-pushed). @MilosKozak.
 
-- Forgotten [master password reset procedure](../Maintenance/Update3_0.md#reset-master-password) @MilosKozak
+- Forgotten [master password reset procedure](#Update3_0-reset-master-password) @MilosKozak
 
 - User actions tracing @Philoul
 
@@ -255,7 +279,7 @@ RECOMMENDED SETTING
 
 Ημερομηνία κυκλοφορίας: 12-01-2021
 
-(important-hints-2-8-1-1)
+(important-hints-2-8-1-1)=
 ### Important hints
 
 - Option **NS_UPLOAD_ONLY** has been forced ON for all 2.8.1 users.
@@ -285,24 +309,24 @@ RECOMMENDED SETTING
 ### Important hints
 
 - **Minimum Android version is 8.0 now.** For older Android versions you can still use 2.6.1.4 from old repo.
-- [Objectives have changed.](../SettingUpAaps/CompletingTheObjectives.md#objective-3-prove-your-knowledge) **Finish not completed objectives before update.**
+- [Objectives have changed.](#objectives-objective3) **Finish not completed objectives before update.**
 - Repository location still on <https://github.com/nightscout/AndroidAPS> . If you are not familiar with git the easiest way for update is remove directory with AAPS and do a [new clone](../SettingUpAaps/BuildingAaps.md).
 - Please use [Android Studio 4.1.1](https://developer.android.com/studio/) or newer to build the apk.
 
 ### Σημαντικά νέα χαρακτηριστικά
 
 - [Omnipod Eros support](../CompatiblePumps/OmnipodEros.md) @bartsopers @andyrozman @ktomy @samspycher @TeleRiddler @vanelsberg @eurenda and special thanks to @ps2 @itsmojo, everybody else involved in the Loop driver for Omnipod and @jlucasvt from GetRileyLink.org
-- [bolus advisor](../SettingUpAaps/Preferences.md#quick-wizard) & [eating reminder](../DailyLifeWithAaps/AapsScreens.md#section-j) @MilosKozak
-- [New watchface](../UsefulLinks/WearOsSmartwatch.md#new-watchface-as-of-aaps-28) @rICTx-T1D
+- [bolus advisor](#Preferences-quick-wizard) & [eating reminder](#AapsScreens-section-j) @MilosKozak
+- New watchface @rICTx-T1D
 - Dana RS connection improvements @MilosKozak
 - Removed "Unchanged CGM values" behavior in SMB for Dexcom native app
-- New [Low Ressolution Skin](../SettingUpAaps/Preferences.md#skin)
-- New ["Pregnant" patient type](../DailyLifeWithAaps/KeyAapsFeatures.md#overview-of-hard-coded-limits) @Brian Quinion
+- New [Low Ressolution Skin](#Preferences-skin)
+- New ["Pregnant" patient type](#Open-APS-features-overview-of-hard-coded-limits) @Brian Quinion
 - New NSClient tablet layout @MilosKozak
 - NSClient transfer insulin, senstivity and display settings directly from main AAPS @MilosKozak
 - [Preferences filter](../SettingUpAaps/Preferences.md) @Brian Quinion
 - New pump icons @Rig22 @@teleriddler @osodebailar
-- New [insulin type Lyumjev](../SettingUpAaps/ConfigBuilder.md#lyumjev)
+- New [insulin type Lyumjev](#Config-Builder-lyumjev)
 - SetupWizard improvements @MilosKozak
 - Security improvements @dlvoy
 - Various improvements and fixes @AdrianLxM @Philoul @swissalpine  @MilosKozak @Brian Quinion
@@ -314,34 +338,34 @@ RECOMMENDED SETTING
 
 **Make sure to check and adjust settings after updating to 2.7 as described** [here](../Maintenance/Update2_7.md).
 
-You need at least start [objective 11 (in later versions objective 10!)](../SettingUpAaps/CompletingTheObjectives.md#objective-10-automation) in order to continue using [Automation feature](../DailyLifeWithAaps/Automations.md) (all previous objectives must be completed otherwise starting Objective 11 is not possible). If for example you did not finish the exam in [objective 3](../SettingUpAaps/CompletingTheObjectives.md#objective-3-prove-your-knowledge) yet, you will have to complete the exam before you can start [objective 11](../SettingUpAaps/CompletingTheObjectives.md#objective-11-enabling-additional-features-for-daytime-use-such-as-dynamic-sensitivity-plugin-dynisf). This will not effect other objectives you have already finished. You will keep all finished objectives!
+You need at least start [objective 11 (in later versions objective 10!)](#objectives-objective10) in order to continue using [Automation feature](../DailyLifeWithAaps/Automations.md) (all previous objectives must be completed otherwise starting Objective 11 is not possible). If for example you did not finish the exam in [objective 3](#objectives-objective3) yet, you will have to complete the exam before you can start [objective 11](#objectives-objective11). This will not effect other objectives you have already finished. You will keep all finished objectives!
 
 ### Σημαντικά νέα χαρακτηριστικά
 
 - internal use of dependency injection, updates libraries, code rewritten to kotlin @MilosKozak @AdrianLxM
 - using modules for Dana pumps @MilosKozak
 - [new layout, layout selection](../DailyLifeWithAaps/AapsScreens.md) @MilosKozak
-- new [status lights layout](../SettingUpAaps/Preferences.md#status-lights) @MilosKozak
-- [multiple graphs support](../DailyLifeWithAaps/AapsScreens.md#activate-optional-information) @MilosKozak
-- [Profile helper](../SettingUpAaps/ProfileHelper.md) @MilosKozak
-- visualization of [dynamic target adjustment](../DailyLifeWithAaps/AapsScreens.md#visualization-of-dynamic-target-adjustment) @Tornado-Tim
+- new [status lights layout](#Preferences-status-lights) @MilosKozak
+- [multiple graphs support](#AapsScreens-activate-optional-information) @MilosKozak
+- [Profile helper](../SettingUpAaps/YourAapsProfile.md) @MilosKozak
+- visualization of [dynamic target adjustment](#AapsScreens-visualization-of-dynamic-target-adjustment) @Tornado-Tim
 - new [preferences layout](../SettingUpAaps/Preferences.md) @MilosKozak
 - SMB algorithm update @Tornado-Tim
-- [Low glucose suspend mode](../SettingUpAaps/Preferences.md#aps-mode) @Tornado-Tim
-- [carbs required notifications](../SettingUpAaps/Preferences.md#carb-required-notification) @twain47 @Tornado-Tim
+- [Low glucose suspend mode](#Preferences-aps-mode) @Tornado-Tim
+- [carbs required notifications](#key-aaps-features-minimal-carbs-required-for-suggestion) @twain47 @Tornado-Tim
 - removed Careportal (moved to Actions) @MilosKozak
 - [new encrypted backup format](ExportImportSettings.md) @dlvoy
 - [new SMS TOTP authentication](../RemoteFeatures/SMSCommands.md) @dlvoy
-- [new SMS PUMP CONNECT, DISCONNECT](../RemoteFeatures/SMSCommands.md#commands) commands @Lexsus
+- [new SMS PUMP CONNECT, DISCONNECT](#SMSCommands-commands) commands @Lexsus
 - better support for tiny basals on Dana pumps @Mackwe
 - small Insight fixes @TebbeUbben @MilosKozak
-- ["Default language" option](../SettingUpAaps/Preferences.md#general) @MilosKozak
+- ["Default language" option](#Preferences-general) @MilosKozak
 - vector icons @Philoul
-- [set neutral temps for MDT pump](../CompatiblePumps/MedtronicPump.md#configuration-of-the-pump) @Tornado-Tim
+- [set neutral temps for MDT pump](#MedtronicPump-configuration-of-the-pump) @Tornado-Tim
 - History browser improvements @MilosKozak
 - removed OpenAPS MA algorithm @Tornado-Tim
 - removed Oref0 sensitivity @Tornado-Tim
-- [Biometric or password protection](../SettingUpAaps/Preferences.md#protection) for settings, bolus @MilosKozak
+- [Biometric or password protection](#Preferences-protection) for settings, bolus @MilosKozak
 - [new automation trigger](../DailyLifeWithAaps/Automations.md) @PoweRGbg
 - [Open Humans uploader](../SupportingAaps/OpenHumans.md) @TebbeUbben @AdrianLxM
 - New documentation @Achim
@@ -421,7 +445,7 @@ Please use [Android Studio 3.6.1](https://developer.android.com/studio/) or newe
 
 - Small design changes (startpage...)
 
-- Careportal tab / menu removed - more details [here](../Usage/CPbefore26.md)
+- Careportal tab / menu removed
 
 - New Local Profile plugin
 
@@ -433,7 +457,7 @@ Please use [Android Studio 3.6.1](https://developer.android.com/studio/) or newe
 
 - SimpleProfile is removed
 
-- [Extended bolus](../DailyLifeWithAaps/ExtendedCarbs.md#extended-bolus-and-switch-to-open-loop---dana-and-insight-pump-only) feature - closed loop will be disabled
+- [Extended bolus](#Extended-Carbs-extended-bolus-and-switch-to-open-loop-dana-and-insight-pump-only) feature - closed loop will be disabled
 
 - MDT plugin: Fixed bug with duplicated entries
 
@@ -443,15 +467,15 @@ Please use [Android Studio 3.6.1](https://developer.android.com/studio/) or newe
 
 - Different UI and internal improvements
 
-- [Wear complications](../UsefulLinks/WearOsSmartwatch.md)
+- [Wear complications](../WearOS/WearOsSmartwatch.md)
 
 - New [SMS commands](../RemoteFeatures/SMSCommands.md) BOLUS-MEAL, SMS, CARBS, TARGET, HELP
 
 - Fixed language support
 
-- Objectives: [Allow to go back](../SettingUpAaps/CompletingTheObjectives.md#go-back-in-objectives), Time fetching dialog
+- Objectives: [Allow to go back](#CompletingTheObjectives-go-back-in-objectives), Time fetching dialog
 
-- Automation: [allow sorting](../DailyLifeWithAaps/Automations.md#the-order-of-the-automations-in-the-list-matters)
+- Automation: [allow sorting](#Automations-the-order-of-the-automations-in-the-list-matters)
 
 - Automation: fixed bug when automation was running with disabled loop
 
@@ -473,7 +497,7 @@ Please use [Android Studio 3.6.1](https://developer.android.com/studio/) or newe
 
 Ημερομηνία κυκλοφορίας: 31-10-2019
 
-Please note the [important notes](ReleaseNotes#version-250) and [limitations](ReleaseNotes#is-this-update-for-me-currently-is-not-supported) listed for [version 2.5.0](ReleaseNotes#version-250). \* Fixed a bug in the network state receiver that lead to crashes with many (not critical but would waste a lot of energy re-calculating things). \* New versioning that will allow to do minor updates without triggering the update-notification.
+Please note the [important notes](#Releasenotes-version-2-5-0) and [limitations](#Releasenotes-is-this-update-for-me-currently-is-not-supported) listed for [version 2.5.0](#Releasenotes-version-2-5-0). \* Fixed a bug in the network state receiver that lead to crashes with many (not critical but would waste a lot of energy re-calculating things). \* New versioning that will allow to do minor updates without triggering the update-notification.
 
 (Releasenotes-version-2-5-0)=
 ## Έκδοση 2.5.0
@@ -485,7 +509,7 @@ Please note the [important notes](ReleaseNotes#version-250) and [limitations](Re
 ### Σημαντικές σημειώσεις
 
 - Please use [Android Studio Version 3.5.1](https://developer.android.com/studio/) or newer to [build the apk](../SettingUpAaps/BuildingAaps.md) or [update](UpdateToNewVersion).
-- If you are using xDrip [identify receiver](../CompatibleCgms/xDrip.md#identify-receiver) must be set.
+- If you are using xDrip [identify receiver](#xdrip-identify-receiver) must be set.
 - If you are using Dexcom G6 with the patched Dexcom app you will need the version from the [2.4 folder](https://github.com/dexcomapp/dexcomapp/tree/master/2.4).
 - Glimp is supported from version 4.15.57 and newer.
 
@@ -503,7 +527,7 @@ Please note the [important notes](ReleaseNotes#version-250) and [limitations](Re
 - RxJava2, Okhttp3, Retrofit support
 - Old [Medtronic pumps](../CompatiblePumps/MedtronicPump.md) support (RileyLink need)
 - New [Automation plugin](../DailyLifeWithAaps/Automations.md)
-- Allow to [bolus only part](../SettingUpAaps/Preferences.md#advanced-settings-overview) from bolus wizard calculation
+- Allow to [bolus only part](#Preferences-advanced-settings-overview) from bolus wizard calculation
 - Rendering insulin activity
 - Adjusting IOB predictions by autosens result
 - New support for patched Dexcom apks ([2.4 folder](https://github.com/dexcomapp/dexcomapp/tree/master/2.4))
@@ -546,7 +570,7 @@ Release date: 29-03-2019
 
 ### Σημαντικά νέα χαρακτηριστικά
 
-- [DST fix](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#time-adjustment-daylight-savings-time-dst)
+- [DST fix](#time-adjustment-daylight-savings-time-dst)
 - Wear Update
 - [SMS plugin](../RemoteFeatures/SMSCommands.md) update
 - Go back in objectives.
@@ -602,7 +626,7 @@ Release date: 03-11-2018
 
 - Top ribbon gives access to suspend/disable loop, view/adjust profile and to start/stop temporary targets (TTs). TTs use defaults set in preferences. The new Hypo TT option is a high temp TT to prevent the loop from too aggressively overcorrection rescue carbs.
 - Treatment buttons: old treatment button still available, but hidden by default. Visibility of buttons can now be configured. New insulin button, new carbs button (including [eCarbs/extended carbs](../DailyLifeWithAaps/ExtendedCarbs.md))
-- [Colored prediction lines](../DailyLifeWithAaps/AapsScreens.md#prediction-lines)
+- [Colored prediction lines](#aaps-screens-prediction-lines)
 - Option to show a notes field in insulin/carbs/calculator/prime+fill dialogs, which are uploaded to NS
 - Updated prime/fill dialog allows priming and creating careportal entries for site change and cartridge change
 

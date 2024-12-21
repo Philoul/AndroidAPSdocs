@@ -14,6 +14,8 @@
 
 Nightscout 的 `API_SECRET` 是你網站的主要密碼：切勿公開分享他。
 
+(Nightscout-aaps-settings)=
+
 ### AAPS 設置
 
 你可以設置 AAPS 接收 Nightscout 指令（例如配置更改、治療等），或完全停用此功能。
@@ -34,13 +36,13 @@ Nightscout 的 `API_SECRET` 是你網站的主要密碼：切勿公開分享他�
 #### 接受來自 Nightscout 的變更
 
 啟用這些選項允許你透過 Nightscout 遠端更改 AAPS 設定，例如設定檔修改和切換、臨時目標以及添加碳水化合物，這些將被 AAPS 考慮在內。  
-請注意，胰島素治療僅用於計算，例如“僅記錄，不進行注射”。
+請注意，胰島素治療僅用於計算，例如“僅紀錄，不進行注射”。
 
 ![僅限 Nightscout 上傳](../images/NSsafety3.png)
 
 ### 進一步的安全設置
 
-保持你的手機最新，如[安全第一](../Getting-Started/PreparingForAaps.md#safety-first)所述。
+保持你的手機最新，如[安全第一](#preparing-safety-first)所述。
 
 (Nightscout-manual-nightscout-setup)=
 

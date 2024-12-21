@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # Accu Chek Combo 幫浦
 
 這些說明是關於使用 AndroidAPS 3.2 版本中新增的 combov2 驅動程式設置 Accu-Chek Combo 幫浦。 該驅動程式與舊版完全分開。
@@ -8,10 +12,10 @@
 
 * 一台 Roche Accu-Chek Combo 幫浦（任何韌體版本均可使用）。
 * 一個 Smartpix 或 Realtyme 裝置，配合 360 設定軟體來配置幫浦。 （Roche 在客戶要求下會免費寄送 Smartpix 裝置和設定軟體。）
-* 一台相容的手機。 至少需要 Android 9（Pie）或更新版本。 如果使用 LineageOS，最低支援版本為 16.1。 請參閱 [發行說明](../Maintenance/ReleaseNotes.md#android-version-and-aaps-version) 以獲取詳細信息。
+* 一台相容的手機。 至少需要 Android 9（Pie）或更新版本。 如果使用 LineageOS，最低支援版本為 16.1。 請參閱 [發行說明](#maintenance-android-version-aaps-version) 以獲取詳細訊息。
 * 手機上安裝了 AndroidAPS 應用程式。
 
-根據手機的藍牙支援品質及其是否具備額外的省電邏輯，有些手機可能比其他手機運作得更好。 可以在[AAPS 手機列表](https://docs.google.com/spreadsheets/d/1gZAsN6f0gv6tkgy9EBsYl0BQNhna0RDqA9QGycAqCQc/edit)文件中找到相容手機。 請注意，這不是完整的列表，只反應個人使用經驗。 我們鼓勵你也分享你的經驗，這樣可以幫助其他人（這些專案是關於傳遞經驗）。
+根據手機的藍牙支援品質及其是否具備額外的省電邏輯，有些手機可能比其他手機運作得更好。 手機列表可以在 [AAPS 手機列表](#Phones-list-of-tested-phones) 文件中找到。 請注意，這不是完整的列表，只反應個人使用經驗。 我們鼓勵你也分享你的經驗，這樣可以幫助其他人（這些專案是關於傳遞經驗）。
 
 (combov2-before-you-begin)=
 ## 開始之前
@@ -32,7 +36,7 @@
 
 此外，如果你正在從舊驅動程式遷移，請注意，新驅動程式以完全不同的方式將注射指令傳達給 Combo，速度更快，因此不要驚訝於無論劑量大小，注射都會立即開始。 此外，有關處理 Ruffy 配對和連線問題的一般建議、提示和技巧等不適用於此處，因為這是一個全新的驅動程式，與舊驅動程式沒有共享任何代碼。
 
-該新驅動程式目前支援 Combo 上以下語言。 （這與 AAPS 的語言無關——是顯示在 Combo LCD 上的語言。）
+該新驅動程式目前支援 Combo 上以下語系。 （這與 AAPS 的語系無關——是顯示在 Combo LCD 上的語系。）
 
 * 英語
 * 西班牙語
@@ -57,7 +61,7 @@
 * 斯洛文尼亞語
 * 立陶宛語
 
-**重要**：如果你的幫浦設置為不在此列表中的語言，請聯繫開發人員，並將幫浦的語言設置為此列表中的一個語言。 否則，驅動程式將無法正常工作。
+**重要**：如果你的幫浦設置為不在此列表中的語系，請聯繫開發人員，並將幫浦的語系設置為此列表中的一個語系。 否則，驅動程式將無法正常工作。
 
 ## 手機設置
 
@@ -94,7 +98,7 @@
 
 ## 註冊驅動並將其與 Combo 配對
 
-* 在[組態設置工具](../SettingUpAaps/ConfigBuilder.md)中選擇 "Accu-Chek Combo" 驅動程序。 **重要提示**：名單中也有舊驅動，稱為 "Accu-Chek Combo (Ruffy)"。 請 _不要_ 選擇那個。
+* 在[組態建置工具](../SettingUpAaps/ConfigBuilder.md)中選擇 "Accu-Chek Combo" 驅動程序。 **重要提示**：名單中也有舊驅動，稱為 "Accu-Chek Combo (Ruffy)"。 請 _不要_ 選擇那個。
 
   ![組態建置工具 Combo 截圖](../images/combo/combov2-config-builder.png)
 
@@ -124,7 +128,7 @@
 
   ![未配對的 Accu-Chek Combo 標籤截圖](../images/combo/combov2-tab-without-pairing.png)
 
-* 為了驗證你的設置（幫浦與任何導管**中斷連線**以確保安全！），使用 AAPS 設置一個 500％ 的 TBR 持續 15 分鐘並發出注射指令。 幫浦現在應該正在運作 TBR，並且歷史記錄中有注射紀錄。 AAPS 也應顯示活動的 TBR 和已注射的記錄。
+* 為了驗證你的設置（幫浦與任何導管**中斷連線**以確保安全！），使用 AAPS 設置一個 500％ 的 TBR 持續 15 分鐘並發出注射指令。 幫浦現在應該正在運作 TBR，並且歷史紀錄中有注射紀錄。 AAPS 也應顯示活動的 TBR 和已注射的紀錄。
 
 * 建議在 Combo 上啟用按鍵鎖定，以防止從幫浦進行注射，特別是之前已經使用幫浦並使用 "快速注射" 功能時。
 
@@ -176,7 +180,7 @@ Combo 可以在 _遠端終端_ 模式或 _指令_ 模式下透過藍牙操作。
 3. _發現持續時間（以秒為單位）_：配對時，驅動會使手機對幫浦可見。 這控制了這種可見性持續多久。 預設選擇最大值（300 秒 = 5 分鐘）。 Android 不允許可見性無限期持續，因此必須選擇一個持續時間。
 4. _自動偵測並自動輸入胰島素儲存庫變更_：如果啟用，通常透過 Action 標籤中的 "注射/填充" 按鈕由用戶完成的 "儲存庫變更" 操作。 這在[下面進一步詳細說明](#autodetecting-and-automatically-entering-battery-and-reservoir-changes)。
 5. _自動偵測並自動輸入電池更換_：如果啟用，通常由用戶透過 Action 標籤中的 "幫浦電池變更" 按鈕完成的 "電池更換" 操作。 這在[下面進一步詳細說明](#autodetecting-and-automatically-entering-battery-and-reservoir-changes)。
-6. _啟用詳細 Combo 日誌記錄_：這大大擴展了驅動記錄的日誌數量。 **注意**：除非開發人員要求，否則不要啟用此功能。 否則，這會增加大量的噪音到 AndroidAPS 日誌中，減少他們的實用性。
+6. _啟用詳細 Combo 日誌紀錄_：這大大擴展了驅動紀錄的日誌數量。 **注意**：除非開發人員要求，否則不要啟用此功能。 否則，這會增加大量的噪音到 AndroidAPS 日誌中，減少他們的實用性。
 
 大多數用戶只使用頂部兩個項目，即 _與幫浦配對_ 和 _取消幫浦配對_ 按鈕。
 

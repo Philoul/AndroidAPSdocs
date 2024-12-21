@@ -1,18 +1,22 @@
-# CGMS/FGMS 設定
+# CGMs/FGMs 配置
 
-這只是所有相容CGM/FGM與**AAPS**的簡要概述。
-小提示：如果你能在xDrip+應用或Nightscout網站上顯示你的血糖資料，你可以在**AAPS**中選擇xDrip+（或Nightscout與網路連線）作為BG來源。
+本節提供所有與**AAPS**相容的**CGMs/FGMs**的簡要概述。
 
-- [一般](../CompatibleCgms/GeneralCGMRecommendation.md)
-- [數據平滑處理](../CompatibleCgms/SmoothingBloodGlucoseData.md)
-- [xDrip+設定](../CompatibleCgms/xDrip.md)
-- [Dexcom G7 和 ONE+](../CompatibleCgms/DexcomG7.md)：與 xDrip+ 或打補丁的 Dexcom 應用兼容
-- [Dexcom G6 和 ONE](../CompatibleCgms/DexcomG6.md)：與 BYODA 或 xDrip+ 兼容
-- [Dexcom G5](../CompatibleCgms/DexcomG5.md)：與 xDrip+ 或打補丁的 Dexcom 應用兼容
-- [Libre 3](../CompatibleCgms/Libre3.md)：與 xDrip+ 兼容（不需要傳輸器）
-- [Libre 2](../CompatibleCgms/Libre2.md)：與 xDrip+ 兼容（不需要傳輸器）
-- [Libre 1](../CompatibleCgms/Libre1.md)：需要像 Bluecon 或 MiaoMiao 的傳輸器（自製或購買）和 xDrip+ 應用
-- [Eversense](../CompatibleCgms/Eversense.md)：目前僅能與 ESEL 應用及打補丁的 Eversense 應用結合使用（不適用於 Dana RS 和 LineageOS，但與 DanaRS 和 Android 或 Combo 及 Lineage OS 可正常使用）
-- [Enlite (MM640G/MM630G)](../CompatibleCgms/MM640g.md)：相當複雜，需額外配備許多Components
-- [PocTech](../CompatibleCgms/PocTech.md)
-- [Nightscout 作為 BG 來源](../CompatibleCgms/CgmNightscoutUpload.md)
+*提示*: 如果你能在 xDrip+ 應用中顯示你的血糖資料，可以在**AAPS**中選擇 xDrip+ 作為**BG** 資料來源。
+
+* [一般建議](../CompatibleCgms/GeneralCGMRecommendation.md)
+* [資料平滑](../CompatibleCgms/SmoothingBloodGlucoseData.md)
+* [xDrip+設定](../CompatibleCgms/xDrip.md)
+* [Nightscout 作為 BG 資料來源](../CompatibleCgms/CgmNightscoutUpload.md): 儘管可以使用 Nightscout 作為閉環胰島素給藥的 BG 資料來源，但**這種方法不推薦**，因為其依賴穩定的行動網路或 Wi-Fi 連接。 這意味著你的**CGM**資料只有在與你的 Nightscout 網站保持在線連接時，才會被**AAPS**接收。 為了更加穩定的設置，使用具有接收器的本地廣播的 CGM（如下所列）到**AAPS**，是一個更好的選擇。
+
+| CGM                                                  | 可用的[BG 資料來源](../SettingUpAaps/ConfigBuilder.md#bg-source) |
+| ---------------------------------------------------- | --------------------------------------------------------- |
+| [Dexcom G7 和 ONE+](../CompatibleCgms/DexcomG7.md)    | xDrip+ 或 DiaKEM 應用程式（選擇 BYODA）                            |
+| [Dexcom G6 和 ONE](../CompatibleCgms/DexcomG6.md)     | xDrip+ 或 BYODA                                            |
+| [Dexcom G5](../CompatibleCgms/DexcomG5.md)           | xDrip+                                                    |
+| [Libre 3](../CompatibleCgms/Libre3.md)               | xDrip+（不需要發射器）                                            |
+| [Libre 2](../CompatibleCgms/Libre2.md)               | xDrip+（不需要發射器）                                            |
+| [Libre 1](../CompatibleCgms/Libre1.md)               | xDrip+、Glimp、Tomato 或 Diabox。 需要像 Bluecon 或 MiaoMiao 的發射器 |
+| [Eversense](../CompatibleCgms/Eversense.md)          | xDrip+ 或 ESEL/Eversense 補丁應用程式 + MM640g                   |
+| [Enlite（MM640G/MM630G）](../CompatibleCgms/MM640g.md) | xDrip+ 或 MM640g + 600系列 Android 上傳程式                      |
+| [PocTech](../CompatibleCgms/PocTech.md)              | PocTech                                                   |

@@ -1,3 +1,7 @@
+- - -
+orphan: true
+- - -
+
 # Dexcom G7 and ONE+
 
 
@@ -9,10 +13,17 @@ Noteworthy is the fact that the G7 and ONE+ systems, compared to the G6, do not 
 
 ```{admonition} [Smoothing method](../CompatibleCgms/SmoothingBloodGlucoseData.md)
 :class: warning
-**Exponential Smoothing** **MUST** be enabled for meaningful use of the G7 / ONE+ values.  
+**Average Smoothing or Exponential Smoothing** **MUST** be enabled for meaningful use of the G7 / ONE+ values.  
 ```
 
-## 1.  Patched Dexcom G7 App (DiaKEM)
+## 1. xDrip+ (direct connection to G7 or ONE+)
+
+- עקבו אחר ההוראות כאן: [Xdrip+ G7](https://navid200.github.io/xDrip/docs/Dexcom/G7.html)
+- Select  xDrip+ in [ConfigBuilder, BG Source](#Config-Builder-bg-source).
+
+- Adjust the xDrip+ settings according to the explanations on the xDrip+ settings page  [xDrip+ settings](../CompatibleCgms/xDrip.md)
+
+## 2.  Patched Dexcom G7 App (DiaKEM)
 
 **Note: AAPS 3.2.0.0 or higher is required! Not available for ONE+.**
 
@@ -32,21 +43,14 @@ A patched Dexcom G7 app (DiaKEM) gives access to the Dexcom G7 data. This is not
 
 ### תצורה ב-AAPS
 
-- Select 'BYODA' in in [ConfigBuilder, BG Source](../SettingUpAaps/ConfigBuilder.md#bg-source) - even if it is not the BYODA app!
+- Select 'BYODA' in in [ConfigBuilder, BG Source](#Config-Builder-bg-source) - even if it is not the BYODA app!
 
 - אם ב-AAPS לא מתקבלים ערכים, החליפו למקור ערכי סוכר אחרים ואז חזרו ל'BYODA' כדי לגרום ל-AAPS לחפש נתונים מ-BYODA.
-
-## 2. xDrip+ (direct connection to G7 or ONE+)
-
-- עקבו אחר ההוראות כאן: [Xdrip+ G7](https://navid200.github.io/xDrip/docs/Dexcom/G7.html)
-- Select  xDrip+ in [ConfigBuilder, BG Source](../SettingUpAaps/ConfigBuilder.md#bg-source).
-
-- Adjust the xDrip+ settings according to the explanations on the xDrip+ settings page  [xDrip+ settings](../CompatibleCgms/xDrip.md)
 
 ## 3. xDrip+ (מצב מלווה)
 
 -   הורידו והתקינו את [xDrip](https://github.com/NightscoutFoundation/xDrip).
 - בחרו "Companion App" כמקור נתונים בxDrip+ ויש לבחור בהגדרות פחות נפוצות> הגדרות בלוטות' > יש לאפשר "Companion Bluetooth".
--   Select  xDrip+ in in [ConfigBuilder, BG Source](../SettingUpAaps/ConfigBuilder.md#bg-source).
+-   Select  xDrip+ in in [ConfigBuilder, BG Source](#Config-Builder-bg-source).
 
 -   Adjust the xDrip+ settings according to the explanations on the xDrip+ settings page  [xDrip+ settings](../CompatibleCgms/xDrip.md) 

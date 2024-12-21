@@ -1,39 +1,43 @@
-# Внесение изменений в конфигурацию AAPS
+# Making changes to your AAPS' configuration
 
-После завершения **Мастера установки** больше не нужно запускать весь Мастер, чтобы изменить часть конфигурации.
+After you have completed the **[Setup Wizard](../SettingUpAaps/SetupWizard.md)**, you don't need to run the entire Wizard again if you want to only change parts of your **AAPS**' configuration.
 
-Есть три способа внесения изменений в настройки конфигурации. Какой из них выбираете вы - это просто вопрос удобства, каждый ведет к тем же настройкам конфигурации.
+There are three routes to change AAPS’ configuration. As to which route you take, it is simply a matter of convenience or personal preference as each route leads to the same configuration settings.
 
 Вот они:
 
 1. Конфигуратор,
-2. Выпадающее меню справа и выберите "настройки" или
-3. Выпадающее меню справа и выберите "настройки расширений".
+1. Three dot menu on the right and select "Preferences" or
+1. Three dot menu on the right and select "Plugin preferences".
 
 Здесь мы объясним, какой вариант наиболее удобно для каждой ситуации:
 
 ## Конфигуратор
 
-**Конфигуратор** используется, если вы хотите **включить расширения** и их **видимость** в меню верхнего уровня. Если они включены, вы можете решить, сделать их видимыми в верхнем меню или нет.
+![Open Config Builder](../images/ConfBuild_Open_AAPS30.png)
 
-Расширения, которые не включены (то есть отключены), нельзя сделанть видимыми. Например, когда **AAPS** запущен на **цели 1**, нельзя активировать **автоматизацию**, так что модуль/расширение **автоматизация** нельзя сделать видимым в верхнем меню.
+The **config builder** is used if you want to **enable plugins** and their **visibility** in the top level menu. Once enabled, the **plugins** will always run, and you can decide if you want to be able to see them in the top menu or not. Disabled plugins can not be made visible.
 
-**Конфигуратор** - самый простой способ изменить конфигурацию после выполнения **Мастера установки**.
+You can use the cogwheel next to each activated plugin to access its settings.
 
 The documentation relating to the config builder is available [here](../SettingUpAaps/ConfigBuilder.md).
 
 ## Настройки
 
-Через правое верхнее выпадающее меню **главного экрана** AAPS можно получить доступ к настройкам. It gives you the possibility to change the configuration of **all enabled plugins at once**.
+![Open preferences](../images/Pref2020_Open2.png)
 
-Это хороший маршрут, если нет уверенности, где найти какую-то опцию из конфигурации, но он длинноват, если вам хочется изменить настройку только одного конкретного модуля.
+The **preferences** dialogue can be reached via the top right _three dots_ menu on any tab of **AAPS**. This allows to change the configuration of **all enabled plugins in a single place**.
+
+This is a good route if you are not really sure where to look for a configuration option, but it can be a bit tedious if you know you want to change the configuration for just one specific plugin.
 
 The documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).
 
 ## Настройки расширений
 
-Через правое верхнее выпадающее меню **главного экрана** AAPS можно получить доступ к **настройкам расширений**. It provides the possibility to change the configuration of the plugin currently on screen.
+![Open plugin preferences](../images/Pref2020_OpenPlugin2.png)
 
-Это хороший маршрут, если_например._ вы _просто_ хотите изменить конфигурацию для самостоятельно собранного приложения Dexcom BYODA. Затем выберите вкладку "BYODA" в верхнем меню **AAPS** и на странице BYODA, в правом верхнем углу выберите меню с тремя точками, а затем "Настройки расширения". Вы попадаете сразу к диалогу настроек специально для расширения BYODA.
+The **plugin preferences** dialogue can be reached via the top right _three dots_ menu on the home screen of **AAPS**. It allows to change the configuration of the **plugin currently on screen**.
 
-This is a "short cut" to the general preferences dialogue, the documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).
+For example, this is a good route if you know that you want to change the configuration for BYODA. Then, you would select the tab "BYODA" on the top menu of **AAPS**, and then once you are on the BYODA page, in the top right, select the _three dots_ menu and then the "plugin preferences" entry. Вы попадаете сразу к диалогу настроек специально для расширения BYODA.
+
+This is a "shortcut" to the general preferences dialogue, the documentation of the preferences is available [here](../SettingUpAaps/Preferences.md).

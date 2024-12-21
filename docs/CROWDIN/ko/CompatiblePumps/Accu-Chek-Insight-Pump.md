@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # 아큐첵 인사이트 펌프(Accu-Chek Insight Pump)
 
 **이 소프트웨어는 DIY 인공 췌장 솔루션의 일부이며 판매용 제품이 아닙니다. 하지만 사용법을 읽고 배우고 이해 하셔야합니다. 이 소프트웨어는 당뇨관리를 대신 해주는 것은 아니지만, 시간을 들여 숙지하신 후 용하신다면 당뇨관리를 용이하게 도와주며 삶의 질을 향상시키는데 큰 도움을 줍니다. 성급하게 생각하지 마시고, 사용법을 숙지하시기를 권장합니다. 서용자가 소프트웨어 활용과 관련하여 대한 책임을 집니다.**
@@ -54,7 +60,7 @@ Note: There will be no permanent connection between pump and phone. A connection
 
 ## AAPS의 설정
 
-**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](../SettingUpAaps/Preferences.md#advanced-settings-nsclient)).
+**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](#Preferences-advanced-settings-nsclient)).
 
 ![Screenshot of Insight Settings](../images/Insight_settings.png)
 
@@ -122,7 +128,7 @@ Depending on the firmware version of your pump, the Insight will vibrate briefly
 
 * Firmware 1.x: No vibration by design.
 * Firmware 2.x: Vibration cannot be disabled.
-* Firmware 3.x: AAPS delivers bolus silently. (minimum [version 2.6.1.4](../Maintenance/ReleaseNotes.md#version-2614))
+* Firmware 3.x: AAPS delivers bolus silently. (minimum [version 2.6.1.4](#Releasenotes-version-2-6-1-4))
 
 Firmware version can be found in the menu.
 
@@ -150,4 +156,4 @@ In this case turn off bluetooth on pump AND smartphone for about 10 seconds and 
 
 ## Crossing time zones with Insight pump
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#insight).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-insight).

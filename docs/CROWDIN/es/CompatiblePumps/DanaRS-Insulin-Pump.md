@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # DanaRS and Dana-i Pump
 
 *These instructions are for configuring the app and your pump if you have a DanaRS from 2017 onwards or the newer Dana-i. Visit [DanaR Insulin Pump](./DanaR-Insulin-Pump.md) if you have the original DanaR instead.*
@@ -105,7 +111,7 @@ In case the connection between AAPS and Dana RS is lost during bolus insulin del
 
 * En la mayoría de los casos, se trata sólo de un problema de comunicación y se inyecta la cantidad correcta de insulina.
 * Compruebe el historial de la bomba (ya sea en la bomba o a través de la pestaña Dana > historial de bomba > bolos) para ver si se ha administrado el bolo correctamente.
-* Delete error entry in [treatments tab](../DailyLifeWithAaps/AapsScreens.md#bolus--carbs) if you wish.
+* Delete error entry in [treatments tab](#screens-bolus-carbs) if you wish.
 * La cantidad real será leída y grabada en la siguiente conexión. Para forzar esto pulse el icono BT en la pestaña de dana o simplemente espere a la siguiente conexión.
 
 ## Nota especial al cambiar de teléfono
@@ -129,4 +135,4 @@ When switching to a new phone the following steps are necessary:
 
 ## Cambio de zona horaria al viajar con la bomba Dana RS
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

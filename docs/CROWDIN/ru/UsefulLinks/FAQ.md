@@ -44,7 +44,7 @@ Thirdly, you have to learn and **understand the OpenAPS reference design to chec
 
 Если вы снимаете помпу на время душа, купания, занятия спортом или других действий, то, чтобы активный инсулин IOB правильно отражался в системе, следует проинформировать AAPS, что инсулин не вводится,.
 
-The pump can be disconnected using the Loop Status icon on the [AAPS Home Screen](../DailyLifeWithAaps/AapsScreens.md#loop-status).
+The pump can be disconnected using the Loop Status icon on the [AAPS Home Screen](#AapsScreens-loop-status).
 
 #### Recommendations not only based on one single CGM reading
 
@@ -73,113 +73,6 @@ The pump can be disconnected using the Loop Status icon on the [AAPS Home Screen
 
 Его можно закрепить держателем. В продаже есть держатели CGM/FGM с повязками (поиск Google, eBay Amazon, Озон, Wildberries).
 
-## AAPS settings
-
-Этот список поможет оптимизировать настройки. Начните сверху и двигайтесь вниз. Старайтесь выверить одну настройку прежде чем переходить к другой. Двигайтесь небольшими шагами, не вносите большие изменения сразу. Можно использовать автонастройку [Autotune](https://autotuneweb.azurewebsites.net/) которая даст общее направление, но принимайте рекомендации не вслепую и не во всех ситуациях. Обратите внимание, что настройки дополняют друг друга - вы можете иметь "неправильные" настройки, которые в некоторых обстоятельствах работают хорошо (например, если слишком высокий базал установлен одновременно со слишком высоким углеводным коэффициентом CR), но в других не работают. Это означает, что нужно учитывать все настройки и убедиться, что они совместно работают в различных обстоятельствах.
-
-### Duration of insulin activity (DIA)
-
-#### Description & testing
-
-Длительность времени, которое инсулин падает до нуля.
-
-Довольно часто задается слишком коротким. Правильная настройка для большинства - не менее 5 часов, иногда 6 или 7.
-
-(FAQ-impact)=
-
-#### Impact
-
-Слишком малое значение продолжительности действия инсулина DIA может привести к низкой ГК. И наоборот.
-
-Если DIA слишком короткий, AAPS слишком рано решит, что предыдущий болюс израсходован, и, при все еще высокой ГК, добавит инсулин. (Фактически, алгоритм не выжидает, а продолжает добавлять инсулин, предсказывая, что произойдет). Это, по сути, создает «затоваривание инсулина», о котором AAPS не знает.
-
-Пример слишком короткого DIA - это высокая ГК, за которой следует избыточная коррекция и в результате - низкая ГК.
-
-### Basal rate schedule (U/h)
-
-#### Description & testing
-
-Количество инсулина в заданном часовом блоке для поддержания ГК на стабильном уровне.
-
-Проверьте настройки базы, приостановив цикл и пропуская приемы пищи, чтобы контролировать изменения ГК в течение 5 часов после еды. Повторите несколько раз.
-
-Если ГК падает, то уровень базы слишком велик. И наоборот.
-
-#### Impact
-
-Повышенная скорость подачи базала может привести к низкому уровню ГК. И наоборот.
-
-AAPS по умолчанию строит свой алгоритм отталкиваясь от скорости базала. Если базал слишком высокий, то «нулевая временная скорость» будет определяться при большем отрицательном значении активного инсулина IOB, чем нужно. Это приведет к тому, что AAPS будет давать больше коррекций, чем следует, чтобы привести активный инсулин IOB к нулю.
-
-Таким образом, слишком высокая скорость подачи базала создаст низкую ГК как на стандартной базе, так и несколько часов спустя, так как AAPS еще корректирует к цели.
-
-И наоборот, слишком низкая скорость базы может привести к высоким ГК, и невозможности снизить уровень до целевого.
-
-### Insulin sensitivity factor (ISF) (mmol/l/U or mg/dl/U)
-
-#### Description & testing
-
-Ожидаемое снижение ГК после подачи 1ед. инсулина.
-
-Если база рассчитана верно, вы можете определить ISF, приостановив цикл и убедившись что IOB равен нулю, принять несколько таблеток глюкозы, чтобы получить стабильно «высокую» гликемию.
-
-Затем введите предполагаемое количество инсулина (по текущему соотношению 1/ISF), чтобы прийти к целевой ГК.
-
-Будьте осторожны, так как довольно часто величина слишком занижена. Слишком низкая ГК означает, что 1 ед опустит ГК быстрее, чем ожидалось.
-
-#### Impact
-
-**Более низкий ISF** (например, 40 вместо 50) означает, что каждая единица инсулина меньше опускает ГК. Это приводит к более агрессивной / сильной коррекции со стороны алгоритма с **бОльшим количеством инсулина**. Если она слишком мала, можно получить низкий уровень ГК.
-
-**Более высокий ISF** (например, 45 вместо 35) означает, что каждая единица инсулина более значительно опускает ГК. Это приводит к менее агрессивной коррекции со стороны алгоритма с **меньшим количеством инсулина**. Если ISF слишком велик, можно получить высокий уровень ГК.
-
-**Пример:**
-
-- ГК - 190 мг/дл (10,5 ммол/л), а цель - 100 мг/дл (5,6 ммол/л). 
-- Нужно скорректировать 90 мг/дл (= 190 - 100).
-- Чувствитльность ISF = 30 -> 90 / 30 = 3 единицы инсулина
-- Чувствитльность ISF = 45 -> 90 / 45 = 2 единицы инсулина
-
-Слишком низкая заданная чувствительность (бывает нередко) может привести к "чрезмерной коррекции" ГК, поскольку AAPS будет считать, что ему нужно больше инсулина для корректировки высокой гликемии, чем на самом деле. Это может привести к «американским горкам» (особенно при голодании). В этом случае нужно увеличить ISF. Тогда ААПС уменьшит корректирующие дозы, что позволит избежать чрезмерной коррекции, которая приводит к низкой ГК.
-
-В то же время, задание слишком высокой чувствительности ISF может привести к недостаточной коррекции, когда ГК останется выше цели, это особенно заметно за ночь.
-
-### Insulin to carb ratio (IC) (g/U)
-
-#### Description & testing
-
-Углеводы в граммах на каждую единицу инсулина.
-
-Некоторые пользователи также используют I:C в качестве сокращения вместо IC или говорят о коэффициенте углеводов (carb ratio, CR).
-
-Полагая, что база задана верно, можно проверить этот коэффициент, убедившись в отсутствии активного инсулина IOB при нормальной гликемии. Для этого надо съесть известную пищу с известным количеством углеводов и подав на нее расчетное количество инсулина, основываясь на текущем соотношении IC. Лучше всего есть пищу, которую вы обычно едите в это время дня и точно посчитать ее углеводы.
-
-> **ПРИМЕЧАНИЕ:**
-> 
-> В некоторых европейских странах для определения количества инсулина, необходимого для компенсации пищи, использовались т. н. хлебные единицы. В начале 1 хлебная единица равнялась 12г углеводов, позже некоторые стали считать ее как 10 г.
-> 
-> В такой модели подсчетов количество углеводов было фиксированной величиной, а количество инсулина-переменной. ("Сколько инсулина нужно для того, чтобы компенсировать одну хлебную единицу?")
-> 
-> При использовании коэффициента инсулин-углеводы IC количество инсулина фиксируется, а количество углеводов становится величиной переменной. ("Сколько грамм углеводов может компенсироваться одной единицей инсулина?")
-> 
-> Пример:
-> 
-> Множитель хлебной единицы (ХЕ = 12г. углеводов): 2,4 ед./ХЕ -> Требуется 2,4 ед. инсулина для компенсации одной ХЕ.
-> 
-> Соответствующее соотношение инсулин-углеводы IC: 12г /2,4 ед -> 5,0 г. углеводов можно компенсировать одной единицей инсулина.
-> 
-> Множитель ХЕ 2,4 ед/12g ===> IC = 12 г/2,4 ед = 5,0 г/ед
-> 
-> Таблицы преобразования доступны в Интернете: [ здесь ](https://www.mylife-diabetescare.com/files/media/03_Documents/11_Software/FAS/SOF_FAS_App_KI-Verha%CC%88ltnis_MSTR-DE-AT-CH.pdf).
-
-#### Impact
-
-**Более низкий углеводный коэффициент IC** = меньше еды на единицу инсулина, то есть вы получаете больше инсулина на фиксированное количество углеводов. Может также назваться «более агрессивным».
-
-**Более высокий углеводный коэффициент IC** = больше еды на единицу инсулина, то есть вы получаете меньше инсулина на фиксированное количество углеводов. Может также назваться «менее агрессивным».
-
-Если после усваивания пищи и возвращения активного инсулина IOB к нулю, ГК остается выше чем до еды, высока вероятность того, что IC слишком велик. И наоборот, если ГК ниже, чем перед едой, IC слишком мал.
-
 ## APS algorithm
 
 ### Why does it show "dia:3" in the "OPENAPS AMA"-tab even though I have a different DIA in my profile?
@@ -187,22 +80,6 @@ AAPS по умолчанию строит свой алгоритм отталк
 ![Мастер болюса AMA 3 часа](../images/Screenshot_AMA3h.png)
 
 В помощнике болюса AMA "DIA" не означает "длительность действия инсулина". Этот параметр раньше привязывался к длительности действия инсулина DIA. Теперь же он означает, 'время, за которое нужно завершить коррекцию'. Он не имеет ничего общего с расчетом активного инсулина IOB. В алгоритме OpenAPS SMB больше нет необходимости в этом параметре.
-
-### Profile
-
-#### Why using min. 5h DIA (insulin end time) instead of 2-3h?
-
-Хорошо объяснено в [этой статье](https://www.diabettech.com/insulin/why-we-are-regularly-wrong-in-the-duration-of-insulin-action-dia-times-we-use-and-why-it-matters/). Не забудьте `АКТИВИРОВАТЬ ПРОФИЛЬ` после изменения продолжительности действия инсулина DIA.
-
-#### What causes the loop to frequently lower my BG to hypoglycemic values without COB?
-
-В первую очередь, проверьте значения скорости подачи базала и проверьте работу базы безуглеводным test'ом. Если все верно, то такое поведение обычно вызвано слишком низким значением чувствительности к инсулину ISF. Слишком низкая чувствительность ISF обычно выглядит так.
-
-![Чувствительность ISF слишком низкая](../images/isf.jpg)
-
-#### What causes high postprandial peaks in closed loop?
-
-В первую очередь, проверьте значения скорости подачи базала и проверьте работу базы безуглеводным test'ом. Если все правильно, и гликемия падает до целевого значения после полного усвоения углеводов, попробуйте за некоторое время до еды установить временную цель "ожидаемый прием пищи" в AAPS или продумайте подходящее время преболюса с эндокринологом. Если гликемия слишком высока после еды и после полного усваивания углеводов, подумайте о снижении углеводного коэффициента ( соотношения инсулин/углеводы) IC с эндокринологом. Если гликемия слишком высока во время усвоении углеводов COB и слишком низка после их полного усвоения, подумайте об увеличении углеводного коэффициента IC и о надлежащем времени преболюса с эндокринологом.
 
 ## Other settings
 
@@ -245,7 +122,7 @@ AAPS по умолчанию строит свой алгоритм отталк
 - протирайте контакты батареи спиртовыми салфетками, чтобы на ней не оставались следы заводской смазки.
 
 - for [Dana R/RS pumps](../CompatiblePumps/DanaRS-Insulin-Pump.md) the startup procedure draws a high current across the battery to purposefully break the passivation film (prevents loss of energy whilst in storage) but it doesn't always work to break it 100%. Либо удалите и заново вставьте батарею 2-3 раза до тех пор, пока на экране помпы заряд батареи не покажет 100%, либо замкните контакты батареи на долю секунды при помощи ключа батареи, чтобы удалить этот налет.
-- see also more tips for [particular types of battery](../CompatiblePumps/Accu-Chek-Combo-Tips-for-Basic-usage.md#battery-type-and-causes-of-short-battery-life)
+- see also more tips for [particular types of battery](#Accu-Chek-Combo-Tips-for-Basic-usage-battery-type-and-causes-of-short-battery-life)
 
 #### Changing reservoirs and cannulas
 
@@ -253,14 +130,14 @@ AAPS по умолчанию строит свой алгоритм отталк
 
 - Нажмите и удерживайте кнопку "Открытый цикл"/"Замкнутый цикл" на вкладке "Главный экран" AAAPS и выберите "Приостановка цикла на 1ч.'
 - Отключите помпу и замените резервуар в соответствии с инструкцией помпы.
-- Заполнить инфузионный набор можно и непосредственно с помпы. In this case use [PRIME/FILL button](../DailyLifeWithAaps/AapsScreens.md#action-tab) in the actions tab just to record the change.
+- Заполнить инфузионный набор можно и непосредственно с помпы. In this case use [PRIME/FILL button](#screens-action-tab) in the actions tab just to record the change.
 - После переподключения помпы запустите цикл долгим нажатием на 'Приостановлено (X мин.)'.
 
-Однако замена катетера происходит не через функцию "первичного заполнения инфузионного набора" на помпе, но заполняет катетер с помощью болюса, который не отражается в истории болюса. Это означает, что текущая временная скорость базала не прерывается. On the Actions (Act) tab, use the [PRIME/FILL button](../DailyLifeWithAaps/AapsScreens.md#action-tab) to set the amount of insulin needed to fill the infusion set and start the priming. Если этого количества недостаточно, повторите заполнение. Вы можете установить кнопки по умолчанию в Настройках > Другое > Заполнить/Инициировать стандартные количества инсулина. В инструкции к инфузионному набору вы найдете объемы единиц для первичного заполнения в зависимости от длины иглы и длины трубки.
+Однако замена катетера происходит не через функцию "первичного заполнения инфузионного набора" на помпе, но заполняет катетер с помощью болюса, который не отражается в истории болюса. Это означает, что текущая временная скорость базала не прерывается. On the Actions (Act) tab, use the [PRIME/FILL button](#screens-action-tab) to set the amount of insulin needed to fill the infusion set and start the priming. Если этого количества недостаточно, повторите заполнение. Вы можете установить кнопки по умолчанию в Настройках > Другое > Заполнить/Инициировать стандартные количества инсулина. В инструкции к инфузионному набору вы найдете объемы единиц для первичного заполнения в зависимости от длины иглы и длины трубки.
 
 ### Wallpaper
 
-You can find the AAPS wallpaper for your phone on the [phones page](../Getting-Started/Phones.md#phone-wallpaper).
+You can find the AAPS wallpaper for your phone on the [phones page](#Phones-phone-wallpaper).
 
 ### Daily usage
 
@@ -268,11 +145,11 @@ You can find the AAPS wallpaper for your phone on the [phones page](../Getting-S
 
 ##### What to do when taking a shower or bath?
 
-Помпу можно снять при приеме душа или ванной. За этот короткий промежуток времени вам может не понадобиться, но вы должны сообщить AAPS о том, что отключились для того, чтобы вычисления IOB были правильными. See [description above](#disconnect-pump).
+Помпу можно снять при приеме душа или ванной. За этот короткий промежуток времени вам может не понадобиться, но вы должны сообщить AAPS о том, что отключились для того, чтобы вычисления IOB были правильными. See [description above](#FAQ-disconnect-pump).
 
 #### Work
 
-В зависимости от вида работы, возможно, вы используете иные методы терапии в рабочие дни. As a looper you should consider a [profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) for your typical working day. Например, профиль больше 100% можно установить, если работа не очень тяжелая (напр. сидя за столом), или меньше 100%, если вы активны и на ногах весь день. You could also consider a high or low temporary target or a [time shift of your profile](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md#time-shift-of-the-circadian-percentage-profile) when working much earlier or later than regular, of if you work different shifts. Также можно создать второй профиль (например, дом' и 'работа') и при необходимости переключаться с профиля на профиль.
+В зависимости от вида работы, возможно, вы используете иные методы терапии в рабочие дни. As a looper you should consider a [profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) for your typical working day. Например, профиль больше 100% можно установить, если работа не очень тяжелая (напр. сидя за столом), или меньше 100%, если вы активны и на ногах весь день. You could also consider a high or low temporary target or a [time shift of your profile](#ProfileSwitch-ProfilePercentage-time-shift-of-the-circadian-percentage-profile) when working much earlier or later than regular, of if you work different shifts. Также можно создать второй профиль (например, дом' и 'работа') и при необходимости переключаться с профиля на профиль.
 
 ### Leisure activities
 
@@ -287,8 +164,8 @@ You can find the AAPS wallpaper for your phone on the [phones page](../Getting-S
 При работе с алгоритмом ИПЖ следует выполнить следующие действия:
 
 - Make a [profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) < 100%.
-- Set an [activity temp target](../DailyLifeWithAaps/TempTargets.md#activity-temp-target) above your standard target.
-- If you are using SMB make sure ["Enable SMB with high temp targets"](../DailyLifeWithAaps/KeyAapsFeatures.md#enable-smb-with-high-temp-targets) and ["Enable SMB always"](../DailyLifeWithAaps/KeyAapsFeatures.md#enable-smb-always) are disabled.
+- Set an [activity temp target](#TempTargets-activity-temp-target) above your standard target.
+- If you are using SMB make sure ["Enable SMB with high temp targets"](#Open-APS-features-enable-smb-with-high-temp-targets) and ["Enable SMB always"](#Open-APS-features-enable-smb-always) are disabled.
 
 Важное значение имеет предварительная и последующая обработка этих настроек. Внесите изменения до занятий спортом и учитывайте эффект наполнения мышц.
 
@@ -298,7 +175,7 @@ If you do sports regularly at the same time (i.e. sports class in your gym) you 
 
 #### Sex
 
-Можете снять помпу для "свободы" но следует проинформировать об этом AAPS, чтобы расчеты активного инсулина IOB были правильными. See [description above](#disconnect-pump).
+Можете снять помпу для "свободы" но следует проинформировать об этом AAPS, чтобы расчеты активного инсулина IOB были правильными. See [description above](#FAQ-disconnect-pump).
 
 #### Drinking alcohol
 
@@ -314,7 +191,7 @@ If you do sports regularly at the same time (i.e. sports class in your gym) you 
 
 ##### How can I loop during the night without mobile and WIFI radiation?
 
-Многие пользователи ночью переводят телефон в режим авиаперелета. If you want the loop to support you when you are sleeping, proceed as follows (this will only work with a local BG-source such as xDrip+ or ['Build your own Dexcom App'](../CompatibleCgms/DexcomG6.md#if-using-g6-with-build-your-own-dexcom-app), it will NOT work if you get the BG-readings via Nightscout):
+Многие пользователи ночью переводят телефон в режим авиаперелета. If you want the loop to support you when you are sleeping, proceed as follows (this will only work with a local BG-source such as xDrip+ or ['Build your own Dexcom App'](#DexcomG6-if-using-g6-with-build-your-own-dexcom-app), it will NOT work if you get the BG-readings via Nightscout):
 
 1. Включите режим авиаперелета на вашем мобильном устройстве.
 2. Подождите, пока режим авиаперелета не будет активирован.
@@ -336,7 +213,7 @@ If you do sports regularly at the same time (i.e. sports class in your gym) you 
 
 #### Hospitalization
 
-Если вы хотите поделиться информацией об AndroidAPS и ИПЖ с врачами, можете распечатать [руководство по AAPS для медработников](../Resources/clinician-guide-to-AndroidAPS.md).
+If you want to share some information about AAPS and DIY looping with your clinicians, you can print out the [guide to AAPS for clinicians](../UsefulLinks/ClinicianGuideToAaps.md).
 
 #### Medical appointment with your endocrinologist
 
@@ -383,7 +260,7 @@ If you do sports regularly at the same time (i.e. sports class in your gym) you 
 
 ### How to reset the password in AAPS v3.x
 
-You find the documentation [here](../Maintenance/Update3_0.md#reset-master-password).
+You find the documentation [here](#Update3_0-reset-master-password).
 
 ### My link/pump/pod is unresponsive (RL/OL/EmaLink…)
 

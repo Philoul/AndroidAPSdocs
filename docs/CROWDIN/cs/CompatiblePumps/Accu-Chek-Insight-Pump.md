@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # Pumpa Accu-Chek Insight
 
 **Tento software je součástí DIY řešení umělé slinivky, nejedná se o výrobek. Před jeho používáním je důležité, abyste prostudovali a pochopili celý systém, včetně toho jak ho používat. Není to něco, co za Vás udělá veškerý management diabetu. Pokud do toho investujete potřebný čas, pomůže Vám dojít k lepším výsledkům při léčbě Vaší cukrovky, a tím zlepšit i kvalitu Vašeho života. Zbytečně nespěchejte, a vytvořte si čas pro učení. Pouze Vy jste zodpovědní za ovládání Vašeho systému.**
@@ -54,7 +60,7 @@ Poznámka: Spojení mezi pumpou a telefonem není permanentní. Spojení bude na
 
 ## Nastavení v AAPS
 
-**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](../SettingUpAaps/Preferences.md#advanced-settings-nsclient)).
+**Note : It is now possible (only with AAPS v2.7.0 and above) to use ‘Always use basal absolute values’ if you want to use Autotune with Insight pump, even if 'sync is enabled' with Nightscout.** (In AAPS go to [Preferences > NSClient > Advanced Settings](#Preferences-advanced-settings-nsclient)).
 
 ![Snímek obrazovky nastavení Insight](../images/Insight_settings.png)
 
@@ -122,7 +128,7 @@ V závislosti na verzi firmwaru vaší pumpy bude Insight krátce vibrovat poka�
 
 * Firmware 1.x: Žádné vibrace z výroby
 * Firmware 2.x: Vibrace nelze vypnout.
-* Firmware 3.x: AAPS vydává bolus potichu. (minimum [version 2.6.1.4](../Maintenance/ReleaseNotes.md#version-2614))
+* Firmware 3.x: AAPS vydává bolus potichu. (minimum [version 2.6.1.4](#Releasenotes-version-2-6-1-4))
 
 Verzi firmwaru lze nalézt v menu.
 
@@ -150,4 +156,4 @@ V tom případě vypněte bluetooth v pumpě i telefonu na 10 sekund a potom jej
 
 ## Změna časových pásem s pumpou Insight
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#insight).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-insight).

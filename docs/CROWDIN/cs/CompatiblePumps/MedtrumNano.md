@@ -1,8 +1,17 @@
+- - -
+orphan: true
+- - -
+
 # Medtrum Nano / 300U
 
 Tyto pokyny slouží ke konfiguraci inzulinové pumpy Medtrum.
 
 This software is part of a DIY artificial pancreas solution and is not a product but requires YOU to read, learn, and understand the system, including how to use it. Jste jediní, kdo nese odpovědnost za to, co s tím uděláte.
+
+```{contents} Table of contents
+:depth: 1
+:local: true
+```
 
 ## Možnosti pumpy s AAPS
 * Podpora všech funkcí smyčky (SMB, TBR atd.)
@@ -50,7 +59,7 @@ Pokud máte pochybnosti, můžete také vybrat možnost „Virtuální pumpa“ 
 
 #### Option 2: The Config Builder
 
-On an existing installation you can select the **Medtrum** pump from the [Config Builder](../SettingUpAaps/ConfigBuilder.md#pump):
+On an existing installation you can select the **Medtrum** pump from the [Config Builder](#Config-Builder-pump):
 
 V levém horním rohu klepněte na **hamburger menu**, vyberte **Konfigurace**\ ➜\ **Pumpa**\ ➜\ **Medtrum**\ klepnutím na **přepínač** s názvem **Medtrum**.
 
@@ -90,8 +99,9 @@ Toto nastavení mění způsob, jakým AAPS zobrazí upozornění na nekritická
     - Nízký stav zásobníku (20 U)
     - Připomenutí expirace patche
 
-Tato varování jsou také zobrazena na obrazovce přehledu Medtrum v části [Aktivní alarmy](#active-alarms).
+In either case these warnings are also shown on the Medtrum overview screen under [Active alarms](#medtrum-active-alarms).
 
+(medtrum-patch-expiration)=
 #### Vypršení platnosti patche
 
 ***Výchozí: Povoleno.***
@@ -104,7 +114,7 @@ Pokud je tato možnost zakázána, patch vás nebude varovat a bude nadále fung
 
 ***Výchozí: 72 hodin.***
 
-Toto nastavení změní čas upozornění na vypršení platnosti, když je povoleno [Vypršení platnosti patche](#patch-expiration), AAPS zobrazí oznámení v nastaveném čase po aktivaci.
+This setting changes the time of the expiration warning, when [Patch Expiration](#medtrum-patch-expiration) is enabled, AAPS will give a notification on the set hour after activation.
 
 #### Hodinové maximum inzulínu
 
@@ -213,6 +223,7 @@ Očistěte pokožku, odstraňte krycí fólie a připevněte patch k tělu. Odst
 
 Stisknutím tlačítka **Další** aktivujte patch.
 
+(medtrum-activate-patch)=
 ##### Aktivovat patch
 
 ![Aktivovat patch](../images/medtrum/activation/ActivatePatch.png)
@@ -257,71 +268,72 @@ Přehled obsahuje informace o aktuálním stavu patche Medtrum. Obsahuje také t
 
 ![Přehled Medtrum](../images/medtrum/Overview.png)
 
-##### Stav BLE:
+### Stav BLE:
 
 Zobrazuje aktuální stav připojení Bluetooth k základně pumpy.
 
-##### Naposledy připojeno:
+### Naposledy připojeno:
 
 Zobrazuje čas posledního připojení pumpy k AAPS.
 
-##### Stav pumpy:
+### Stav pumpy:
 
 Zobrazuje aktuální stav pumpy. Například:
     - AKTIVNÍ : Pumpa je aktivována a funguje normálně
     - ZASTAVENO: Patch není aktivován
 
-##### Typ bazálu:
+### Typ bazálu:
 
 Zobrazuje aktuální typ bazálu.
 
-##### Bazál:
+### Bazál:
 
 Zobrazuje aktuální bazální dávku.
 
-##### Poslední bolus:
+### Poslední bolus:
 
 Zobrazuje poslední vydaný bolus.
 
-##### Aktivní bolus:
+### Aktivní bolus:
 
 Zobrazuje aktivní bolus, který je v současné době vydáván.
 
-##### Aktivní alarmy:
+(medtrum-active-alarms)=
+### Aktivní alarmy:
 
 Zobrazuje všechny aktivní alarmy.
 
-##### Zásobník:
+### Zásobník:
 
 Zobrazuje aktuální úroveň zásobníku.
 
-##### Baterie:
+### Baterie:
 
 Zobrazuje aktuální napětí baterie patche.
 
-##### Typ pumpy:
+### Typ pumpy:
 
 Zobrazuje číslo aktuálního typu pumpy.
 
-##### Verze FW:
+### Verze FW:
 
 Zobrazuje aktuální verzi firmwaru patche.
 
-##### Č. patche:
+### Č. patche:
 
 Zobrazuje pořadové číslo aktivovaného patche. Toto číslo se zvyšuje pokaždé, když je aktivován nový patch.
 
-##### Patch vyprší:
+### Patch vyprší:
 
 Zobrazuje datum a čas, kdy patch vyprší.
 
-##### Obnovit:
+### Obnovit:
 
 Toto tlačítko obnoví stav patche.
 
-##### Vyměnit patch:
+### Vyměnit patch:
 
-Toto tlačítko spustí proces výměny patche. Další informace viz [Aktivace patche](#activate-patch).
+Toto tlačítko spustí proces výměny patche. See [Activate patch](#medtrum-activate-patch) for more information.
 
 ### Resetovat alarmy
 
@@ -330,6 +342,18 @@ Tlačítko alarmu se zobrazí na obrazovce přehledu, když je aktivní alarm, k
 ![Resetovat alarmy](../images/medtrum/ResetAlarms.png)
 
 Stiskněte tlačítko **Resetovat alarmy** k resetování alarmů a obnovení normálního provozu.
+
+## Switching phone, export/import settings
+
+Pokud měníte telefon za nový, je nezbytné, abyste provedli následující kroky:
+* [Export settings](../Maintenance/ExportImportSettings.md) on your old phone
+* Transfer settings from old to new phone, and import them into AAPS
+
+The imported settings file has to be of the same patch session that you are currently using, otherwise the patch will not connect.
+
+After a settings import the driver will sync history with the pump, this can take a while depending on the age of the settings file.
+
+From AAPS version 3.3.0.0 onwards, the sync progress is shown in the the home screen: ![Sync progress](../images/medtrum/SyncProgress.png)
 
 ## Troubleshooting
 

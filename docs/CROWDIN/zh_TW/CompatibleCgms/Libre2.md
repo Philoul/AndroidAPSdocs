@@ -1,14 +1,18 @@
-# Freestyle Libre 2
+- - -
+orphan: true
+- - -
+
+# Freestyle Libre 2 和 2+
 
 即使使用官方應用程式，Freestyle Libre 2 傳感器現在也是一款真正的連續血糖監測儀（CGM）。 然而，LibreLink 仍無法將資料傳送至 AAPS。 有幾種解決方案可以將其與 AAPS 搭配使用。
 
 ## 1. 使用藍牙橋接器和 OOP
 
-可以使用藍牙傳輸器與 Libre 2（EU）及一款 [進程外算法](https://drive.google.com/file/d/1f1VHW2I8w7Xe3kSQqdaY3kihPLs47ILS/view) 應用程式。 你可以像使用 [Libre 1](./Libre1.md) 一樣每 5 分鐘接收一次血糖讀取值。
+藍牙發射器可用於 Libre 2（EU）或 2+（EU），以及一個 [非處理演算法](https://drive.google.com/file/d/1f1VHW2I8w7Xe3kSQqdaY3kihPLs47ILS/view) 應用程式。 你可以像使用 [Libre 1](./Libre1.md) 一樣每 5 分鐘接收一次血糖讀取值。
 
 檢查你要使用的橋接器和應用程式是否與你的傳感器及 xDrip+ 相容（舊版 Blucon 及近期的版本不支援，Miaomiao 1 需要韌體 39，Miaomiao 2 則需要韌體 7）。
 
-Libre2 OOP 所生成的讀取值與原始讀取器或透過 NFC 掃描的 LibreLink 應用程式的讀取值相同。 AAPS 與 Libre 2 的讀取值會經過 10 至 25 分鐘的平滑處理，以避免某些讀取值的跳動。 請參閱以下內容[讀取值平滑化及原始讀取值](#value-smoothing--raw-values)。 OOP 每 5 分鐘生成一次讀取值，並取最近 5 分鐘的平均值。 因此，這些血糖讀取值可能不如其他方法平滑，但他們與原始讀取器的讀取值一致，並且更快速地反應“真實”血糖讀取值。 如果你嘗試使用 OOP 進行循環，請在 xDrip+ 中啟用所有平滑設定。
+Libre2 OOP 所生成的讀取值與原始讀取器或透過 NFC 掃描的 LibreLink 應用程式的讀取值相同。 AAPS 與 Libre 2 的讀取值會經過 10 至 25 分鐘的平滑處理，以避免某些讀取值的跳動。 請參閱以下內容[讀取值平滑化及原始讀取值](#libre2-value-smoothing-raw-values)。 OOP 每 5 分鐘生成一次讀取值，並取最近 5 分鐘的平均值。 因此，這些血糖讀取值可能不如其他方法平滑，但他們與原始讀取器的讀取值一致，並且更快速地反應“真實”血糖讀取值。 如果你嘗試使用 OOP 進行循環，請在 xDrip+ 中啟用所有平滑設定。
 
 有幾個使用藍牙傳輸器的理由：
 
@@ -28,13 +32,14 @@ Libre2 OOP 所生成的讀取值與原始讀取器或透過 NFC 掃描的 LibreL
 
 ```{admonition} Libre 2 EU only
 :class: warning
-xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。  
+xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
+僅支持 Libre 2 和 2+ **EU** 型號。
 ```
 
 - 請按照 [這些指示](https://www.minimallooper.com/post/how-to-setup-freestyle-libre-2-and-oop2-to-use-a-native-bluetooth-connection-in-xdrip) 設定 xDrip+，但請確保下載 [此最新版 OOP2](https://drive.google.com/file/d/1f1VHW2I8w7Xe3kSQqdaY3kihPLs47ILS/view)，因為文件中的版本已過時。
 - 按照[xDrip+ 設定頁面](../CompatibleCgms/xDrip.md)上的設置說明進行操作。
 
--   在[組態建置工具的血糖來源](../SettingUpAaps/ConfigBuilder.md#bg-source)中選擇 xDrip+。
+-   在[組態建置工具的血糖來源](#Config-Builder-bg-source)中選擇 xDrip+。
 
 ## 3. 使用 Diabox
 
@@ -42,7 +47,7 @@ xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
 
 ![Diabox](../images/Diabox.png)
 
-- 在[組態建置工具的血糖來源](../SettingUpAaps/ConfigBuilder.md#bg-source)中選擇 xDrip+。
+- 在[組態建置工具的血糖來源](#Config-Builder-bg-source)中選擇 xDrip+。
 
 ## 4. 使用 Juggluco
 
@@ -52,15 +57,16 @@ xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
 
 ![Juggluco 廣播至 AAPS](../images/Juggluco_AAPS.png)
 
-- 在[組態建置工具的血糖來源](../SettingUpAaps/ConfigBuilder.md#bg-source)中選擇 xDrip+。
+- 在[組態建置工具的血糖來源](#Config-Builder-bg-source)中選擇 xDrip+。
 
 ```{admonition} Use with xDrip+
 :class: note
 你可以將 Juggluco 設置為廣播到 xDrip+，使用修補過的 Libre 廣播（你應該停用 xDrip+ 廣播），以進行校準（請見此處）並避免每分鐘讀取值被發送到 AAPS。  
 ![Juggluco 廣播到 xDrip+](../images/Juggluco_xDrip.png)  
-然後，你需要將 xDrip+ 數據來源設置為 Libre 2 修補應用程式，以從 Juggluco 接收數據。  
+然後，你需要將 xDrip+ 資料來源設置為 Libre 2 修補應用程式，以從 Juggluco 接收資料。  
 ```
 
+(libre2-patched-librelink-app-with-xdrip)=
 ## 5. 使用修補版 LibreLink 應用程式與 xDrip+ 搭配使用
 
 ```{admonition} Libre 2 EU only
@@ -145,7 +151,7 @@ xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
 血糖讀取值會透過 xDrip+ 應用程式接收到智慧型手機上。
 
 -   除非你需要最新功能，否則可以安全下載[最新 APK（穩定版）](https://xdrip-plus-updates.appspot.com/stable/xdrip-plus-latest.apk)，在這種情況下，你應該使用最新的[Nightly Snapshot](https://github.com/NightscoutFoundation/xDrip/releases)。
--   使用 [修補版應用程式資料來源](../CompatibleCgms/xDrip.md#libre-2-patched-app)設定 xDrip+。
+-   使用 [修補版應用程式資料來源](#xdrip-libre2-patched-app)設定 xDrip+。
 -   按照[xDrip+ 設定頁面](../CompatibleCgms/xDrip.md)上的設置說明進行操作。
 
 ### 步驟 4：啟動傳感器
@@ -164,7 +170,7 @@ xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
 
 ![xDrip+血糖來源](../images/ConfBuild_BG_xDrip.png)
 
--   如果 AAPS 在手機處於飛行模式時無法接收血糖值，請參閱[xDrip+ 設定頁面](./xDrip.md#identify-receiver)，使用「識別接收器」。
+-   如果 AAPS 在手機處於飛航模式時未接收到血糖 值，請使用「識別接收器」，如在 [xDrip+ 設定頁面](#xdrip-identify-receiver) 所述。
 
 目前，將 Libre 2 作為血糖來源時，無法在 SMB 演算法中啟用「始終啟用 SMB」和「碳水後啟用 SMB」功能。 Libre 2 的血糖值不夠平滑，無法安全使用。 請參見 [平滑血糖資料](../CompatibleCgms/SmoothingBloodGlucoseData.md) 獲得更多詳情。
 
@@ -175,6 +181,7 @@ xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
 
 大多數手機的連線性良好，除非是華為手機。 如果手機在與傳感器相對的口袋中或在戶外時，連線可能會中斷。 請將手機佩戴在傳感器所在的一側。 在室內，藍牙訊號透過反射傳播時應該不會有問題。 如果你遇到連線問題，請嘗試其他手機。 將傳感器的內部藍牙天線朝下設置也可能有所幫助。 在安裝傳感器時，應將應用器上的縫隙朝下。
 
+(libre2-value-smoothing-raw-values)=
 #### 讀取值平滑化與原始值
 
 技術上來說，目前的血糖值每分鐘會傳送到 xDrip+。 加權平均濾波器預設會計算最近 25 分鐘內的平滑資料。 你可以在 NFC 掃描功能選單中更改此時間段。
@@ -215,14 +222,15 @@ xDrip+ 不支援直接連接到 Libre 2 美國和澳洲版本。
 
 Libre2 傳感器內部包含合理性檢查，用於偵測不正確的傳感器數值。 傳感器在手臂上移動或稍微抬起，數值可能開始波動。 為了安全起見，Libre2 傳感器會自動關閉。 不幸的是，當使用應用程式掃描時，會進行額外的檢查。 應用程式甚至可能停用正常的傳感器。 目前內部檢查過於嚴格。 避免使用其他手機掃描傳感器，以降低意外停用傳感器的風險。
 
+(Libre2-best-practices-for-calibrating-a-libre-2-sensor)=
 # Libre 2 傳感器校正最佳實踐
 
 為了獲得最佳的 Libre 2 傳感器校正效果，你應遵循一些「規則」。 這些規則適用於處理 Libre 2 資料的軟體組合（例如修補版 Libre 應用程式、OOP2 等）。
 
 1.  最重要的規則是在血糖平穩至少 15 分鐘時才校正傳感器。 最近三次讀取值的變化不應超過 10 mg/dL（在 15 分鐘內，而非每次讀取值間）。 由於 Libre 2 並不是測量你的血糖值，而是測量你的組織液葡萄糖值，因此在血糖上升或下降時會有一些延遲。 這種延遲可能導致在不利情況下出現過大的校正偏差，即使血糖值的上升/下降幅度並不大。 因此，盡可能避免在血糖上升或下降時進行校正。 → 如果你必須在血糖未平穩時添加校正（例如在啟動新傳感器時），建議儘早移除該校正，並在血糖平穩時添加新的校正。
 2.  其實，當你遵循規則 1 時，這一點會自動被考慮，但為了保險起見：在進行比較測量時，你的血糖值也應平穩至少 15 分鐘。 避免在血糖上升或下降時進行比較測量。 重要提示：你仍然可以隨時進行血糖測量，但不要在血糖上升或下降時將結果用於校正！
-3.  由於在平穩狀態下校正傳感器是個很好的起點，建議僅在你的目標範圍內校正傳感器，例如 70 mg/dL 至 160 mg/dL。 Libre 2 傳感器並未優化用於處理像 50 mg/dL 到 350 mg/dL 這樣的大範圍讀取值（至少在非線性情況下），因此盡量僅在你所需的範圍內進行校正。 → 接受你的校正範圍外的值無法完美匹配血糖水平的事實。
+3.  由於在平穩狀態下校正傳感器是個很好的起點，建議僅在你的目標範圍內校正傳感器，例如 70 mg/dL 至 160 mg/dL。 Libre 2 傳感器並未優化用於處理像 50 mg/dL 到 350 mg/dL 這樣的大範圍讀取值（至少在非線性情況下），因此盡量僅在你所需的範圍內進行校正。 → 接受你的校正範圍外的值無法完美匹配血糖數值的事實。
 4.  不要過於頻繁地校正。 過於頻繁地校正傳感器通常會導致更差的結果。 當傳感器在平穩狀態下提供良好結果時，請不要再添加新的校正，因為這並不會帶來任何實際效果。 重新檢查狀態每 3-5 天一次就足夠了（當然，仍然是在平穩狀態下）。
 5.  避免在不需要時進行校正。 這聽起來可能很奇怪，但當血糖與組織液葡萄糖的差異只有±10 mg/dL 時，不建議添加新的校正（例如：血糖值 95，Libre 傳感器顯示 100 -> 不要添加 95，血糖值 95，Libre 傳感器顯示 115 -> 添加 95 進行校正）。
 
-一些一般性說明：啟動新傳感器後以及傳感器即將到期時，進行比較測量比每 3-5 天一次的建議更頻繁地進行更有意義。 對於新傳感器和舊傳感器來說，原始值更有可能發生變化，因此需要重新校正。 有時候，傳感器可能無法提供有效的數值。 最有可能的情況是傳感器的讀取值遠低於實際血糖水平（例如，傳感器讀取值：50 mg/dL，血糖值：130 mg/dL），即使經過校正後也是如此。 如果是這種情況，則無法校正該傳感器以報告有效結果。 例如： 當使用修補版 Libre 應用程式時，你可以添加最大 +20 mg/dL 的偏移值。 如果你遇到傳感器提供的值過低，不要猶豫，更換傳感器，因為他不會變得更好。 即使這可能是傳感器故障，但如果經常遇到讀取值過低的情況，請嘗試更換傳感器的位置。 即使在官方推薦的區域（上臂），某些位置可能也無法提供有效資料。 這是一種嘗試錯誤的過程，找到適合你的區域。
+一些一般性說明：啟動新傳感器後以及傳感器即將到期時，進行比較測量比每 3-5 天一次的建議更頻繁地進行更有意義。 對於新傳感器和舊傳感器來說，原始值更有可能發生變化，因此需要重新校正。 有時候，傳感器可能無法提供有效的數值。 最有可能的情況是傳感器的讀取值遠低於實際血糖數值（例如，傳感器讀取值：50 mg/dL，血糖值：130 mg/dL），即使經過校正後也是如此。 如果是這種情況，則無法校正該傳感器以報告有效結果。 例如： 當使用修補版 Libre 應用程式時，你可以添加最大 +20 mg/dL 的偏移值。 如果你遇到傳感器提供的值過低，不要猶豫，更換傳感器，因為他不會變得更好。 即使這可能是傳感器故障，但如果經常遇到讀取值過低的情況，請嘗試更換傳感器的位置。 即使在官方推薦的區域（上臂），某些位置可能也無法提供有效資料。 這是一種嘗試錯誤的過程，找到適合你的區域。

@@ -1,8 +1,17 @@
+- - -
+orphan: true
+- - -
+
 # Medtrum Nano / 300U
 
 Diese Anleitung beschreibt die Konfiguration der Medtrum Insulinpumpe.
 
 Diese Software ist Teil einer DIY-Lösung (Do It Yourself = Eigenbau) und kein kommerzielles Produkt. Daher bist DU gefordert. DU musst lesen, lernen und verstehen, was das System macht und wie du es bedienst. Du bist ganz alleine dafür verantwortlich, was Du mit dem System machst.
+
+```{contents} Table of contents
+:depth: 1
+:local: true
+```
 
 ## Funktionalitäten bei der Nutzung mit AAPS
 * Alle Loop-Funktionen werden unterstützt (SMB, TBR usw.)
@@ -50,13 +59,13 @@ Falls Du Dir nicht sicher bist, kannst Du auch zunächst die „Virtuelle Pumpe�
 
 #### Option 2: Der Konfigurations-Generator
 
-On an existing installation you can select the **Medtrum** pump from the [Config Builder](../SettingUpAaps/ConfigBuilder.md#pump):
+On an existing installation you can select the **Medtrum** pump from the [Config Builder](#Config-Builder-pump):
 
 Das **Hamburger-Menü** in der oberen linken Ecke antippen und **Konfiguration**\ ➜\ **Pumpe**\ ➜\ **Medtrum**\ durch **Aktivieren** des Optionsfelds vor dem Namen **Medtrum** auswählen.
 
 Wenn Du das **Kontrollkästchen** neben dem **Zahnrad** auswählst, wird die Medtrum-Übersicht als Registerkarte **MEDTRUM**> in der AAPS-Menüleiste sichtbar werden. Wenn Du dieses Kästchen aktivierst, hast Du beim Nutzen von AAPS einen einfachen Zugriff auf die Medtrum-Befehle und es wird deshalb sehr empfohlen.
 
-![Konfigurations-Generator](../images/medtrum/ConfigBuilder.png)
+![Konfiguration (Konfigurations-Generator)](../images/medtrum/ConfigBuilder.png)
 
 ### Schritt 2: Ändern der Medtrum-Einstellungen
 
@@ -90,8 +99,9 @@ Diese Einstellungen ändern die Art und Weise, wie AAPS Benachrichtigung bei nic
     - Reservoir fast leer (20 IE)
     - Patch-Ablaufwarnung
 
-In jedem Fall werden diese Warnungen auch auf der Medtrum-Übersichtsseite unter [Aktive Alarme](#active-alarms) angezeigt.
+In either case these warnings are also shown on the Medtrum overview screen under [Active alarms](#medtrum-active-alarms).
 
+(medtrum-patch-expiration)=
 #### Patch Ablaufdatum
 
 ***Voreingestellt: Aktiviert.***
@@ -104,7 +114,7 @@ Wenn diese Einstellung deaktiviert ist, wird der Patch keine Warnung abgeben und
 
 ***Voreingestellt: 72 Stunden.***
 
-Diese Einstellung ändert, wenn das [Patch Ablaufdatum](#patch-expiration) aktiviert ist, den Zeitpunkt (in Stunden nach der Aktivierung) zu dem AAPS eine Benachrichtigung anzeigen wird.
+This setting changes the time of the expiration warning, when [Patch Expiration](#medtrum-patch-expiration) is enabled, AAPS will give a notification on the set hour after activation.
 
 #### Stündliches Maximum Insulin
 
@@ -213,6 +223,7 @@ Reinige die Haut, entferne alle Aufkleber und befestige den Patch an Deinem Kör
 
 Drücke **Weiter**, um den Patch zu aktivieren.
 
+(medtrum-activate-patch)=
 ##### Patch aktivieren
 
 ![Patch aktivieren](../images/medtrum/activation/ActivatePatch.png)
@@ -257,71 +268,72 @@ Die Übersicht enthält den aktuellen Status des Medtrum Patches. Sie enthält a
 
 ![Medtrum-Übersicht](../images/medtrum/Overview.png)
 
-##### BLE Status:
+### BLE Status:
 
 Zeigt den aktuellen Status der Bluetooth-Verbindung zur Pumpenbasis an.
 
-##### Zuletzt verbunden:
+### Zuletzt verbunden:
 
 Zeigt den Zeitpunkt, an dem die Pumpenbasis das letzte Mal mit AAPS verbunden war, an.
 
-##### Pumpenstatus:
+### Pumpenstatus:
 
 Dies zeigt den aktuellen Zustand der Pumpe. Zum Beispiel:
     - ACTIVE: Die Pumpe ist aktiviert und läuft normal
     - STOPPED: Der Patch ist nicht aktiviert
 
-##### Basaltyp:
+### Basaltyp:
 
 Das zeigt den aktuellen Basaltyp an.
 
-##### Basalrate:
+### Basalrate:
 
 Dies zeigt die aktuelle Basalrate an.
 
-##### Letzter Bolus:
+### Letzter Bolus:
 
 Dies zeigt den letzten abgegebenen Bolus an.
 
-##### Active bolus (Aktiver Bolus):
+### Active bolus (Aktiver Bolus):
 
 Dies zeigt den derzeit abgegebenen (laufenden) Bolus an.
 
-##### Aktive Alarme:
+(medtrum-active-alarms)=
+### Aktive Alarme:
 
 Dies zeigt alle derzeit aktiven Alarme an.
 
-##### Reservoir:
+### Reservoir:
 
 Dies zeigt den aktuellen Reservoir-Stand an.
 
-##### Batterie:
+### Batterie:
 
 Dies zeigt die aktuelle Batterie-Spannung des Patches an.
 
-##### Pumpentyp:
+### Pumpentyp:
 
 Zeigt die aktuelle Pumpentyp-Nummer an.
 
-##### FW-Version:
+### FW-Version:
 
 Dies zeigt die aktuelle Firmware-Version des Patches an.
 
-##### Patch Nr.:
+### Patch Nr.:
 
 Dies zeigt die laufende Nummer des aktivierten Patches an. Diese Nummer wird jedes Mal um eins erhöht, wenn ein neuer Patch aktiviert wird.
 
-##### Patch läuft ab:
+### Patch läuft ab:
 
 Hier wird das Datum und die Uhrzeit angezeigt, an dem der Patch ablaufen wird.
 
-##### Aktualisieren:
+### Aktualisieren:
 
 Diese Schaltfläche aktualisiert den Patch-Status.
 
-##### Wechsele Patch:
+### Wechsele Patch:
 
-Diese Schaltfläche startet den Prozess zum Wechseln des Patches. Weitere Informationen findest Du unter [Patch aktivieren](#activate-patch).
+Diese Schaltfläche startet den Prozess zum Wechseln des Patches. See [Activate patch](#medtrum-activate-patch) for more information.
 
 ### Alarme zurücksetzen
 
@@ -330,6 +342,18 @@ Die Alarmtaste wird auf der Übersicht angezeigt, wenn es einen aktiven Alarm, d
 ![Alarme zurücksetzen](../images/medtrum/ResetAlarms.png)
 
 Tippe auf **Alarme zurücksetzen**, um die Alarme zurückzusetzen und den normalen Betrieb fortzusetzen.
+
+## Switching phone, export/import settings
+
+Falls Du das Smartphone wechselst, sind die folgenden Schritte erforderlich:
+* [Export settings](../Maintenance/ExportImportSettings.md) on your old phone
+* Transfer settings from old to new phone, and import them into AAPS
+
+The imported settings file has to be of the same patch session that you are currently using, otherwise the patch will not connect.
+
+After a settings import the driver will sync history with the pump, this can take a while depending on the age of the settings file.
+
+From AAPS version 3.3.0.0 onwards, the sync progress is shown in the the home screen: ![Sync progress](../images/medtrum/SyncProgress.png)
 
 ## Troubleshooting
 

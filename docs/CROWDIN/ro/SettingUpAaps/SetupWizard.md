@@ -20,9 +20,7 @@ So, please take your time in configuring your loop, the benefits of a well-runni
 :class: note
 If there is an error in the documentation or you have a better idea for how something can be explained, you can ask for help from the community as explained at [Connect with other users](../GettingHelp/WhereCanIGetHelp.md).
 ```
-
 ## Step-wise guide to the AAPS Setup Wizard
-
 ### Welcome message
 
 This is just the welcome message which you can skip with the "NEXT" button:
@@ -73,6 +71,7 @@ Please click the "ASK FOR PERMISSION" button:
 
 ![image](../images/setup-wizard/Screenshot_20231202_125813.png)
 
+
 Select the "AAPS" app:
 
 ![image](../images/setup-wizard/Screenshot_20231202_125833.png)
@@ -121,6 +120,7 @@ Click "OK" and then the "NEXT" button:
 
 ![image](../images/setup-wizard/Screenshot_20231202_130031.png)
 
+
 ### Parola principală
 
 As the configuration of **AAPS** contains some sensitive data (_e.g._ API_KEY for accessing your Nightscout server) it is encrypted by a password you can set here.
@@ -130,6 +130,7 @@ The second sentence is very important, please **DO NOT LOSE YOUR MASTER PASSWORD
 After filling in the password twice, please click the "NEXT" button:
 
 ![image](../images/setup-wizard/Screenshot_20231202_130122.png)
+
 
 ### Fabric upload
 
@@ -142,11 +143,12 @@ It helps the developers to better understand your usage of the app, and informs 
 They get:
 
 1. The information that the app crashed, which they would not otherwise know since in their own set-up everything works fine and
-2. In the send data (crash information), there is information about the circumstances under which the crash happened, and what kind of configuration is being used.
+1. In the send data (crash information), there is information about the circumstances under which the crash happened, and what kind of configuration is being used.
 
 So it helps the developers to improve the app.
 
 Please enable the "Fabric Upload" by sliding the slider to the right:
+
 
 ![image](../images/setup-wizard/Screenshot_20231202_130136.png)
 
@@ -170,7 +172,7 @@ Please select if your glucose values are in mg/dl or mmol/L and then please clic
 
 ### Display settings
 
-Here you select the range for the sensor glucose display, which will be shown as "in range" between the values you set. You can leave it as the default values for now, and edit it later.
+ Here you select the range for the sensor glucose display, which will be shown as "in range" between the values you set. You can leave it as the default values for now, and edit it later.
 
 The values you choose only affect the graphical presentation of the diagram, and nothing else.
 
@@ -182,6 +184,7 @@ Please press the "NEXT" button:
 
 ![image](../images/setup-wizard/Screenshot_20231202_135853.png)
 
+(SetupWizard-synchronization-with-the-reporting-server-and-more)=
 ### Synchronization with the reporting server and more
 
 Here you are configuring the data upload to your reporting server.
@@ -194,13 +197,13 @@ If you select an item here on the left tick box, on the right you can then ticki
 
 In this example we select Nightscout as reporting server, and will configure it.
 
-```{admonition} Make sure to choose the correct **NSClient** version for your needs! 
+```{admonition}  Make sure to choose the correct **NSClient** version for your needs! 
 :class: Note
-Click [here](./Releasenotes.md) for the release notes of **AAPS** 3.2.0.0 which explain the differences between the top option **NSClient** (this is "v1", although it is not explicitly labelled) and the second option, **NSClient v3**. 
+
+Click [here](#version3200) for the release notes of **AAPS** 3.2.0.0 which explain the differences between the top option **NSClient** (this is "v1", although it is not explicitly labelled) and the second option, **NSClient v3**.
 
 Nightscout users should choose **NSClient v3**, unless you want to monitor or send remote treatments (_e.g._ as a parent or caregiver using **AAPS** for a child) through Nightscout, in which case, choose the first option "**NSClient**" until further notice. 
 ```
-
 For Tidepool it is even simpler, as you only need your personal login information.
 
 After making your selection, please press the cogwheel button next to the item you selected :
@@ -232,6 +235,7 @@ Please select "Upload data to NS" if you already configured nightscout in the pr
 If you have stored profiles on Nightscout and want to download them to **AAPS**, enable "Receive profile store":
 
 ![image](../images/setup-wizard/Screenshot_20231202_141219.png)
+
 
 Go back to the previous screen and select "Alarm option":
 
@@ -304,19 +308,23 @@ Press "NEXT" to go to the next screen:
 
 ![image](../images/setup-wizard/Screenshot_20231202_141840.png)
 
+
 ### Blood sugar source
 
 Select the BG source you are using. Please read the documentation for your [BG source](../Getting-Started/CompatiblesCgms.md).
 
 As there are several options available, we don't explain the configuration for all of them here. We are using Dexcom G6 with the BYODA app in our example here:
 
+
 ![image](../images/setup-wizard/Screenshot_20231202_141912.png)
+
 
 If you are using Dexcom G6 with BYODA, enable the visibility in the top level menu by clicking the tickbox on the right side.
 
 After making your selection, press "NEXT" to go to the next screen:
 
 ![image](../images/setup-wizard/Screenshot_20231202_141925.png)
+
 
 If you are using Dexcom G6 with BYODA, click on the cogwheel button to access the settings for BYODA.
 
@@ -326,11 +334,12 @@ Go back and press "NEXT" to go to the next screen:
 
 ![image](../images/setup-wizard/Screenshot_20231202_141958.png)
 
+(setup-wizard-profile)=
 ### Profile
 
 Now we are entering a very important part of the Setup Wizard.
 
-Please read the documentation about profiles before you try to enter your profile details on the following screen.
+Please read the documentation about [profiles](../SettingUpAaps/YourAapsProfile.md) before you try to enter your profile details on the following screen.
 
 ```{admonition} Working profile required - no exceptions here !
 :class: danger
@@ -345,6 +354,7 @@ Press "NEXT" to go to the next screen. Enter a "profile name":
 
 ![image](../images/setup-wizard/Screenshot_20231202_142027.png)
 
+
 You can have several profiles in the long-term if needed. We only create one here.
 
 ```{admonition} Profile only for tutorial - not for your usage
@@ -356,21 +366,23 @@ It is not intended to be an accurate profile or something very well optimised, b
 Don't use it for actually looping!
 ```
 
-Enter your Duration of insulin Action (DIA) in hours. Then press "IC":
+Enter your [Duration of insulin Action (DIA)](#your-aaps-profile-duration-of-insulin-action) in hours. Then press "IC":
 
 ![image](../images/setup-wizard/Screenshot_20231202_142143.png)
 
-Enter your IC values:
+Enter your [IC](#your-aaps-profile-insulin-to-carbs-ratio) values:
 
 ![image](../images/setup-wizard/Screenshot_20231202_142903.png)
 
-Press "ISF". Enter your ISF values:
+Press "ISF". Enter your [ISF values](#your-aaps-profile-insulin-sensitivity-factor):
 
 ![image](../images/setup-wizard/Screenshot_20231202_143009.png)
 
-Press "BAS". Enter your basal values:
+
+Press "BAS". Enter your [basal values](#your-aaps-profile-basal-rates):
 
 ![image](../images/setup-wizard/Screenshot_20231202_143623.png)
+
 
 Press "TARG". Enter your blood sugar target values.
 
@@ -386,6 +398,7 @@ Save the profile by clicking on "SAVE":
 
 ![image](../images/setup-wizard/Screenshot_20231202_143724.png)
 
+
 After saving a new buttom "Activate Profile" occurs.
 
 ```{admonition} Several defined but only one active profile
@@ -397,6 +410,10 @@ Press "Activate Profile":
 
 ![image](../images/setup-wizard/Screenshot_20231202_143741.png)
 
+
+
+
+
 The profile switch dialogue appears. In this case let it stay as preset.
 
 ```{admonition} Several defined but only one active profile
@@ -404,9 +421,13 @@ The profile switch dialogue appears. In this case let it stay as preset.
 You will learn later how to use this general dialog to handle situations like illness or sport, where you need to change your profile suitable for the circumstances.
 ```
 
+
 Press "OK":
 
+
 ![image](../images/setup-wizard/Screenshot_20231202_143808.png)
+
+
 
 A confirmation dialog for the profile switch appears.
 
@@ -418,7 +439,10 @@ Your profile has now been set:
 
 ![image](../images/setup-wizard/Screenshot_20231202_143833.png)
 
+
 ### Insulin pump
+
+
 
 Now you are selecting your insulin pump.
 
@@ -434,6 +458,7 @@ Press "NEXT" to go to the next screen.
 
 ![image](../images/setup-wizard/Screenshot_20231202_143909.png)
 
+
 In this case we select "Virtual Pump".
 
 Press "NEXT" to go to the next screen:
@@ -444,7 +469,7 @@ Press "NEXT" to go to the next screen:
 
 Use the OpenAPS SMB algorithm as your APS algorithm. Despite the name the SMB feature of the algorithm is disabled until you are familar with AAPS and already worked through the first objectives. OpenAPS SMB is newer and in general better compared to the OpenAPS AMA anyway.
 
-The reason SMB is disabled in the beginning is because the SMB feature enables faster reaction on blood sugar increase through the Super Micro Bolus instead of increasing the basal rate percentage. As in the begining your profile is in general not as good as after some time of experience the feature is disabled in the begining.
+The reason SMB is disabled in the beginning is because the SMB feature enables faster reaction on blood sugar increase through the Super Micro Bolus instead of increasing the basal rate percentage. As in the beginning your profile is in general not as good as after some time of experience the feature is disabled in the beginning.
 
 ```{admonition} Only use the older algorithm **OpenAPS AMA** if you know what you are doing
 :class: information
@@ -454,6 +479,7 @@ OpenAPS AMA is the most basic algorithm which does not support micro boluses to 
 Press the cogwheel to see the details:
 
 ![image](../images/setup-wizard/Screenshot_20231202_144014.png)
+
 
 Only read the text and change nothing here.
 
@@ -473,7 +499,7 @@ Press "NEXT" to go to the next screen:
 
 ### Detectare sensibilitate
 
-Let "Sensitivity Oref1" the standard for the sensitivty plugins selected.
+Let "Sensitivity Oref1" the standard for the sensitivity plugins selected.
 
 Press "NEXT" to go to the next screen:
 

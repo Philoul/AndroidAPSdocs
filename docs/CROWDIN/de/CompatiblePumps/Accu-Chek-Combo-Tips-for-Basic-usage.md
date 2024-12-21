@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # Accu-Chek Combo Tipps zum Einstieg
 
 **NOTE:** Starting with AAPS version 3.2, a [new Combo driver](../CompatiblePumps/Accu-Chek-Combo-Pump-v2.md) (referred to as "combov2" sometimes) has been added. Der alte Treiber wird auch 'Ruffy-based driver' genannt. Einige Teile dieses Dokuments gelten nur für den alten Treiber. Diese Abschnitte werden entsprechend gekennzeichnet.
@@ -26,7 +32,7 @@
 * Wenn AAPS einen **Pumpe nicht erreichbar**-Alarm auslöst, hebe zuerst die Tastensperre auf und **drücke irgendeine Taste an der Pumpe** (z.B. den "Runter" Button). Sobald das Display der Pumpe sich ausgeschaltet hat, drücke **AKTUALISIEREN** auf dem **Reiter 'Combo'** in AAPS. Meistens funktioniert die Verbindung dann wieder.
 * Wenn das nicht hilft, starte dein Smartphone neu. Nach dem Neustart wird AAPS ebenfalls neu gestartet und es wird eine neue Verbindung zur Pumpe aufgebaut. Solltest Du den alten Treiber verwenden wird 'ruffy' ebenfalls neu gestartet.
 
-* Die Tests haben gezeigt, dass bestimmte Smartphones den Fehler "Pumpe nicht erreichbar" öfter auslösen als andere. [AAPS Smartphones](https://docs.google.com/spreadsheets/d/1gZAsN6f0gv6tkgy9EBsYl0BQNhna0RDqA9QGycAqCQc/edit) zeigt die erfolgreich getesteten Smartphones.
+* Die Tests haben gezeigt, dass bestimmte Smartphones den Fehler "Pumpe nicht erreichbar" öfter auslösen als andere. See [AAPS Phones](#Phones-list-of-tested-phones) for successfully tested smartphones.
 
 ### Ursachen und Folgen von häufigen Kommunikationsfehlern
 

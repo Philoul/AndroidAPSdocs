@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 (Troubleshooting-NSClient-troubleshooting-nsclient)=
 
 # Troubleshooting NSClient
@@ -12,7 +18,7 @@ Go to NSClient tab in AAPS and watch the log. The expected behavior is to receiv
 
 Since AAPS version 2.0, when such behavior is detected, NSClient is paused for 15 minutes and the message "NSClient malfunction" is displayed on the main Overview screen.
 
-* Restart
+* 重新启动
 
 What you should try as a first step is restart both: Nightscout and then phone to see if the issue is permanent
 

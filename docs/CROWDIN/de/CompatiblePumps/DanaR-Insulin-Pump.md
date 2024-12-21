@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # DanaR Insulinpumpe
 
 *Diese Anleitung beschreibt die Konfiguration der App und deiner Pumpe, wenn du die DanaR nutzt. Visit [DanaRS Insulin Pump](./DanaRS-Insulin-Pump.md) if you have the DanaRS launched in 2017 instead.*
@@ -23,4 +29,4 @@
 
 ## Mit der Dana R Pumpe über Zeitzonen hinweg reisen
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

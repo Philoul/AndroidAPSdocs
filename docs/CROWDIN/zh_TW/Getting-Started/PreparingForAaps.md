@@ -28,7 +28,7 @@
 
 一個重要的安全考量是，對於長期血糖升高的人來說，**HbA1c 的快速降低和血糖控制的改善可能會導致永久性損害**。 許多糖尿病患者並不知道這一點，而且並非所有臨床醫生都會提醒患者這個問題。
 
-這種損害可能包括**視力喪失和永久性神經病變（疼痛）**。 透過逐步降低平均血糖水平，可以避免這些損害的發生。 如果你目前的 HbA1c 升高並打算使用**AAPS**（或任何其他閉環系統），_請_在開始之前與你的醫療團隊討論這一潛在風險，並與他們協商逐步降低安全血糖目標的時間表。 你可以在**AAPS**中設置較高的血糖目標（目前，你可以選擇的最高目標是 10.6 mmol/L，你也可以維持一個相對較弱的設定），隨著時間的推移逐漸降低目標。
+這種損害可能包括**視力喪失和永久性神經病變（疼痛）**。 透過逐步降低平均血糖數值，可以避免這些損害的發生。 如果你目前的 HbA1c 升高並打算使用**AAPS**（或任何其他閉環系統），_請_在開始之前與你的醫療團隊討論這一潛在風險，並與他們協商逐步降低安全血糖目標的時間表。 你可以在**AAPS**中設置較高的血糖目標（目前，你可以選擇的最高目標是 10.6 mmol/L，你也可以維持一個相對較弱的設定），隨著時間的推移逐漸降低目標。
 
 #### 我可以多快降低 HbA1c 而不會冒永久性損害的風險？
 
@@ -42,13 +42,14 @@ N.B. 如果你使用不同的 HbA1c 單位（mmol/mol 而非 %），請點擊[�
 
 針對這項研究的一篇[評論](https://academic.oup.com/brain/article/138/1/2/340563)同意為了避免併發症，**目標應是在 3 個月內將 HbA1c 降低不超過 2%**。你可以在[這裡](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6587545/pdf/DOM-21-454.pdf)和[這裡](https://www.mdpi.com/1999-4923/15/7/1791)閱讀其他相關評論。
 
-通常認為，_新診斷的_ 1 型糖尿病患者（通常在診斷時 HbA1c 非常高，在開始胰島素治療之前）可以立即迅速降低 HbA1c，而不會遇到這些風險，因為他們的血糖水平未長期升高。 然而，這仍然是一個需要與你的臨床醫生討論的考慮因素。
+通常認為，_新診斷的_ 1 型糖尿病患者（通常在診斷時 HbA1c 非常高，在開始胰島素治療之前）可以立即迅速降低 HbA1c，而不會遇到這些風險，因為他們的血糖數值未長期升高。 然而，這仍然是一個需要與你的臨床醫生討論的考慮因素。
 
+(PreparingForAaps-no-sglt-2-inhibitors)=
 ### 禁止使用 SGLT-2 抑制劑
 
 ```{admonition} NO SGLT-2 inhibitors
 :class: danger
-SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收。 Gliflozins 會無法預測地降低血糖水平，因此在使用類似 AAPS 的閉環系統時，絕對不能服用這類藥物！ 這會導致酮酸中毒和/或低血糖的重大風險！ 該藥物與降低基礎率以提高血糖水平的系統結合使用尤其危險。 
+SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收。 Gliflozins 會無法預測地降低血糖數值，因此在使用類似 AAPS 的閉環系統時，絕對不能服用這類藥物！ 這會導致酮酸中毒和/或低血糖的重大風險！ 該藥物與降低基礎率以提高血糖數值的系統結合使用尤其危險。 
 
 簡而言之：
 - **範例 1: 低血糖風險**
@@ -105,7 +106,7 @@ SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收�
 
 #### 問題排除
 
-如果你對任何問題感到不確定，請隨時聯繫**AAPS**社區——沒有什麼問題是愚蠢的！ 鼓勵具有不同經驗水平的所有用戶提出問題。 由於**AAPS**用戶眾多，問題的回應時間通常很快。
+如果你對任何問題感到不確定，請隨時聯繫**AAPS**社區——沒有什麼問題是愚蠢的！ 鼓勵具有不同經驗數值的所有用戶提出問題。 由於**AAPS**用戶眾多，問題的回應時間通常很快。
 
 ##### [在 AAPS Facebook 社群上詢問](https://www.facebook.com/groups/AndroidAPSUsers/)
 
@@ -115,13 +116,13 @@ SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收�
 
 
 
-#### [去哪裡尋求幫助](../Where-To-Go-For-Help/Background-reading.md)？
+#### [去哪裡尋求幫助](../UsefulLinks/BackgroundReading.md)？
 
 本節主要在為新用戶提供資源連結，以便獲得幫助，包括由新手和有經驗的用戶組成的社區支援，這些用戶可以幫助解答問題並解決使用 AAPS 時常見的問題。
 
-#### [臨床醫師專區](../Resources/clinician-guide-to-AndroidAPS.md)
+#### [臨床醫師專區](../UsefulLinks/ClinicianGuideToAaps.md)
 
-這是一個[專為臨床醫師設立的專區](../Resources/clinician-guide-to-AndroidAPS.md)，希望了解更多關於 AAPS 及開源人工胰臟技術。 在簡介中還提供了[如何與你的臨床團隊討論 AAPS](./Introduction.md#how-can-i-approach-discussing-aaps-with-my-clinical-team)的指南。
+這是一個[專為臨床醫師設立的專區](../UsefulLinks/ClinicianGuideToAaps.md)，希望了解更多關於 AAPS 及開源人工胰臟技術。 在簡介中還提供了[如何與你的臨床團隊討論 AAPS](#introduction-how-can-i-approach-discussing-aaps-with-my-clinical-team)的指南。
 
 ## 我們要建置和安裝什麼？
 
@@ -138,7 +139,7 @@ SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收�
 
 ### 2) 報告伺服器：NightScout（或 Tidepool）
 
-為了充分利用**AAPS**，你需要設置 Nightscout 伺服器。 你可以自己設置（連線至指導），或者支付小額費用讓人幫你設置受管的 Nightscout 服務（鏈接至 T1 Pal 10.be 等）。 Nightscout 用於收集**AAPS**隨時間推移的資料，並能夠生成詳細的報告，以關聯 CGM 和胰島素模式。 照護者還可以使用 Nightscout 遠端與**AAPS**應用程式通訊，以監控其孩子的糖尿病管理。 這些遠端通訊功能包括即時監控血糖和胰島素水平、遠端注射胰島素（透過發送訊息）以及餐點通知。 試圖將 CGM 資料與幫浦資料分開進行分析，就像駕駛時司機是盲人，乘客在旁描述場景一樣。  從 AAPS 3.2 版開始，也可以使用 Tidepool 作為 Nightscout 的替代方案。
+為了充分利用**AAPS**，你需要設置 Nightscout 伺服器。 你可以自己設置（連線至指導），或者支付小額費用讓人幫你設置受管的 Nightscout 服務（鏈接至 T1 Pal 10.be 等）。 Nightscout 用於收集**AAPS**隨時間推移的資料，並能夠生成詳細的報告，以關聯 CGM 和胰島素模式。 照護者還可以使用 Nightscout 遠端與**AAPS**應用程式通訊，以監控其孩子的糖尿病管理。 這些遠端通訊功能包括即時監控血糖和胰島素數值、遠端注射胰島素（透過發送訊息）以及餐點通知。 試圖將 CGM 資料與幫浦資料分開進行分析，就像駕駛時司機是盲人，乘客在旁描述場景一樣。  從 AAPS 3.2 版開始，也可以使用 Tidepool 作為 Nightscout 的替代方案。
 
 ### 3) CGM 傳感器應用程式
 
@@ -150,7 +151,7 @@ SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收�
 
 **Nightscout**和**AAPS**必須大約每年更新一次，隨著改進版本的發佈。 在某些情況下，更新可以延後，但在其他情況下，更新被強烈建議或視為安全的重要措施。 這些更新的通知將在 Facebook 群組和 Discord 伺服器上發佈。 發佈說明將明確說明具體情況。 在更新時，可能會有許多人與你提出類似問題，你將獲得支援來進行更新。
 
-(preparing-how-long-will-it-take?)=
+(preparing-how-long-will-it-take)=
 ## 設置所有內容需要多長時間？
 
 如前所述，使用**AAPS**更像是一段旅程，需要你投入個人時間。 這不是一次性的設置。 關於建立建置**AAPS**、安裝和配置**AAPS**和**CGM**軟體，到從開放循環進入混合閉環循環的過程，大約需要 4 到 6 個月。 因此建議您優先建立 **AAPS** 應用程式並儘快完成早期目標，即使您仍然在使用其他胰島素輸送系統（您可以使用虛擬幫浦到達目標 5）。
@@ -203,21 +204,16 @@ SGLT-2 抑制劑，也稱為 gliflozins，抑制腎臟對葡萄糖的再吸收�
 
 ### 技術性
 
-本文件主要在將技術專業知識的需求降到最低。 你將需要使用電腦在 Android Studio 中建置 **AAPS** 應用程式（逐步指導）。 你還需要在公共雲端上設定一個伺服器，配置幾個 Android 手機應用程式，並發展糖尿病管理的專業知識。 這可以透過逐步行動、保持耐心並從 **AAPS** 社群中獲得幫助來實現。 如果你已經能夠瀏覽互聯網、管理自己的 Gmail 郵件並保持電腦更新，那麼建置 **AAPS** 是一項可行的任務。 只需花點時間。
+本文件主要在將技術專業知識的需求降到最低。 你將需要使用電腦在 Android Studio 中建置 **AAPS** 應用程式（逐步指導）。 你還需要在公共雲端上設定一個伺服器，配置幾個 Android 手機應用程式，並發展糖尿病管理的專業知識。 這可以透過逐步行動、保持耐心並從 **AAPS** 社群中獲得幫助來實現。 如果你已經能夠瀏覽網際網路、管理自己的 Gmail 郵件並保持電腦更新，那麼建置 **AAPS** 是一項可行的任務。 只需花點時間。
 
 ### 智慧型手機
 
 #### AAPS 與 Android 版本
-目前版本的 **AAPS**（3.2）需要使用 Google **Android 9.0 或更高版本** 的 Android 智慧型手機。 如果你打算購買一部新手機，截至 2024 年 7 月，建議選擇 Android 13。 用戶強烈建議出於安全原因保持 **AAPS** 的最新版本，不過對於無法使用 Android 9.0 或更新設備的用戶，較早版本的 **AAPS** 仍然可用於舊版 Android，例如 [Android 8](https://github.com/nightscout/AndroidAPS/releases/tag/2.8.2.1) 和 [Android 7](https://github.com/nightscout/AndroidAPS/releases/tag/2.6.2)，可以從過去的版本中找到（查看舊版本的發行說明）。
+
+目前版本的 **AAPS**（3.2）需要使用 Google **Android 9.0 或更高版本** 的 Android 智慧型手機。 下一個 **AAPS** 版本（3.3）將需要 **Android 11.0 或更高版本**。 如果你考慮購買新手機 (截至2024年7月)，建議選擇 Android 13。<br/> 截至2024年11月，幾位用戶反映 Android 15 的藍牙連線存在問題。 如果你使用 Omnipod Dash 或 Dexcom G7，你可能希望延遲更新至 Android 15。 請查看 [Facebook 或 Discord](../GettingHelp/WhereCanIGetHelp.md) 以獲取此主題的最新更新。<br/> 強烈建議使用者為了安全原因，保持 **AAPS** 的版本為最新。 然而，對於無法使用 Android 11.0 或更新版本的使用者，早期版本的 **AAPS** 仍然可與舊版 Android 相容，詳情請見： [版本說明](#maintenance-android-version-aaps-version)。
 
 #### 智慧型手機型號選擇
-你選購的具體型號取決於所需的功能。 這裡有兩個關於相容的[智慧型手機](https://docs.google.com/spreadsheets/d/1zO-Vf3wv0jji5Gflk6pe48oi348ApF5RvMcI6NG5TnY/edit#gid=2097219952)和[智慧型手機與智慧型手錶](https://docs.google.com/spreadsheets/d/1gZAsN6f0gv6tkgy9EBsYl0BQNhna0RDqA9QGycAqCQc/edit#gid=698881435)的歷史電子表格。 由於可能的型號眾多，這些電子表格已不再更新，因此我們建議在支援群組（Facebook 或 Discord）中搜尋“手機”或你考慮購買的具體型號。 如果仍需更多資訊，請發佈新帖來詢問。
-
-如欲捐贈仍需測試的智慧型手機或智慧型手錶型號，請發送電子郵件至[donations@androidaps.org](mailto:donations@androidaps.org)。
-
-- [已測試的手機清單](../CompatiblePhones/ListOfTestedPhones.md)
-- [Jelly 設置](../CompatiblePhones/Jelly.md)
-- [華為設定](../CompatiblePhones/Huawei.md)
+你選購的具體型號取決於所需的功能。 你可以在 [手機頁面](../Getting-Started/Phones.md) 上找到推薦與用戶對於可用設置的反饋。
 
 我們鼓勵用戶保持手機 Android 版本的最新狀態，包括安全參數。 然而，如果你是 **AAPS** 的新手，或者不是技術專家，你可能希望等到其他人確認更新是安全的後再進行更新，這可以透過我們的各大論壇確認。
 

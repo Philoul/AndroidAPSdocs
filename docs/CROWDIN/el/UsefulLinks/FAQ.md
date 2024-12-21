@@ -44,7 +44,7 @@ If you don't want your preferences to be easily changed then you can password pr
 
 Εάν αφαιρέσετε την αντλία σας για ντους, κολύμβηση, κολύμπι, σπορ ή άλλες δραστηριότητες θα πρέπει να ενημερώσετε το AAPS ότι δεν χορηγείται ινσουλίνη για να διατηρηθεί η ενεργή σας ινσουλίνη σωστά.
 
-The pump can be disconnected using the Loop Status icon on the [AAPS Home Screen](../DailyLifeWithAaps/AapsScreens.md#loop-status).
+The pump can be disconnected using the Loop Status icon on the [AAPS Home Screen](#AapsScreens-loop-status).
 
 #### Recommendations not only based on one single CGM reading
 
@@ -73,113 +73,6 @@ You can tape it. There are several pre-perforated 'overpatches' for common CGM s
 
 You can fix it. You can also purchase upper arm bracelets that fix the CGM/FGM with a band (search Google, eBay or Amazon).
 
-## AAPS settings
-
-Η λίστα που ακολουθεί έχει ως στόχο να σας βοηθήσει να βελτιστοποιήσετε τις ρυθμίσεις. Σας προτείνουμε να δουλέψετε με τα στοιχεία που αναφέρονται δουλεύοντας από πάνω προς κάτω. Προσπαθήστε να θέσετε σωστά την κάθε ρύθμιση προτού προχωρήσετε στην επόμενη. Δοκιμάστε να κάνετε μικρά βήματα αντί να κάνετε πολλές και μεγάλες αλλαγές μαζικά. Μπορείτε να το χρησιμοποιήσετε το [Autotune](https://autotuneweb.azurewebsites.net/) για να σας καθοδηγήσει, ωστόσο είναι σημαντικό να μην τον ακολουθήσετε στα τυφλά. Μπορεί να μη λειτουργεί σωστά στη δική σας ή και σε ορισμένες άλλες περιπτώσεις. Επίσης, μην ξεχνάτε ότι οι ρυθμίσεις επηρεάζουν η μία την άλλη. Μπορεί να έχετε χρησιμοποιήσει "λάθος" ρυθμίσεις που όμως η λειτουργία τους, σε συνδυασμό με τις άλλες, να είναι εν τέλη σωστή κάτω από συγκεκριμένες συνθήκες. Λόγω αυτών είναι σημαντικό να εξετάσετε μία προς μία τις ρυθμίσεις και να ελέγξετε ότι λειτουργούν όπως θα θέλατε σε διάφορες περιπτώσεις.
-
-### Duration of insulin activity (DIA)
-
-#### Description & testing
-
-Η διάρκεια του χρόνου που ινσουλίνη διασπάται τελείως.
-
-Αυτό είναι συχνά πολύ μικρό. Οι περισσότεροι άνθρωποι χρειάζονται τουλάχιστον 5 ώρες, πιθανόν 6 ή και 7 ώρες.
-
-(FAQ-impact)=
-
-#### Impact
-
-Μικρή τιμή στη διάρκεια δράσης της ινσουλινης μπορεί να οδηγήσει σε χαμηλά επίπεδα σακχάρου. Και αντίστροφα.
-
-If DIA is too short, AAPS thinks too early that your previous bolus is all consumed, and, at still elevated glucose, will give you more. (Στην πραγματικότητα το AndroidAPS δεν περιμένει μέχρι να ανέβει πολύ το σάκχαρο σας, αλλά προβλέπει τι πρόκειται να γίνει και με βάση την πρόβλεψη του προσθέτει συνεχόμενα ινσουλίνη). Αυτό ουσιαστικά δημιουργεί " συσσώρευση ινσουλίνης" που το AAPS δεν γνωρίζει.
-
-Παράδειγμα ενός υπερβολικά σύντομου DIA είναι ένα υψηλό BG που ακολουθείται από υπερ-διόρθωση του AAPS και δίνοντας ένα χαμηλό BG.
-
-### Basal rate schedule (U/h)
-
-#### Description & testing
-
-The amount of insulin in a given hour time block to maintain BG at a stable level.
-
-Δοκιμάστε τα βασικά σας ποσοστά, αναστέλλοντας τον κύκλωμα, με νηστεία, περιμένοντας ας πούμε 5 ώρες μετά το φαγητό και βλέποντας τον τρόπο με τον οποίο η BG αλλάζει. Επαναλάβετε μερικές φορές.
-
-Αν το BG πέφτει, ο βασικός ρυθμός είναι πολύ υψηλός. Και αντίστροφα.
-
-#### Impact
-
-Πολύ υψηλός βασικός ρυθμός μπορεί να οδηγήσει σε χαμηλά επίπεδα σακχάρου. Και αντίστροφα.
-
-AAPS ‘baselines’ against the default basal rate. Εάν ο βασικός ρυθμός είναι πολύ υψηλός, ενας 'μηδενικός ρυθμός' θα μετράται ως μεγαλύτερο αρνητικό IOB από ό, τι θα έπρεπε. Αυτό θα οδηγήσει το AAPS να δίνει περισσότερες επακόλουθες διορθώσεις από ό, τι θα έπρεπε για να φέρει τελικά το IOB στο μηδέν.
-
-So, a basal rate too high will create low BGs both with the default rate, but also some hours hence as AAPS corrects to target.
-
-Conversely a basal rate too low can lead to high BGs, and a failure to bring levels down to target.
-
-### Insulin sensitivity factor (ISF) (mmol/l/U or mg/dl/U)
-
-#### Description & testing
-
-Η πτώση BG που αναμένεται από τη χορήγηση 1U ινσουλίνης.
-
-Υποθέτοντας το σωστό βασικό, μπορείτε να το δοκιμάσετε αναστέλλοντας το κύκλωμα, ελέγχοντας ότι το IOB είναι μηδέν και λαμβάνοντας μερικά δισκία γλυκόζης για να φτάσετε σε ένα σταθερό 'υψηλό' επίπεδο.
-
-Then take an estimated amount of insulin (as per current 1/ISF) to get to your target BG.
-
-Να είστε προσεκτικοί, καθώς αυτό είναι αρκετά συχνά ρυθμισμένο πολύ χαμηλά. Πάρα πολύ χαμηλά σημαίνει 1 U θα ρίξει το BG γρηγορότερα από το αναμενόμενο.
-
-#### Impact
-
-**Lower ISF** (i.e. 40 instead of 50) meaning insulin drops your BG less per unit. This leads to a more aggressive / stronger correction from the loop with **more insulin**. If the ISF is too low, this can lead to low BGs.
-
-**Higher ISF** (i.e. 45 instead of 35) meaning insulin drops your BG more per unit. This leads to a less aggressive / weaker correction from the loop with **less insulin**. If the ISF is too high, this can lead to high BGs.
-
-**Παράδειγμα:**
-
-- BG είναι 190 mg/dl (10,5 mmol) και στόχος είναι τα 100 mg/dl (5,6 mmol). 
-- Έτσι θέλετε διόρθωση των 90 mg/dl (= 190 - 110).
-- ISF = 30 -> 90 / 30 = 3 μονάδες ινσουλίνης
-- ISF = 45 -> 90 / 45 = 2 μονάδες ινσουλίνης
-
-An ISF that is too low (not uncommon) can result in ‘over corrections’, because AAPS thinks it needs more insulin to correct a high BG than it actually does. This can lead to ‘roller coaster’ BGs (esp. when fasting). Σε αυτή την περίπτωση θα πρέπει να αυξήσετε το ISF σας. Αυτό σημαίνει ότι το AAPS δίνει μικρότερες δόσεις διόρθωσης, και αυτό θα αποφύγει την υπερβολική διόρθωση ενός υψηλού BG που θα οδηγήσει σε χαμηλή BG.
-
-Conversely, an ISF set too high can result in under-corrections, meaning your BG remains above target – particularly noticeable overnight.
-
-### Insulin to carb ratio (IC) (g/U)
-
-#### Description & testing
-
-Τα γραμμάρια υδατανθράκων για κάθε μονάδα ινσουλίνης.
-
-Μερικοί άνθρωποι χρησιμοποιούν επίσης I: C ως συντομογραφία αντί για IC όταν μιλάμε για αναλογία υδατανθράκων (CR).
-
-Assuming correct basal, you can test by checking IOB is zero and that you are in-range, eating exactly known carbs, and take an estimated amount of insulin based on current insulin to carb ratio. Best is to eat food your normally eat at that time of day and count its carbs precisely.
-
-> **NOTE:**
-> 
-> In some European countries bread units were used for determination of how much insulin is needed for food. At the beginning 1 bread unit equal to 12g of carbs, later some changed to 10g of carbs.
-> 
-> In this model the amount of carbs was fixed and the amount of insulin was variable. ("How much insulin is needed to cover one bread unit?")
-> 
-> When using IC the amount of insulin is fixed and the amount of carbs is variable. ("How many g of carbs can be covered by one unit of insulin?")
-> 
-> Παράδειγμα:
-> 
-> Bread unit factor (BU = 12g carbs): 2,4 U/BU -> You need 2,4 units of insulin when you eat one bread unit.
-> 
-> Corresponding IC: 12g / 2,4 U = 5,0 g/U -> 5,0g carbs can be covered with one unit of insulin.
-> 
-> BU factor 2,4 U / 12g ===> IC = 12g / 2,4 U = 5,0 g/U
-> 
-> Conversion tables are available online i.e. [here](https://www.mylife-diabetescare.com/files/media/03_Documents/11_Software/FAS/SOF_FAS_App_KI-Verha%CC%88ltnis_MSTR-DE-AT-CH.pdf).
-
-#### Impact
-
-**Lower IC** = less food per unit, i.e. you are getting more insulin for a fixed amount of carbs. Μπορεί επίσης να ονομάζεται "πιο επιθετική".
-
-**Higher IC** = more food per unit, i.e. you are getting less insulin for a fixed amount of carbs. Μπορεί επίσης να ονομάζεται "λιγότερο επιθετική".
-
-If after meal has digested and IOB has returned to zero, your BG remains higher than before food, chances are IC is too large. Conversely if your BG is lower than before food, IC is too small.
-
 ## APS algorithm
 
 ### Why does it show "dia:3" in the "OPENAPS AMA"-tab even though I have a different DIA in my profile?
@@ -187,22 +80,6 @@ If after meal has digested and IOB has returned to zero, your BG remains higher 
 ![AMA 3 ώρες](../images/Screenshot_AMA3h.png)
 
 Στην ΑΜΑ, η DIA στην πραγματικότητα δεν σημαίνει «διάρκεια δράσης της ινσουλίνης». Πρόκειται για μια παράμετρο, η οποία χρησιμοποιείται για τη σύνδεση με το DIA. Τώρα, αυτό σημαίνει, «σε ποιο χρονικό σημείο πρέπει να ολοκληρωθεί η διόρθωση». Δεν έχει καμία σχέση με τον υπολογισμό του IOB. In OpenAPS SMB, there is no need for this parameter any longer.
-
-### Profile
-
-#### Why using min. 5h DIA (insulin end time) instead of 2-3h?
-
-Εξηγείται καλά σε [ αυτό το άρθρο ](https://www.diabettech.com/insulin/why-we-are-regularly-wrong-in-the-duration-of-insulin-action-dia-times-we-use-and-why-it-matters/). Μην ξεχάσετε να κάνετε ` ΕΝΕΡΓΟΠΟΙΗΣΗ ΠΡΟΦΙΛ ` μετά την αλλαγή του DIA.
-
-#### What causes the loop to frequently lower my BG to hypoglycemic values without COB?
-
-Πρώτα απ 'όλα, ελέγξτε το βασικό σας ρυθμό και κάντε δοκιμασία βασικού ρυθμού χωρίς υδατάνθρακες. If it is correct, this behavior is typically caused by a too low ISF. A too low ISF looks typically like this:
-
-![ISF πολύ χαμηλό](../images/isf.jpg)
-
-#### What causes high postprandial peaks in closed loop?
-
-Πρώτα απ 'όλα, ελέγξτε το βασικό σας ρυθμό και κάντε δοκιμασία βασικού ρυθμού χωρίς υδατάνθρακες. If it is correct and your BG is falling to your target after carbs are fully absorbed, try to set an 'eating soon' temp target in AAPS some time before the meal or think about an appropriate prebolus time with your endocrinologist. If your BG is too high after the meal and still too high after carbs are fully absorbed, think about decreasing your IC with your endocrinologist. If your BG is too high while COB and too low after carbs are fully absorbed, think about increasing your IC and an appropriate prebolus time with your endocrinologist.
 
 ## Other settings
 
@@ -245,7 +122,7 @@ Looping can reduce the pump battery faster than normal use because the system in
 - clean battery terminals with alcohol wipe to ensure no manufacturing wax/grease remains.
 
 - for [Dana R/RS pumps](../CompatiblePumps/DanaRS-Insulin-Pump.md) the startup procedure draws a high current across the battery to purposefully break the passivation film (prevents loss of energy whilst in storage) but it doesn't always work to break it 100%. Αφαιρέστε και επανατοποθετήστε την μπαταρία 2-3 φορές μέχρι να εμφανιστεί 100% στην οθόνη ή χρησιμοποιήστε το κλειδί της μπαταρίας για βραχυκύκλωμα μπαταρίας πριν την τοποθέτηση εφαρμόζοντας και στους δύο ακροδέκτες για ένα δευτερόλεπτο.
-- see also more tips for [particular types of battery](../CompatiblePumps/Accu-Chek-Combo-Tips-for-Basic-usage.md#battery-type-and-causes-of-short-battery-life)
+- see also more tips for [particular types of battery](#Accu-Chek-Combo-Tips-for-Basic-usage-battery-type-and-causes-of-short-battery-life)
 
 #### Changing reservoirs and cannulas
 
@@ -253,14 +130,14 @@ The change of cartridge cannot be done via AAPS but must be carried out as befor
 
 - Long press on "Open Loop"/"Closed Loop" on the Home tab of AAPS and select 'Suspend Loop for 1h'
 - Now nnect the pump and change the reservoir as per pump instructions.
-- Also priming and filling tube and cannula can be done directly on the pump. In this case use [PRIME/FILL button](../DailyLifeWithAaps/AapsScreens.md#action-tab) in the actions tab just to record the change.
+- Also priming and filling tube and cannula can be done directly on the pump. In this case use [PRIME/FILL button](#screens-action-tab) in the actions tab just to record the change.
 - Μόλις επανασυνδεθείτε με την αντλία, συνεχίστε με το πάτημα του κουμπιού "Αναστολή (X m)".
 
-The change of a cannula however does not use the "prime infusion set" function of the pump, but fills the infusion set and/or cannula using a bolus which does not appear in the bolus history. Αυτό σημαίνει ότι δεν διακόπτει ένα τρέχον προσωρινό βασικό ρυθμό. On the Actions (Act) tab, use the [PRIME/FILL button](../DailyLifeWithAaps/AapsScreens.md#action-tab) to set the amount of insulin needed to fill the infusion set and start the priming. Αν η ποσότητα δεν είναι αρκετή, επαναλάβετε την πλήρωση. Μπορείτε να ορίσετε κουμπιά προεπιλεγμένου ποσού στις Προτιμήσεις > Άλλο > Συμπληρώστε / Αρχίστε την κανονική ποσότητα ινσουλίνης. Ανατρέξτε στο φυλλάδιο οδηγιών στο κουτί της κάνουλας για το πόσες μονάδες θα πρέπει να γίνουν ανάλογα με το μήκος της βελόνας και το μήκος της σωλήνωσης.
+The change of a cannula however does not use the "prime infusion set" function of the pump, but fills the infusion set and/or cannula using a bolus which does not appear in the bolus history. Αυτό σημαίνει ότι δεν διακόπτει ένα τρέχον προσωρινό βασικό ρυθμό. On the Actions (Act) tab, use the [PRIME/FILL button](#screens-action-tab) to set the amount of insulin needed to fill the infusion set and start the priming. Αν η ποσότητα δεν είναι αρκετή, επαναλάβετε την πλήρωση. Μπορείτε να ορίσετε κουμπιά προεπιλεγμένου ποσού στις Προτιμήσεις > Άλλο > Συμπληρώστε / Αρχίστε την κανονική ποσότητα ινσουλίνης. Ανατρέξτε στο φυλλάδιο οδηγιών στο κουτί της κάνουλας για το πόσες μονάδες θα πρέπει να γίνουν ανάλογα με το μήκος της βελόνας και το μήκος της σωλήνωσης.
 
 ### Wallpaper
 
-You can find the AAPS wallpaper for your phone on the [phones page](../Getting-Started/Phones.md#phone-wallpaper).
+You can find the AAPS wallpaper for your phone on the [phones page](#Phones-phone-wallpaper).
 
 ### Daily usage
 
@@ -268,11 +145,11 @@ You can find the AAPS wallpaper for your phone on the [phones page](../Getting-S
 
 ##### What to do when taking a shower or bath?
 
-Μπορείτε να αφαιρέσετε την αντλία ενώ κάνετε ντους ή μπάνιο. For this short period of time you may not need it, but you should tell AAPS that you've disconnected so that the IOB calculations are correct. See [description above](#disconnect-pump).
+Μπορείτε να αφαιρέσετε την αντλία ενώ κάνετε ντους ή μπάνιο. For this short period of time you may not need it, but you should tell AAPS that you've disconnected so that the IOB calculations are correct. See [description above](#FAQ-disconnect-pump).
 
 #### Work
 
-Depending on your job, you may choose to use different treatment factors on workdays. As a looper you should consider a [profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) for your typical working day. For example, you may switch to a profile higher than 100% if you have a less demanding job (e.g. sitting at a desk), or less than 100% if you are active and on your feet all day. You could also consider a high or low temporary target or a [time shift of your profile](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md#time-shift-of-the-circadian-percentage-profile) when working much earlier or later than regular, of if you work different shifts. You can also create a second profile (e.g. 'home' and 'workday') and do a daily profile switch to the profile you actually need.
+Depending on your job, you may choose to use different treatment factors on workdays. As a looper you should consider a [profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) for your typical working day. For example, you may switch to a profile higher than 100% if you have a less demanding job (e.g. sitting at a desk), or less than 100% if you are active and on your feet all day. You could also consider a high or low temporary target or a [time shift of your profile](#ProfileSwitch-ProfilePercentage-time-shift-of-the-circadian-percentage-profile) when working much earlier or later than regular, of if you work different shifts. You can also create a second profile (e.g. 'home' and 'workday') and do a daily profile switch to the profile you actually need.
 
 ### Leisure activities
 
@@ -287,8 +164,8 @@ So, you would have more carbohydrates on board, but at the same time the loop wo
 When looping you should try these steps:
 
 - Make a [profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md) < 100%.
-- Set an [activity temp target](../DailyLifeWithAaps/TempTargets.md#activity-temp-target) above your standard target.
-- If you are using SMB make sure ["Enable SMB with high temp targets"](../DailyLifeWithAaps/KeyAapsFeatures.md#enable-smb-with-high-temp-targets) and ["Enable SMB always"](../DailyLifeWithAaps/KeyAapsFeatures.md#enable-smb-always) are disabled.
+- Set an [activity temp target](#TempTargets-activity-temp-target) above your standard target.
+- If you are using SMB make sure ["Enable SMB with high temp targets"](#Open-APS-features-enable-smb-with-high-temp-targets) and ["Enable SMB always"](#Open-APS-features-enable-smb-always) are disabled.
 
 Pre- and post-processing of these settings is important. Make the changes in time before sport and consider the effect of muscle filling.
 
@@ -298,7 +175,7 @@ The percentage of the profile switch, the value for your activity temp target an
 
 #### Sex
 
-You can remove the pump to be 'free', but you should tell AAPS so that the IOB calculations are correct. See [description above](#disconnect-pump).
+You can remove the pump to be 'free', but you should tell AAPS so that the IOB calculations are correct. See [description above](#FAQ-disconnect-pump).
 
 #### Drinking alcohol
 
@@ -314,7 +191,7 @@ You can remove the pump to be 'free', but you should tell AAPS so that the IOB c
 
 ##### How can I loop during the night without mobile and WIFI radiation?
 
-Πολλοί χρήστες γυρίζουν το τηλέφωνο τους σε λειτουργία αεροπλάνου το βράδυ. If you want the loop to support you when you are sleeping, proceed as follows (this will only work with a local BG-source such as xDrip+ or ['Build your own Dexcom App'](../CompatibleCgms/DexcomG6.md#if-using-g6-with-build-your-own-dexcom-app), it will NOT work if you get the BG-readings via Nightscout):
+Πολλοί χρήστες γυρίζουν το τηλέφωνο τους σε λειτουργία αεροπλάνου το βράδυ. If you want the loop to support you when you are sleeping, proceed as follows (this will only work with a local BG-source such as xDrip+ or ['Build your own Dexcom App'](#DexcomG6-if-using-g6-with-build-your-own-dexcom-app), it will NOT work if you get the BG-readings via Nightscout):
 
 1. Ενεργοποιήστε τη "λειτουργία πτήσης" στο κινητό σας.
 2. Περιμένετε μέχρι να ενεργοποιηθεί η λειτουργία του αεροπλάνου.
@@ -336,7 +213,7 @@ Some people have discovered problems with local broadcast (AAPS not receiving BG
 
 #### Hospitalization
 
-If you want to share some information about AAPS and DIY looping with your clinicians, you can print out the [guide to AAPS for clinicians](../Resources/clinician-guide-to-AndroidAPS.md).
+If you want to share some information about AAPS and DIY looping with your clinicians, you can print out the [guide to AAPS for clinicians](../UsefulLinks/ClinicianGuideToAaps.md).
 
 #### Medical appointment with your endocrinologist
 
@@ -383,7 +260,7 @@ Open the hamburger menu, start the Configuration wizard and enter new password w
 
 ### How to reset the password in AAPS v3.x
 
-You find the documentation [here](../Maintenance/Update3_0.md#reset-master-password).
+You find the documentation [here](#Update3_0-reset-master-password).
 
 ### My link/pump/pod is unresponsive (RL/OL/EmaLink…)
 

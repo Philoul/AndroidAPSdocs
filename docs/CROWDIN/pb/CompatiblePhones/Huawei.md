@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # How-to configure a Huawei phone
 
 There are different options, some Android specific, some Huawei specific:
@@ -27,9 +33,9 @@ There are different options, some Android specific, some Huawei specific:
     
     ![Huawei - lock app](../images/Huawei_LockApp.png)
 
-For xdrip+, you can also enable persistent notifications (within xdrip+ app):
+For xDrip+, you must enable persistent notifications (within xDrip+ app):
 
-* Setttings / less common settings / other misc options / Run Collector in foreground
+* Settings / less common settings / other misc options / Run Collector in foreground
   
   ![xdrip+ settings - collector in foreground](../images/xdrip_collector_foreground.png)
 

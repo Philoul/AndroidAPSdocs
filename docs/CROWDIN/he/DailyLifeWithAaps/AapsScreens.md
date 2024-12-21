@@ -1,104 +1,117 @@
 # ממשק AndroidAPS
 
-```{contents} Table of Contents :depth: 2
+```{contents}
+:backlinks: entry
+:depth: 2
+```
 
-    <br />## The Homescreen
+(AapsScreens-the-homescreen)=
+
+## The Homescreen
+
+![Homescreen V2.7](../images/Home2020_Homescreen.png)
+
+This is the first screen you will come across when you open **AAPS**, and it contains most of the information that you will need day to day.
+
+### Section A - Tabs
+
+* Navigate between the various **AAPS** modules.
+* Alternatively you can change screens by swiping left or right.
+* Displayed tabs can be selected in [config builder](#Config-Builder-tab-or-hamburger-menu).
+
+### Section B - Profile & target
+
+#### Current Profile
+
+The current profile is displayed in the left bar.
+
+Short press profile bar to view profile details. Long press profile bar to [switch between different profiles](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md).
+
+![Profile switch remaining duration](../images/Home2020_ProfileSwitch.png)
+
+1. Regular display with a standard profile activation.
+2. Profile switch with a remaining duration of 59mn.
+3. Profile switch with a specific percentage of 120%.
+4. Profile switch with a specific percentage of 80% and a remaining duration of 59 mn.
+5. Profile switch with a time shift of -1 hour.
+6. Profile switch with a specific percentage of 120%, time shift of 1 hour, and a remaining duration of 59mn.
+
+#### Target
+
+![Temp target remaining duration](../images/Home2020_TT.png)
+
+Current target blood glucose level is displayed in the right bar.
+
+Short press target bar to set a **[Temporary Target](../DailyLifeWithAaps/TempTargets.md)**.
+
+If a temp target is set, the bar turns yellow and the remaining time in minutes is shown in brackets.
+
+(AapsScreens-visualization-of-dynamic-target-adjustment)=
+
+#### Visualization of Dynamic target adjustment
+
+![Visualization of dynamic target adjustment](../images/Home2020_DynamicTargetAdjustment.png)
+
+When using the [SMB algorithm](#Config-Builder-aps) and [Autosens](#Open-APS-features-autosens) functionality, **AAPS** can dynamically adjust your target based on sensitivity.
+
+Enable either one or both of the following options in [Preferences > OpenAPS SMB settings](#Preferences-openaps-smb-settings):
+
+* "sensitivity raises target" and/or 
+* "resistance lowers target" 
+
+If **AAPS** detects resistance or sensitivity, the target will change from what is set from profile. When it alters the target glucose, the background will change to green.
+
+(AapsScreens-section-c-bg-loop-status)=
+
+### Section C - BG & loop status
+
+#### Current blood glucose
+
+The latest blood glucose reading from your CGM is shown on the left side.
+
+The color of the BG value reflects the status to the defined [range](#Preferences-range-for-visualization).
+
+* green = in range
+* red = below range
+* yellow = above range 
+
+The greyish block in the middle shows minutes since last reading and changes since last reading, in the last 15 and 40 minutes.
+
+(AapsScreens-loop-status)=
+
+#### Loop status
+
+![Loop status](../images/Home2020_LoopStatus.png)
+
+On the right side, an icon shows the loop status:
+
+1. Green circle = loop running
+2. Green circle with dotted line = [low glucose suspend (LGS)](#objectives-objective6)
+3. Red circled = loop disabled (not working permanently)
+4. Yellow circle = loop suspended (temporarily paused but basal insulin will be given) - remaining time is shown below icon
+5. Grey circle = pump disconnected (temporarily no insulin dosage at all) - remaining time is shown below icon
+6. Orange circle = super bolus running - remaining time is shown below icon
+7. Blue circle with dotted line = open loop
+
+Short press or Long press the icon to open the Loop dialog to switch loop mode (Close, Low Glucose Suspend, Open or Disable), suspend / re-enable loop or disconnect / reconnect pump.
+
+* If short press on Loop icon, a validation is required after selection in Loop Dialog
     
-    ![Homescreen V2.7](../images/Home2020_Homescreen.png)
-    
-    This is the first screen you will come across when you open **AAPS**, and it contains most of the information that you will need day to day.
-    
-    ### Section A - Tabs
-    
-    * Navigate between the various **AAPS** modules.
-    * Alternatively you can change screens by swiping left or right.
-    * Displayed tabs can be selected in [config builder](../SettingUpAaps/ConfigBuilder.md#tab-or-hamburger-menu).
-    
-    ### Section B - Profile & target
-    
-    #### Current Profile
-    
-    The current profile is displayed in the left bar. 
-    
-    Short press profile bar to view profile details. Long press profile bar to [switch between different profiles](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md#profile-switch--profile-percentage).
-    
-    ![Profile switch remaining duration](../images/Home2020_ProfileSwitch.png)
-    
-    1. Regular display with a standard profile activation.
-    2. Profile switch with a remaining duration of 59mn.
-    3. Profile switch with a specific percentage of 120%.
-    4. Profile switch with a specific percentage of 80% and a remaining duration of 59 mn.
-    5. Profile switch with a time shift of -1 hour.
-    6. Profile switch with a specific percentage of 120%, time shift of 1 hour, and a remaining duration of 59mn.
-    
-    #### Target
-    
-    ![Temp target remaining duration](../images/Home2020_TT.png)
-    
-    Current target blood glucose level is displayed in the right bar.
-    
-    Short press target bar to set a **[Temporary Target](../DailyLifeWithAaps/TempTargets.md)**.
-    
-    If a temp target is set, the bar turns yellow and the remaining time in minutes is shown in brackets.
-    
-    #### Visualization of Dynamic target adjustment
-    
-    ![Visualization of dynamic target adjustment](../images/Home2020_DynamicTargetAdjustment.png)
-    
-    When using the [SMB algorithm](../SettingUpAaps/ConfigBuilder.md#aps) and [Autosens](../DailyLifeWithAaps/KeyAapsFeatures.md#autosens) functionality, **AAPS** can dynamically adjust your target based on sensitivity. 
-    
-    Enable either one or both of the following options in [Preferences > OpenAPS SMB settings](../SettingUpAaps/Preferences.md#openaps-smb-settings):
-    
-       * "sensitivity raises target" and/or 
-       * "resistance lowers target" 
-    
-    If **AAPS** detects resistance or sensitivity, the target will change from what is set from profile. When it alters the target glucose, the background will change to green.
-    
-    ### Section C - BG & loop status
-    
-    #### Current blood glucose
-    The latest blood glucose reading from your CGM is shown on the left side.
-    
-    The color of the BG value reflects the status to the defined [range](../SettingUpAaps/Preferences.md#range-for-visualization).
-    
-       * green = in range
-       * red = below range
-       * yellow = above range 
-    
-    The greyish block in the middle shows minutes since last reading and changes since last reading, in the last 15 and 40 minutes.
-    
-    #### Loop status
-    
-    ![Loop status](../images/Home2020_LoopStatus.png)
-    
-    On the right side, an icon shows the loop status:
-    
-    * Green circle = loop running
-    * Green circle with dotted line = [low glucose suspend (LGS)](../SettingUpAaps/CompletingTheObjectives.md#objective-6-starting-to-close-the-loop-with-low-glucose-suspend)
-    * Red circled = loop disabled (not working permanently)
-    * Yellow circle = loop suspended (temporarily paused but basal insulin will be given) - remaining time is shown below icon
-    * Grey circle = pump disconnected (temporarily no insulin dosage at all) - remaining time is shown below icon
-    * Orange circle = super bolus running - remaining time is shown below icon
-    * Blue circle with dotted line = open loop
-    
-    Short press or Long press the icon to open the Loop dialog to switch loop mode (Close, Low Glucose Suspend, Open or Disable), suspend / re-enable loop or disconnect / reconnect pump.
-    
-       * If short press on Loop icon, a validation is required after selection in Loop Dialog
-    
-       ![Loop status menu](../images/Home2020_Loop_Dialog.png)
-    
-    #### BG warning sign
-    
-    If for any reason, there are issues in the BG readings **AAPS** receives, you will get a warning signal beneath your BG number on the main screen.
-    
-    ##### Red warning sign: Duplicate BG data
-    
-    The red warning sign is signaling you to get active immediately: You are receiving **duplicate BG data**, which does avoid the loop to do its work right. Therefore, your loop will be disabled until it is resolved.
-    
-    ```{admonition} Your loop is not running
+    ![Loop status menu](../images/Home2020_Loop_Dialog.png)
+
+(aaps-screens-bg-warning-sign)=
+
+#### BG warning sign
+
+If for any reason, there are issues in the BG readings **AAPS** receives, you will get a warning signal beneath your BG number on the main screen.
+
+##### Red warning sign: Duplicate BG data
+
+The red warning sign is signaling you to get active immediately: You are receiving **duplicate BG data**, which does avoid the loop to do its work right. Therefore, your loop will be disabled until it is resolved.
+
+    {admonition} Your loop is not running
     :class: note
     Your loop is not running until you solve this issue !
-    
 
 ![Red BG warning](../images/bg_warn_red.png)
 
@@ -107,7 +120,7 @@
 * Is Dexcom bridge enabled on your Nightscout site? Disable the bridge by going to the administration panel of your Nightscout instance, edit the "enable" variable and remove the "bridge" part there. (ניתן למצוא [פרטים לגבי Heroku כאן](https://nightscout.github.io/troubleshoot/troublehoot/#heroku-settings))
 * Do multiple sources upload your BG to Nightscout? If you use the BYODA app, enable the upload in **AAPS** but do not enable it in xDrip+, if you use that.
 * Do you have any followers that might receive your BG but do also upload it again to your Nightscout site?
-* Last resort: In **AAPS**, go to [Preferences > NSClient](../SettingUpAaps/Preferences.md#nsclient), select the sync settings and disable the "Accept CGM data from NS" option.
+* Last resort: In **AAPS**, go to [Preferences > NSClient](#Preferences-nsclient), select the sync settings and disable the "Accept CGM data from NS" option.
 
 To remove the warning immediately and get to loop running again, you need to manually delete a couple of entries from the Dexcom/xDrip+ tab.
 
@@ -141,15 +154,18 @@ Special note for Libre users:
 
 **Syringe**: insulin on board (IOB) - amount of active insulin inside your body
 
-* נתון האינסולין הפעיל יהיה אפס אם רק הבזאלי הסטנדרטי מהפרופיל פועל ולא נשאר אינסולין מבולוסים קודמים. 
-* האינסולין הפעיל עשוי להיות שלילי אם היו לאחרונה תקופות של ירידה במינון הבזאלי.
-* לחצו על הסמל כדי לראות את הפיצול של הבולוס והאינסולין הבזאלי
+1. נתון האינסולין הפעיל יהיה אפס אם רק הבזאלי הסטנדרטי מהפרופיל פועל ולא נשאר אינסולין מבולוסים קודמים.
+    
+    * האינסולין הפעיל עשוי להיות שלילי אם היו לאחרונה תקופות של ירידה במינון הבזאלי.
+    * לחצו על הסמל כדי לראות את הפיצול של הבולוס והאינסולין הבזאלי
 
-* **Grain**: [carbs on board (COB)](CobCalculation) - yet unabsorbed carbs you have eaten before The icon pulses red if carbs are required (see [below](#carbs-required))
+2. **Grain**: [carbs on board (COB)](../DailyLifeWithAaps/CobCalculation.md) - yet unabsorbed carbs you have eaten before The icon pulses red if carbs are required (see [below](#aaps-screens-carbs-required))
 
-* **Purple line**: current basal rate. The icon changes to reflect temporary changes in basal rate (flat at 100%) 
-   * לחצו על הסמל כדי לראות את המינון הבזאלי ופרטים של בזאלי זמני אם מופעל (כולל משך הזמן הנותר)
-* **Arrows up & down**: indicating actual [Autosens](KeyAapsFeatures#autosens) status (enabled or disabled) and value is shown below icon
+3. **Purple line**: current basal rate. The icon changes to reflect temporary changes in basal rate (flat at 100%) 
+    * לחצו על הסמל כדי לראות את המינון הבזאלי ופרטים של בזאלי זמני אם מופעל (כולל משך הזמן הנותר)
+4. **Arrows up & down**: indicating actual [Autosens](#Open-APS-features-autosens) status (enabled or disabled) and value is shown below icon
+
+(aaps-screens-carbs-required)=
 
 #### דרושות פחמימות
 
@@ -179,9 +195,11 @@ This is when the oref algorithm thinks it can't rescue you by zero-temping, and 
 
 אם חורגים מסף האזהרה הקריטי, הערכים יוצגו באדום.
 
-Settings can be changed in [Preferences > Overview > Status lights](../SettingUpAaps/Preferences.md#status-lights).
+Settings can be changed in [Preferences > Overview > Status lights](#Preferences-status-lights).
 
 Depending on the pump you use, you may not have all of these icons.
+
+(aaps-screens-main-graph)=
 
 ### חלק F - גרף ראשי
 
@@ -195,7 +213,9 @@ Long press on the graph to change the timescale. אפשר לבחור 6, 12, 18 �
 
 האזור הירוק משקף את טווח המטרה.
 
-Blue triangles show [SMB](KeyAapsFeatures#super-micro-bolus-smb) - if enabled in [Preferences > OpenAPS SMB](../SettingUpAaps/Preferences.md#openaps-smb-settings).
+Blue triangles show [SMB](#Open-APS-features-super-micro-bolus-smb) - if enabled in [Preferences > OpenAPS SMB](#Preferences-openaps-smb-settings).
+
+(AapsScreens-activate-optional-information)=
 
 #### הפעלת מידע אופציונלי
 
@@ -207,36 +227,37 @@ On the main graph, you can switch on these optional information:
 
 To show this information, click the triangle on the right side of the main graph. עבור הגרף הראשי זמינות רק שלוש האפשרויות שמעל ל-"\---\---- גרף 1 \---\----".
 
-    ![Main graph setting](../images/Home2020_MainGraphSetting.png)
-    
+![Main graph setting](../images/Home2020_MainGraphSetting.png)
+
+(aaps-screens-prediction-lines)=
 
 #### עקומי החיזוי
 
 * **Orange** line: [COB](CobCalculation) (color is used generally to represent COB and carbs)
-   
-   This prediction line shows where your BG (not where COB itself!) will go based on the current **Profile** settings, assuming that the deviations due to carb absorption remain constant. עקום זה מופיע רק אם יש פחמימות פעילות ידועות.
+    
+    This prediction line shows where your BG (not where COB itself!) will go based on the current **Profile** settings, assuming that the deviations due to carb absorption remain constant. עקום זה מופיע רק אם יש פחמימות פעילות ידועות.
 
 * **Dark blue** line: IOB (color is used generally to represent IOB and insulin)
-   
-   This prediction line shows what would happen under the influence of insulin only. For example if you dialed in some insulin and then didn’t eat any carbs.
+    
+    This prediction line shows what would happen under the influence of insulin only. For example if you dialed in some insulin and then didn’t eat any carbs.
 
 * עקום **כחול בהיר**: בזאלי אפס זמני (סוכר חזוי אם יוגדר קצב בזאלי זמני של 0%)
-   
-   This prediction line shows how the BG trajectory line would change if the pump stopped all insulin delivery (0% TBR).
-   
-   *This line appears only when the [SMB](../SettingUpAaps/ConfigBuilder.md#aps) algorithm is used.*
+    
+    This prediction line shows how the BG trajectory line would change if the pump stopped all insulin delivery (0% TBR).
+    
+    *This line appears only when the [SMB](#Config-Builder-aps) algorithm is used.*
 
-* **Dark yellow** line: [UAM](../DailyLifeWithAaps/SensitivityDetectionAndCob.md#sensitivity-oref1) (un-announced meals)
-   
-   ארוחות לא מוכרזות מראש - זיהוי של עלייה משמעותית ברמות הסוכר עקב ארוחות, אדרנלין או השפעות אחרות. Prediction line is similar to the **orange COB line**, but it assumes that the deviations will taper down at a constant rate (by extending the current rate of reduction).
-   
-   *This line appears only when the [SMB](../SettingUpAaps/ConfigBuilder.md#aps) algorithm is used.*
+* **Dark yellow** line: [UAM](#SensitivityDetectionAndCob-sensitivity-oref1) (un-announced meals)
+    
+    ארוחות לא מוכרזות מראש - זיהוי של עלייה משמעותית ברמות הסוכר עקב ארוחות, אדרנלין או השפעות אחרות. Prediction line is similar to the **orange COB line**, but it assumes that the deviations will taper down at a constant rate (by extending the current rate of reduction).
+    
+    *This line appears only when the [SMB](#Config-Builder-aps) algorithm is used.*
 
 * **עקום כתום כהה**: ספיגת פחמימות מואצת
-   
-   דומה לפחמימות פעילות אז מניח שספיגת הפחמימות קבועה ב-10 מ"ג\ד"ל\5דק'. מיושן ובעל תועלת מוגבלת.
-   
-   *This line appears only when the older [AMA](../SettingUpAaps/ConfigBuilder.md#aps) algorithm is used.*
+    
+    דומה לפחמימות פעילות אז מניח שספיגת הפחמימות קבועה ב-10 מ"ג\ד"ל\5דק'. מיושן ובעל תועלת מוגבלת.
+    
+    *This line appears only when the older [AMA](#Config-Builder-aps) algorithm is used.*
 
 בדרך כלל עקומת הסוכר האמיתית נמצאת באמצע בין העקומים הללו, או קרובה לזו שמניחה הנחות שהכי דומות למצבכם הנוכחי.
 
@@ -253,6 +274,8 @@ When the standard basal rate is given, the area under the curve is shown in dark
 העקום ה**צהוב הדק** מציג את פעילות האינסולין.
 
 הוא מבוסס על הירידה הצפויה בסוכר בגלל אינסולין פעיל אם לא קיימים גורמים אחרים (כמו פחמימות).
+
+(AapsScreens-section-g-additional-graphs)=
 
 ### חלק G - גרפים נוספים
 
@@ -277,7 +300,7 @@ Most users find the following configuration of additional graphs to be adequate 
 
 מראה את האינסולין הפעיל. הוא כולל אינסולין מבולוס ובזאלי זמני (**אך אינו כולל מינונים בזאליים שנקבעו בפרופיל**).
 
-If there were no [SMBs](KeyAapsFeatures#super-micro-bolus-smb), no boluses and no TBR during DIA time this would be zero.
+If there were no [SMBs](#Open-APS-features-super-micro-bolus-smb), no boluses and no TBR during DIA time this would be zero.
 
 אינסולין פעיל יכול להיות שלילי אם אין בולוס או בזאלי זמני אפס/נמוך למשך זמן רב יותר.
 
@@ -293,19 +316,21 @@ Decaying depends on the [deviations the algorithm detects](../DailyLifeWithAaps/
 
 #### רגישות
 
-Shows the sensitivity that [Autosens](KeyAapsFeatures#autosens) has detected.
+Shows the sensitivity that [Autosens](#Open-APS-features-autosens) has detected.
 
 חישוב רגישות לאינסולין כתוצאה מפעילות גופנית, תגובות הורמונליות וכו'.
 
+Note, you need to be in [Objective 8](#objectives-objective8) in order to let Sensitivity Detection/[Autosens](#Open-APS-features-autosens) automatically adjust the amount of insulin delivered. Before reaching that objective, the line in your graph is displayed for information only.
+
 #### Heart rate
 
-This data may be available when using a [Garmin smartwatch](../UsefulLinks/WearOsSmartwatch.md#garmin).
+This data may be available when using a [Garmin smartwatch](#Watchfaces-garmin).
 
 #### סטיות
 
 * **Grey** bars show a deviation due to carbs. 
-* **Green** bars show that BG is higher than the algorithm expected it to be. Green bars are used to increase resistance in [Autosens](KeyAapsFeatures#autosens).
-* **Red** bars show that BG is lower than the algorithm expected. Red bars are used to increase sensitivity in [Autosens](KeyAapsFeatures#autosens).
+* **Green** bars show that BG is higher than the algorithm expected it to be. Green bars are used to increase resistance in [Autosens](#Open-APS-features-autosens).
+* **Red** bars show that BG is lower than the algorithm expected. Red bars are used to increase sensitivity in [Autosens](#Open-APS-features-autosens).
 * **Yellow** bars show a deviation due to UAM.
 * **Black** bars show small deviations not taken into account for sensitivity
 
@@ -323,9 +348,9 @@ It is a good combination to display this line along with the Deviation bars. The
 
 Buttons for Insulin, Carbs and Calculator are almost always visible. If the connection to the pump is lost, the insulin button will not be visible.
 
-Other Buttons can be setup in [Preferences > Overview > Buttons](../SettingUpAaps/Preferences.md#buttons).
+Other Buttons can be setup in [Preferences > Overview > Buttons](#Preferences-buttons).
 
-About using the Insulin, Carbs and Calculator buttons : If enabled in the [Preferences > Overview](../SettingUpAaps/Preferences.md#show-notes-field-in-treatments-dialogs), the **Notes** field allows you to enter text that will show on the main graph, and may be uploaded to Nightscout - depending on your settings for NS client.
+About using the Insulin, Carbs and Calculator buttons : If enabled in the [Preferences > Overview](#Preferences-show-notes-field-in-treatments-dialogs), the **Notes** field allows you to enter text that will show on the main graph, and may be uploaded to Nightscout - depending on your settings for NS client.
 
 #### אינסולין
 
@@ -333,11 +358,11 @@ About using the Insulin, Carbs and Calculator buttons : If enabled in the [Prefe
 
 To give a certain amount of insulin without using the [bolus calculator](#bolus-wizard).
 
-By checking the box **Start eating soon TT**, you can automatically start your [eating soon temp target](../DailyLifeWithAaps/TempTargets.md#eating-soon-temp-target).
+By checking the box **Start eating soon TT**, you can automatically start your [eating soon temp target](#TempTargets-eating-soon-temp-target).
 
 If you do not want to bolus through the pump but record an insulin amount (i.e. insulin given by pen) check the corresponding box. When checking this box, you get an additional field “Time offset”, that you can use to record an insulin injection made in the past.
 
-You can use the buttons to quickly increase the insulin quantity. The increment values can be changed in the [Preferences > Overview > Buttons](../SettingUpAaps/Preferences.md#buttons).
+You can use the buttons to quickly increase the insulin quantity. The increment values can be changed in the [Preferences > Overview > Buttons](#Preferences-buttons).
 
 #### פחמימות
 
@@ -345,13 +370,13 @@ You can use the buttons to quickly increase the insulin quantity. The increment 
 
 נועד לרישום פחמימות ללא בולוס.
 
-Certain [pre-set temporary targets](../DailyLifeWithAaps/TempTargets.md#hypo-temp-target) can be set directly by checking the box.
+Certain [pre-set temporary targets](#TempTargets-hypo-temp-target) can be set directly by checking the box.
 
 **Time offset**: When will you / have you been eaten carbs (in minutes).
 
 **Duration**: To be used for ["extended carbs"](ExtendedCarbs)
 
-You can use the buttons to quickly increase the carb amount. The increment values can be changed in the [Preferences > Overview > Buttons](../SettingUpAaps/Preferences.md#buttons).
+You can use the buttons to quickly increase the carb amount. The increment values can be changed in the [Preferences > Overview > Buttons](#Preferences-buttons).
 
 #### מחשבון
 
@@ -361,7 +386,7 @@ See Bolus Wizard [section below](#bolus-wizard).
 
 שולח כיול ל- xDrip או פותח את חלון הכיול של אפליקציית Dexcom.
 
-Must be activated in [Preferences > Overview > Buttons](../SettingUpAaps/Preferences.md#buttons).
+Must be activated in [Preferences > Overview > Buttons](#Preferences-buttons).
 
 #### סנסור
 
@@ -369,13 +394,13 @@ Must be activated in [Preferences > Overview > Buttons](../SettingUpAaps/Prefere
 
 Back button returns to **AAPS**.
 
-Must be activated in [Preferences > Overview > Buttons](../SettingUpAaps/Preferences.md#buttons).
+Must be activated in [Preferences > Overview > Buttons](#Preferences-buttons).
 
 #### אשף מהיר
 
 הזנה בקלות של כמות הפחמימות והגדרת נתוני החישוב.
 
-Details are set up in [Preferences > Overview > QuickWizard settings](../SettingUpAaps/Preferences.md#quick-wizard).
+Details are set up in [Preferences > Overview > QuickWizard settings](#Preferences-quick-wizard).
 
 ## אשף הבולוס
 
@@ -388,6 +413,8 @@ When you want to make a meal bolus, this is where you will normally make it from
 מציג את הבולוס המחושב.
 
 אם כמות האינסולין הפעיל עולה על הבולוס המחושב, תוצג רק כמות הפחמימות הנדרשת.
+
+(AapsScreens-section-j)=
 
 ### חלק J
 
@@ -407,7 +434,7 @@ The **Carb time** field is for pre-bolusing so you can tell the system that ther
 
 **Profile** allows you to select a different profile than the current one, to make the calculation for the insulin required. This profile selection applies only for the current bolus, it is not a profile change.
 
-**Super Bolus** is where the basal insulin for the next two hours is added to the immediate bolus and a zero TBR is issued for the following two hours to take back the extra insulin. The option only shows when "Enable Superbolus in wizard" is set in the [Preferences > Overview > Advanced Settings](../SettingUpAaps/Preferences.md#advanced-settings-overview). הרעיון הוא לספק את האינסולין מוקדם יותר ובתקווה להפחית עליות חדות ברמות הסוכר.
+**Super Bolus** is where the basal insulin for the next two hours is added to the immediate bolus and a zero TBR is issued for the following two hours to take back the extra insulin. The option only shows when "Enable Superbolus in wizard" is set in the [Preferences > Overview > Advanced Settings](#Preferences-advanced-settings-overview). הרעיון הוא לספק את האינסולין מוקדם יותר ובתקווה להפחית עליות חדות ברמות הסוכר.
 
 לפרטים עיינו ב-[diabetesnet.com](https://www.diabetesnet.com/diabetes-technology/blue-skying/super-bolus/).
 
@@ -430,13 +457,17 @@ For safety reasons the **TT box must be ticked manually**, if you want the bolus
 
 The box near the eye allows you to choose between the detailed view, with the numbers entering the calculation for each item, or the simple view with icons. Pressing on an icon will enable / disable this entry from the calculation.
 
+(AapsScreens-wrong-cob-detection)=
+
 #### זיהוי שגוי של פחמימות פעילות
 
 ![Slow carb absorption](../images/Calculator_SlowCarbAbsorption.png)
 
 If you see the warning above after using bolus wizard, **AAPS** has detected that the calculated COB value may be wrong. So, if you want to bolus again after a previous meal with COB, you should be aware of overdosing!
 
-For details, see the hints on [COB calculation page](CobCalculation#detection-of-wrong-cob-values).
+For details, see the hints on [COB calculation page](#CobCalculation-detection-of-wrong-cob-values).
+
+(screens-action-tab)=
 
 ## לשונית פעולות
 
@@ -444,40 +475,36 @@ For details, see the hints on [COB calculation page](CobCalculation#detection-of
 
 ### פעולות - חלק M
 
-Button **[Profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md#profile-switch--profile-percentage)** as an alternative to pressing the [current profile](#section-b---profile--target) on homescreen.
+Button **[Profile switch](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md)** as an alternative to pressing the [current profile](#section-b---profile--target) on homescreen.
 
 Button **[Temporary target](../DailyLifeWithAaps/TempTargets.md)** as an alternative to pressing the [current target](#section-b---profile--target) on homescreen.
 
 לחצן להפעלה או ביטול של מינון בזאלי זמני. שימו לב שהלחצן משתנה מ-"בזאלי זמני" ל-"ביטול %x" כאשר מוגדר מינון בזאלי זמני.
 
-Even though [extended boluses](ExtendedCarbs#extended-bolus-and-why-they-wont-work-in-closed-loop-environment) do not really work in a closed loop environment some people were asking for an option to use extended bolus anyway.
+Even though [extended boluses](#Extended-Carbs-extended-bolus-and-why-they-wont-work-in-closed-loop-environment) do not really work in a closed loop environment some people were asking for an option to use extended bolus anyway.
 
 * אפשרות זו קיימת רק במשאבות Dana RS ו-Accu chek Insight. 
-   * לולאה סגורה תיעצר אוטומטית ותעבור למצב לולאה פתוחה למשך זמן פעילות הבולוס הממושך.
-   * Make sure to read the [details](ExtendedCarbs) before using this option.
+    * לולאה סגורה תיעצר אוטומטית ותעבור למצב לולאה פתוחה למשך זמן פעילות הבולוס הממושך.
+    * Make sure to read the [details](../DailyLifeWithAaps/ExtendedCarbs.md) before using this option.
 
 ### פורטל הטיפולים - חלק N
 
 Displays information on:
 
-    * sensor age & level (battery percentage)
-    * insulin age & level (units)
-    * cannula age
-    * pump battery age & level (percentage
-    
+* sensor age & level (battery percentage)
+* insulin age & level (units)
+* cannula age
+* pump battery age & level (percentage
 
-Less information will be shown if **low resolution skin** is used ([Preferences > General > Skin](../SettingUpAaps/Preferences.md#skin)).
+Less information will be shown if **low resolution skin** is used ([Preferences > General > Skin](#Preferences-skin)).
+
+(screens-sensor-level-battery)=
 
 #### רמת טעינת סוללת החיישן
 
 Works for CGM with an additional transmitter such as MiaoMiao 2. (טכנית, החיישן צריך לשלוח את המידע של רמת הסוללה לxDrip+.)
 
-Thresholds can be set in [Preferences > Overview > Status lights](../SettingUpAaps/Preferences.md#status-lights).
-
-If the sensor level is the same as the phone battery level, your xDrip+ version is probably too old and needs an update. (Needs xDrip+ nightly build Dec. 10, 2020 or newer.)
-
-    ![Sensor levels equals phone battery level](../images/Home2021_ActionSensorBat.png)
-    
+Thresholds can be set in [Preferences > Overview > Status lights](#Preferences-status-lights).
 
 ### פורטל הטיפולים - חלק O
 
@@ -491,7 +518,7 @@ BG check, prime/fill, sensor insert and pump battery change are the base for the
 
 #### דפדפן היסטוריה
 
-Allows you to ride back in **AAPS** history.
+Allows you to ride back in **AAPS** [history](../Maintenance/Reviewing.md).
 
 #### TDD - סה"כ מינון אינסולין יומי
 
@@ -505,21 +532,17 @@ Therefore, ratio is calculated as TDD / 2 * TBB (Total base basal = sum of basal
 
 לרוב כללי האצבע האלה תוקף מוגבל בפרקטיקה. הערה: הסוכרת שלכם עשויה להיות שונה!
 
-![History browser + TDD](../images/Home2021_Action_HB_TDD.png)
+(AapsScreens-insulin-profile)=
 
 ## פרופיל האינסולין
 
 ![פרופיל האינסולין](../images/Screenshot_insulin_profile.png)
 
-This shows the activity profile of the insulin you have chosen in [config builder](../SettingUpAaps/ConfigBuilder.md#insulin).
+This shows the activity profile of the insulin you have chosen in [config builder](#Config-Builder-insulin). The curves will vary based on the [DIA](#your-aaps-profile-duration-of-insulin-action) and the time to peak.
 
-The **purple** line shows how much insulin remains after it has been injected as it decays with time and the **blue** line shows how active it is. The important thing to note is that the decay has a **long tail**. If you have been used to manual pumping, you have probably been used to assuming that insulin decays over about 3.5 hours. However, when you are looping, the long tail matters as the calculations are far more precise and these small amounts add up when they are subjected to the recursive calculations in the **AAPS** algorithm.
+The **purple** line shows how much insulin remains after it has been injected as it decays with time and the **blue** line shows how active it is.
 
-לדיון מפורט יותר על סוגי האינסולין השונים, פרופילי הפעילות שלהם ומדוע כל זה חשוב, אפשר לקרוא מאמר כאן על [הבנת עקומות החדשות של האינסולין הפעיל על סמך עקומות פעילות אקספוננציאליות](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html#understanding-the-new-iob-curves-based-on-exponential-activity-curves)
-
-ניתן גם לקרוא מאמר מצוין בבלוג על זה כאן: [מדוע אנחנו טועים באופן קבוע במשך פעולת האינסולין (DIA) ולמה זה חשוב…](https://www.diabettech.com/insulin/why-we-are-regularly-wrong-in-the-duration-of-insulin-action-dia-times-we-use-and-why-it-matters/)
-
-And even more at: [Exponential Insulin Curves + Fiasp](https://web.archive.org/web/20220630154425/http://seemycgm.com/2017/10/21/exponential-insulin-curves-fiasp/)
+See [Your AAPS Profile > Duration of insulin action](#your-aaps-profile-duration-of-insulin-action) to learn more about what it is and how to set it.
 
 ## סטטוס המשאבה
 
@@ -534,22 +557,15 @@ These tabs show details about the algorithm's calculations and why **AAPS** acts
 
 Calculations are run each time the system gets a fresh reading from the CGM.
 
-For more details see [APS section on config builder page](../SettingUpAaps/ConfigBuilder.md#aps).
+For more details see [APS section on config builder page](#Config-Builder-aps).
+
+(aaps-screens-profile)=
 
 ## Profile
 
 ![Profile](../images/Screenshots_Profile.png)
 
-הפרופיל מכיל מידע על הגדרות הסוכרת האישיות שלכם:
-
-    * DIA (Duration of Insulin Action)
-    * IC or I:C: Insulin to Carb ratio
-    * ISF: Insulin Sensitivity Factor
-    * Basal rate
-    * Target: Blood glucose level that you want **AAPS** to be aiming for
-    
-
-See the detailed **[Profile](../SettingUpAaps/YourAapsProfile.md)** page for more information.
+Profile contains information on your individual diabetes settings, see the detailed **[Profile](../SettingUpAaps/YourAapsProfile.md)** page for more information.
 
 ## אוטומציה
 
@@ -561,7 +577,7 @@ See the dedicated page [here](../DailyLifeWithAaps/Automations.md).
 
 This page displays the status of the connection with your Nightscout site.
 
-Settings can be changed in [Preferences > NS Client](../SettingUpAaps/Preferences.md#nsclient).
+Settings can be changed in [Preferences > NS Client](#Preferences-nsclient).
 
 For troubleshooting see this [page](../GettingHelp/TroubleshootingNsClient.md).
 
@@ -573,12 +589,14 @@ Depending on your BG source settings, this tab is named differently.
 
 Shows history of CGM readings and offers option to remove reading in case of failure (i.e. compression low) or duplicate readings.
 
+(aaps-screens-treatments)=
+
 ## טיפולים
 
 This view can be accessed by pressing the 3 dots on the right of the menu, then Treatments. It is not possible to show it in the main menu through the Config Builder. In this view, you can view and alter the history of the following treatments:
 
 * Bolus & carbs
-* [בולוס ממושך](../DailyLifeWithAaps/ExtendedCarbs.md#extended-bolus-and-switch-to-open-loop---dana-and-insight-pump-only)
+* [בולוס ממושך](#Extended-Carbs-extended-bolus-and-switch-to-open-loop-dana-and-insight-pump-only)
 * מינון בזאלי זמני
 * [ערך מטרה זמני](../DailyLifeWithAaps/TempTargets.md)
 * [החלפת פרופיל](../DailyLifeWithAaps/ProfileSwitch-ProfilePercentage.md)
@@ -589,6 +607,8 @@ In the last column, the data source for each line is displayed in blue. It can b
 
 * NS for Nightscout : the data comes from or has been recorded to Nightscout
 * PH for Pump History : the data has been processed by the pump
+
+(screens-bolus-carbs)=
 
 ### Bolus & carbs
 
@@ -610,8 +630,8 @@ The treatment tab can be used to correct faulty carb entries (*i.e.* you over- o
 3. Remove the entry with the faulty carb amount. (Latest versions have trashcan icon in treatments screen. Press the trashcan icon, select the lines to remove, and then press the trashcan icon again to finalize.)
 4. ודאו שהפחמימות הוסרו בהצלחה על ידי בדיקה מחדש של הפחמימות הפעילות במסך הבית.
 5. עשו את אותו הדבר עבור אינסולין פעיל אם יש רק שורה אחת בלשונית הטיפול כוללת פחמימות ואינסולין.
-   
-   → If carbs are not removed as intended, and you add additional carbs as explained here (6.), COB will be too high and that might lead to too high insulin delivery.
+    
+    → If carbs are not removed as intended, and you add additional carbs as explained here (6.), COB will be too high and that might lead to too high insulin delivery.
 
 6. הזינו את כמות הפחמימות הנכונה דרך כפתור הפחמימות במסך הבית והקפידו להגדיר את מועד האירוע הנכון.
 
@@ -644,6 +664,8 @@ The history of profile switches can be seen here. You may see multiple entries e
 
 Deleting the entries only affects your reports in Nightscout and will never actually change the current profile.
 
+You can use the **Clone** button shown on line **1** to make a copy of a **Profile Switch**. See [Your AAPS Profile > Manage your profiles](#your-aaps-profile-clone-profile-switch) for more information.
+
 ### Care portal
 
 ![Care portal](../images/TreatmentsView5.png)
@@ -654,12 +676,19 @@ This tab shows all notes and alerts recorded in Nightscout.
 
 This view can be accessed by pressing the 3 dots on the right of the menu, then History. It is not possible to put in the main menu through the Config Builder. It can also be accessed through a button at the bottom of the [Action tab](#action-tab).
 
-Allows you to ride back in **AAPS** history.
+Allows you to ride back in **AAPS** history. See the dedicated page [Reviewing your data > History Browser](../Maintenance/Reviewing.md).
+
+## Statistics
+
+This view can be accessed by pressing the 3 dots on the right of the menu, then Statistics. It is not possible to put in the main menu through the Config Builder.
+
+Gives you statistics about your Time In Range and Total Daily Dose. See the dedicated page [Reviewing your data > Statistics](#reviewing-statistics).
+
+(aaps-screens-profile-helper)=
 
 ## Profile Helper
 
-This view can be accessed by pressing the 3 dots on the right of the menu, then Profile Helper. It is not possible to put in the main menu through the Config Builder. The [Profile Helper](../SettingUpAaps/ProfileHelper.md) can help you:
+This view can be accessed by pressing the 3 dots on the right of the menu, then Profile Helper. It is not possible to put in the main menu through the Config Builder. The Profile Helper can help you:
 
-* build a profile from scratch for a kid
-* compare two profiles
-* clone a profile
+* [build a profile from scratch for a kid](#your-aaps-profile-profile-from-scratch-for-a-kid)
+* [compare two profiles](#your-aaps-profile-compare-profiles)

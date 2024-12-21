@@ -14,7 +14,9 @@
 
 `API_SECRET `для Nightscout является главным паролем вашего сайта: не делитесь им публично.
 
-### AAPS settings
+(Nightscout-aaps-settings)=
+
+### Настройки AAPS
 
 AAPS можно настроить на принятие команд Nightscout (изменения профиля, терапии, ...) или полностью отключить его.
 
@@ -40,7 +42,7 @@ AAPS можно настроить на принятие команд Nightscout
 
 ### Дополнительные параметры защиты
 
-Keep your phone up to date as described in [safety first](../Getting-Started/PreparingForAaps.md#safety-first).
+Поддерживайте ПО телефона в актуальном состоянии как это описано в разделе [безопасность на первом месте](#preparing-safety-first).
 
 (Nightscout-manual-nightscout-setup)=
 

@@ -18,6 +18,7 @@ Dans un avion, un pilote automatique ne fait pas tout le travail du pilote humai
 
 ![image](../images/autopilot.png)
 
+(Introduction-what-does-hybrid-closed-loop-mean)=
 ## Que signifie "boucle fermée hybride" ?
 
 La meilleure solution pour le diabète de type 1 serait un « traitement fonctionnel » (probablement un implant de cellules pancréatiques protégées du système immunitaire). En attendant son arrivée, un pancréas artificiel « boucle fermée complète » serait probablement le meilleur choix. Il s'agit d'un système technologique qui n'a besoin d'aucune entrée utilisateur (comme les bolus d'insuline pour les repas, ou l'annonce d'une activité physique), avec une bonne régulation des taux de glycémie. Pour le moment, il n'existe pas de systèmes largement disponibles qui soient en boucle fermée « complète », ces systèmes ont tous besoin de quelques informations entrées par l'utilisateur. Les systèmes actuellement disponibles sont appelés boucles fermées « hybrides », car ils utilisent une combinaison de technologie automatisée et d’informations entrées par l'utilisateur.
@@ -44,7 +45,7 @@ Android APS (**AAPS**) est un système hybride en boucle fermée, ou système Ar
 
 ## Quels sont les composants de base d'AAPS ?
 
-Le « cerveau » d'AAPS est une **application** que vous construisez vous-même. Des instructions détaillées sont fournies pour la construire. Vous installez ensuite **l'application AAPS** sur un **smartphone Android**  [compatible](https://docs.google.com/spreadsheets/d/1zO-Vf3wv0jji5Gflk6pe48oi348ApF5RvMcI6NG5TnY/edit?pli=1#gid=2097219952)  (**1**). Un certain nombre d'utilisateurs préfèrent conserver leur boucle sur un téléphone distinct de leur téléphone principal. Vous pouvez donc par exemple utiliser un téléphone Android juste pour faire fonctionner votre boucle AAPS et utiliser votre téléphone habituel pour toutes vos autres activités.
+Le « cerveau » d'AAPS est une **application** que vous construisez vous-même. Des instructions détaillées sont fournies pour la construire. You then install the **AAPS  app** on a [compatible](../Getting-Started/Phones.md) **Android smartphone** (**1**). Un certain nombre d'utilisateurs préfèrent conserver leur boucle sur un téléphone distinct de leur téléphone principal. Vous pouvez donc par exemple utiliser un téléphone Android juste pour faire fonctionner votre boucle AAPS et utiliser votre téléphone habituel pour toutes vos autres activités.
 
 Vous aurez besoin d'une application supplémentaire sur votre **smartphone Android**, en plus d'**AAPS**. Il s'agit soit d'une application Dexcom modifiée appelée "Build Your Own Dexcom App" [**BYODA**](https://docs.google.com/forms/d/e/1FAIpQLScD76G0Y-BlL4tZljaFkjlwuqhT83QlFM5v6ZEfO7gCU98iJQ/viewform?fbzx=2196386787609383750&fbclid=IwAR2aL8Cps1s6W8apUVK-gOqgGpA-McMPJj9Y8emf_P0-_gAsmJs6QwAY-o0) ou [**Xdrip+**](https://xdrip.readthedocs.io/en/latest/install/usethedoc/). Cette application supplémentaire reçoit les données d'un capteur de glycémie (**2**) par bluetooth, et envoie ces données en interne sur le téléphone à l'application **AAPS**.
 
@@ -127,7 +128,7 @@ En date du 25 juin 2023, il y a actuellement quatre grands systèmes de boucle f
 | Nano-ordinateur | tout petit ordinateur (1)                                                       | ![indisponible](../images/unavailable.png) | ![indisponible](../images/unavailable.png)    | ![disponible](../images/available.png)                | ![indisponible](../images/unavailable.png)     |
 | POMPE           | [Dana I](../CompatiblePumps/DanaRS-Insulin-Pump.md)                             | ![disponible](../images/available.png)     | ![indisponible](../images/unavailable.png)    | ![indisponible](../images/unavailable.png)            | ![indisponible](../images/unavailable.png)     |
 | POMPE           | [Dana RS](../CompatiblePumps/DanaRS-Insulin-Pump.md)                            | ![disponible](../images/available.png)     | ![indisponible](../images/unavailable.png)    | ![indisponible](../images/unavailable.png)            | ![indisponible](../images/unavailable.png)     |
-| POMPE           | [DanaR](../CompatiblePumps/DanaR-Insulin-Pump.md)                               | ![disponible](../images/available.png)     | ![indisponible](../images/unavailable.png)    | ![indisponible](../images/unavailable.png)            | ![indisponible](../images/unavailable.png)     |
+| POMPE           | [Dana R](../CompatiblePumps/DanaR-Insulin-Pump.md)                              | ![disponible](../images/available.png)     | ![indisponible](../images/unavailable.png)    | ![indisponible](../images/unavailable.png)            | ![indisponible](../images/unavailable.png)     |
 | POMPE           | [Omnipod (Dash)](../CompatiblePumps/OmnipodDASH.md) (2)                         | ![disponible](../images/available.png)     | ![disponible](../images/available.png)        | ![indisponible](../images/unavailable.png)            | ![disponible](../images/available.png)         |
 | POMPE           | [Omnipod (Eros)](../CompatiblePumps/OmnipodEros.md)                             | ![disponible](../images/available.png)     | ![disponible](../images/available.png)        | ![indisponible](../images/unavailable.png)            | ![disponible](../images/available.png)         |
 | POMPE           | [Diaconn G8](../CompatiblePumps/DiaconnG8.md)                                   | ![disponible](../images/available.png)     | ![indisponible](../images/unavailable.png)    | ![indisponible](../images/unavailable.png)            | ![indisponible](../images/unavailable.png)     |
@@ -188,7 +189,7 @@ Si une attaque malveillante était effectuée contre votre pompe à insuline, ce
 
 #### Considérations de sécurité en lien avec l'amélioration trop rapide du contrôle de la glycémie
 
-Une baisse rapide de l'HbA1c et un meilleur contrôle de la glycémie paraissent attirants. Cependant, faire baisser les niveaux moyens de glucose sanguin _trop rapidement_ en démarrant un système de boucle fermée quel qu'il soit, peut causer des dommages permanents, y compris aux yeux, et une neuropathie douloureuse qui ne disparaîtra jamais. Ces atteintes peuvent être évitées simplement en baissant plus lentement les niveaux. Si vous avez actuellement un taux d'HbA1c élevé et que vous passez à AAPS (ou à tout autre système en boucle fermée), veuillez discuter de ce risque potentiel avec votre équipe médicale avant de commencer, et convenez d'un plan de mise en place avec elle. More general information on how to reduce your glucose levels safely, including links to medical literature is given in the [safety section [here](../Getting-Started/PreparingForAaps.md#safety-first).
+Une baisse rapide de l'HbA1c et un meilleur contrôle de la glycémie paraissent attirants. Cependant, faire baisser les niveaux moyens de glucose sanguin _trop rapidement_ en démarrant un système de boucle fermée quel qu'il soit, peut causer des dommages permanents, y compris aux yeux, et une neuropathie douloureuse qui ne disparaîtra jamais. Ces atteintes peuvent être évitées simplement en baissant plus lentement les niveaux. Si vous avez actuellement un taux d'HbA1c élevé et que vous passez à AAPS (ou à tout autre système en boucle fermée), veuillez discuter de ce risque potentiel avec votre équipe médicale avant de commencer, et convenez d'un plan de mise en place avec elle. More general information on how to reduce your glucose levels safely, including links to medical literature is given in the [safety section [here](#preparing-safety-first).
 
 #### Sûreté médicale autour des dispositifs, consommables et autres médicaments
 
@@ -196,7 +197,7 @@ Utilisez une pompe à insuline et un capteur de glycémie approuvés par la FDA 
 
 Utilisez du matériel d'origine pour les applicateurs, cathéters et réservoirs d'insuline, approuvés par le fabricant de votre pompe et de votre MGC. L'utilisation de consommables non testés ou modifiés peut entraîner une imprécision du MGC et des erreurs de dosage de l'insuline. L'insuline peut s'avérer très dangereuse lorsqu'elle est mal dosée - ne jouez pas avec votre vie en bricolant votre matériel.
 
-Ne prenez pas d'inhibiteurs de SGLT-2 (gliflozines) lorsque vous utilisez **AAPS** car il est impossible de calculer la manière dont ils font baisser la glycémie. Combining this effect with a system that lowers basal rates in order to increase BG is dangerous, there is more detail about this in the main [safety section](../Getting-Started/PreparingForAaps.md#safety-first).
+Ne prenez pas d'inhibiteurs de SGLT-2 (gliflozines) lorsque vous utilisez **AAPS** car il est impossible de calculer la manière dont ils font baisser la glycémie. Combining this effect with a system that lowers basal rates in order to increase BG is dangerous, there is more detail about this in the main [safety section](#preparing-safety-first).
 
 (introduction-how-can-i-approach-discussing-aaps-with-my-clinical-team)=
 ## Comment puis-je aborder AAPS avec mon équipe médicale ?
@@ -226,7 +227,7 @@ d) Vous trouverez toujours le support technique dont vous avez besoin auprès de
 
 e) Vous serez en mesure de fournir **aussi bien des informations sur votre glycémie que sur votre boucle/administration d'insuline par la pompe** sous forme de rapports synthétiques lors de vos RDV médicaux (grâce à Nightscout ou Tidepool), soit imprimés soit sous format numérique (si vous apportez un ordinateur portable/tablette). La mise en parallèle des données de glycémie et d'insuline permettra une utilisation plus efficace du temps de votre docteur lors de l'examen vos rapports et des discussions pour évaluer vos progrès.
 
-f) Si votre équipe continue de s'opposer fermement, donnez à votre docteur une copie imprimée des articles de référence cités plus haut, et donnez-lui le lien vers la page de **AAPS** à destination des docteurs : [Pour les cliniciens - Une introduction générale et un guide de **AAPS**](../Resources/clinician-guide-to-AndroidAPS.md)
+f) If there is still strong objection from your team, hand your clinician printouts of the reference articles linked here in the text, and give them the link to the **AAPS** clinicians section: [For Clinicians – A General Introduction and Guide to **AAPS**](../UsefulLinks/ClinicianGuideToAaps.md)
 
 #### Support pour la boucle DIY par d'autres docteurs
 

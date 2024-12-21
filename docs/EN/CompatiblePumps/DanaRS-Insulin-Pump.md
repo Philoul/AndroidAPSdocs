@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # DanaRS and Dana-i Pump
 
 _These instructions are for configuring the app and your pump if you have a DanaRS from 2017 onwards or the newer Dana-i. Visit [DanaR Insulin Pump](./DanaR-Insulin-Pump.md) if you have the original DanaR instead._
@@ -97,7 +101,7 @@ In case the connection between AAPS and Dana RS is lost during bolus insulin del
 
 * In most cases this is just a communication issue and the correct amount of insulin is delivered.
 * Check in pump history (either on the pump or through Dana tab > pump history > boluses) if correct bolus is given.
-* Delete error entry in [treatments tab](../DailyLifeWithAaps/AapsScreens.md#bolus--carbs) if you wish.
+* Delete error entry in [treatments tab](#screens-bolus-carbs) if you wish.
 * Real amount is read and recorded on next connect. To force this press BT icon on dana tab or just wait for next connect.
 
 ## Special note when switching phone
@@ -118,4 +122,4 @@ When switching to a new phone the following steps are necessary:
 
 ## Timezone traveling with Dana RS pump
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

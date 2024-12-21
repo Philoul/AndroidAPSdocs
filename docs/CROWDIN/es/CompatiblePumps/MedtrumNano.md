@@ -1,8 +1,17 @@
+- - -
+orphan: true
+- - -
+
 # Medtrum Nano / 300U
 
 These instructions are for configuring the Medtrum insulin pump.
 
 This software is part of a DIY artificial pancreas solution and is not a product but requires YOU to read, learn, and understand the system, including how to use it. Solo Usted es responsable de lo que hace con esto.
+
+```{contents} Table of contents
+:depth: 1
+:local: true
+```
 
 ## Pump capabilities with AAPS
 * All loop functionality supported (SMB, TBR etc)
@@ -50,7 +59,7 @@ If in doubt you can also select “Virtual Pump” and select “Medtrum” late
 
 #### Option 2: The Config Builder
 
-On an existing installation you can select the **Medtrum** pump from the [Config Builder](../SettingUpAaps/ConfigBuilder.md#pump):
+On an existing installation you can select the **Medtrum** pump from the [Config Builder](#Config-Builder-pump):
 
 On the top-left hand corner **hamburger menu** select **Config Builder**\ ➜\ **Pump**\ ➜\ **Medtrum**\ by selecting the **Enable button** titled **Medtrum**.
 
@@ -90,8 +99,9 @@ This settings changes the way AAPS will show notification on non ciritical pump 
     - Low reservoir (20 Units)
     - Patch expiration warning
 
-In either case these warnings are also shown on the Medtrum overview screen under [Active alarms](#active-alarms).
+In either case these warnings are also shown on the Medtrum overview screen under [Active alarms](#medtrum-active-alarms).
 
+(medtrum-patch-expiration)=
 #### Patch Expiration
 
 ***Default: Enabled.***
@@ -104,7 +114,7 @@ If this setting is disabled, the patch will not warn you and will continue runni
 
 ***Default: 72 hours.***
 
-This setting changes the time of the expiration warning, when [Patch Expiration](#patch-expiration) is enabled, AAPS will give a notification on the set hour after activation.
+This setting changes the time of the expiration warning, when [Patch Expiration](#medtrum-patch-expiration) is enabled, AAPS will give a notification on the set hour after activation.
 
 #### Hourly Maximum Insulin
 
@@ -213,6 +223,7 @@ Clean the skin, remove stickers and attach the patch to your body. Remove safety
 
 Press **Next** to activate the patch.
 
+(medtrum-activate-patch)=
 ##### Activate Patch
 
 ![Activate patch](../images/medtrum/activation/ActivatePatch.png)
@@ -257,71 +268,72 @@ The overview contains the current status of the Medtrum patch. It also contains 
 
 ![Medtrum Overview](../images/medtrum/Overview.png)
 
-##### BLE Status:
+### BLE Status:
 
 This shows the current status of the Bluetooth connection to the pumpbase.
 
-##### Last connected:
+### Last connected:
 
 This shows the last time the pump was connected to AAPS.
 
-##### Pump state:
+### Pump state:
 
 This shows the current state of the pump. For example:
     - ACTIVE : The pump is activated and running normally
     - STOPPED: The patch is not activated
 
-##### Basal type:
+### Basal type:
 
 This shows the current basal type.
 
-##### Basal rate:
+### Basal rate:
 
 This shows the current basal rate.
 
-##### Last bolus:
+### Last bolus:
 
 This shows the last bolus that was delivered.
 
-##### Active bolus:
+### Active bolus:
 
 This shows the active bolus that is currently being delivered.
 
-##### Active alarms:
+(medtrum-active-alarms)=
+### Active alarms:
 
 This shows any active alarms that are currently active.
 
-##### Reservoir:
+### Reservoir:
 
 This shows the current reservoir level.
 
-##### Battery:
+### Battery:
 
 This shows the current battery voltage of the patch.
 
-##### Pump type:
+### Pump type:
 
 This shows the current pump type number.
 
-##### FW version:
+### FW version:
 
 This shows the current firmware version of the patch.
 
-##### Patch no:
+### Patch no:
 
 This shows the sequence number of the activated patch. This number is incremented every time a new patch is activated.
 
-##### Patch expires:
+### Patch expires:
 
 This shows the date and time when the patch will expire.
 
-##### Refresh:
+### Refresh:
 
 This button will refresh the status of the patch.
 
-##### Change patch:
+### Change patch:
 
-This button will start the process to change the patch. See [Activate patch](#activate-patch) for more information.
+This button will start the process to change the patch. See [Activate patch](#medtrum-activate-patch) for more information.
 
 ### Reset alarms
 
@@ -330,6 +342,18 @@ The alarm button will appear on the overview screen when there is an active alar
 ![Reset alarms](../images/medtrum/ResetAlarms.png)
 
 Press the **Reset Alarms** button to reset the alarms and resume normal operation.
+
+## Switching phone, export/import settings
+
+When switching to a new phone the following steps are necessary:
+* [Export settings](../Maintenance/ExportImportSettings.md) on your old phone
+* Transfer settings from old to new phone, and import them into AAPS
+
+The imported settings file has to be of the same patch session that you are currently using, otherwise the patch will not connect.
+
+After a settings import the driver will sync history with the pump, this can take a while depending on the age of the settings file.
+
+From AAPS version 3.3.0.0 onwards, the sync progress is shown in the the home screen: ![Sync progress](../images/medtrum/SyncProgress.png)
 
 ## Troubleshooting
 

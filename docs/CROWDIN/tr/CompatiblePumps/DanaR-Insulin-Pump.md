@@ -1,3 +1,9 @@
+* * *
+
+orphan: true
+
+* * *
+
 # DanaR Pompa
 
 *Bu talimatlar bir DanaR'ınız varsa uygulamak ve pompanızı yapılandırmak içindir. Visit [DanaRS Insulin Pump](./DanaRS-Insulin-Pump.md) if you have the DanaRS launched in 2017 instead.*
@@ -23,4 +29,4 @@
 
 ## Dana R pompasıyla farklı zaman diliminde seyahat
 
-For information on traveling across time zones see section [Timezone traveling with pumps](../DailyLifeWithAaps/TimezoneTraveling-DaylightSavingTime.md#danarv2-danars).
+For information on traveling across time zones see section [Timezone traveling with pumps](#timezone-traveling-danarv2-danars).

@@ -10,7 +10,7 @@
 - ההורים יכולים לעקוב מרחוק ולראות את כל המידע הרלוונטי, כגון רמת סוכר, פחמימות פעילות, אינסולין פעיל, וכו', באמצעות ** אפליקציית AAPSClient** במכשיר הטלפון הפרטי שלהם. על ההגדרות ב-AAPS ובאפליקציית AAPSClient להיות זהות.
 - הורים יכולים לקבל התרעות באמצעות שימוש **באפליקציית xDrip בתור עוקבים (follower mode)** במכשירים החכמים.
 - Remote control of AAPS using [SMS Commands](../RemoteFeatures/SMSCommands.md) secured by two-factor authentication.
-- Remote control through AAPSClient app is only recommended if your synchronization is working well (ie. you don’t see unwanted data changes like self modification of TT, TBR etc) see [release notes for Version 2.8.1.1](../Maintenance/ReleaseNotes.md#version-2811) for further details.
+- Remote control through AAPSClient app is only recommended if your synchronization is working well (ie. you don’t see unwanted data changes like self modification of TT, TBR etc) see [release notes for Version 2.8.1.1](#important-hints-2-8-1-1) for further details.
 
 ## כלים ואפליקציות לניטור מרחוק
 
@@ -26,14 +26,10 @@
 שעון חכם יכול להיות כלי עזר משמעותי בניהול AAPS אצל ילדים. ישנן מספר תצורות אפשריות:
 
 - במידה ו-AAPSClient מותקן במכשיר הטלפון של ההורים, ניתן להתקין אפליקציית [AAPSClient WearOS ](https://github.com/nightscout/AndroidAPS/releases/)על שעון חכם תואם המחובר למכשיר הטלפון של ההורים. האפליקציה תראה רמת סוכר נוכחית, מצב לולאה, ותאפשר הזנת פחמימות, יעדי מטרה זמניים, ושינויי פרופיל. אין אפשרות לבולוסים מרחוק באמצעות אפליקציית WearOS.
-- Alternatively, the [AAPS WearOS app](../UsefulLinks/WearOsSmartwatch.md) can be built and installed on a compatible smartwatch, connected to the kid's phone but worn by the parent. אפשרות זו כוללת את כל הפונקציות הרשומות לעיל, וכן את האפשרות למתן בולוסים. כך יוכל ההורה להזריק בולוסים מבלי להשתמש פיזית במכשיר הטלפון של הילד.
+- Alternatively, the [AAPS WearOS app](../WearOS/WearOsSmartwatch.md) can be built and installed on a compatible smartwatch, connected to the kid's phone but worn by the parent. אפשרות זו כוללת את כל הפונקציות הרשומות לעיל, וכן את האפשרות למתן בולוסים. כך יוכל ההורה להזריק בולוסים מבלי להשתמש פיזית במכשיר הטלפון של הילד.
 
 ## דברים שיש לקחת בחשבון
 
-- Setting the correct [treatment factors](../UsefulLinks/FAQ.md#how-to-begin) (basal rate, DIA, ISF...) is difficult for kids, especially when growth hormones are involved.
 - על ההגדרות ב-AAPS ובאפליקציית AAPSClient להיות זהות.
 - שימו לב שיש הפרש זמנים מסויים בין הטלפון הראשי של המטופל לבין הטלפון העוקב בגלל שליחה והורדה של נתונים ובגלל ש-AAPS של המכשיר הראשי יעלה עדכון רק אחרי שיסיים לבצע את פעולתו.
-- לכן קחו את הזמן, הגדירו היטב ונסו את ההגדרות כשהילד\ה לידכם לפני שתתחילו ניטור וטיפול מרחוק. חופשות מבית הספר הן זמן מתאים לכך.
-- מהי התוכנית למקרי חירום כאשר השליטה מרחוק לא עובדת (נניח בעקבות בעיות רשת)?
-- ניטור וטיפול מרחוק יכול להיות שימושי מאוד בגילי גן ובית ספר יסודי. אך יש לוודא שהמורים והסגל מודעים לתוכנית הטיפול שלכם. דוגמאות לתוכניות טיפול כאלה ניתן למצוא ב[לשונית הקבצים (files) בקבוצת AndroidAPS](https://www.facebook.com/groups/AndroidAPSUsers/files/) בפייסבוק.
-- חשוב להשאיר את מכשיר הטלפון של הילד בטווח קליטה של המשאבה והחיישן בכל עת. זה עשוי להיות מאתגר, בעיקר כשמדובר בילדים קטנים. ישנם פתרונות שונים. אפשרות פופולארית אחת היא [חגורת SPI](https://spibelt.com/collections/kids-belts)
+- What is your emergency plan for when remote control does not work (_i.e._ network problems or lost bluetooth connection)?  Always consider what will happen with **AAPS** if you suddenly can’t send a new command. **AAPS** overwrites the pump basal, ISF and ICR with the current profile values. Only use temporary profile switches (_i.e._ with a set time duration) if switching to a stronger insulin profile, in case your remote connection is disrupted. Then the pump will revert to the original profile when the time expires.
